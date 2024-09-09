@@ -1,0 +1,52 @@
+
+.container{
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #BABABA;
+    opacity: 1;
+    border-radius: 10rem;
+
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    filter: saturate(100%);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease;
+    background-color: rgba(var(--background-color), 0.3);
+
+}
+.logo a{
+font-family: "Blisstrapy";
+font-size:4rem;
+cursor: pointer;
+text-decoration: none;
+color: inherit;
+}
+
+.titles{
+    font-family: "NerdFont";
+    display: flex;
+    border-radius: 5rem;
+    cursor: pointer;
+    column-gap: 3rem;
+}
+
+.titles a{
+text-decoration: none;
+color: inherit;
+}
+.titles a:hover{
+    color: white;
+}
+.socialMedia{
+display: flex;
+    column-gap: 1rem;
+    justify-content: baseline;
+}
+.socialMedia *{
+    cursor: pointer;
+    color: inherit;   
+}
+.socialMedia a:hover{
+color: white;
+}

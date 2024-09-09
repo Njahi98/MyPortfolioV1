@@ -1,0 +1,20 @@
+.home{
+    margin-top: 8rem;
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    border-style: solid;
+}
+.colored{
+    font-family: "NerdFont";
+    background: linear-gradient(to right, #9b5de5, #ff5e5b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.75rem;
+}
+.normal{
+    color: #BABABA;
+    font-size: 1.75rem;
+}
