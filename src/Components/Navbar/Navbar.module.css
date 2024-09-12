@@ -1,19 +1,17 @@
 
-.container{
-    height: 4rem;
+.NavBar{
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #BABABA;
-    opacity: 1;
     border-radius: 10rem;
-
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    filter: saturate(100%);
-    backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease;
-    background-color: rgba(var(--background-color), 0.3);
-
+    background-color: rgba(255, 255, 255, 0.061);
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    position: sticky;
+    top:0;
+    z-index: 1;
 }
 .logo a{
 font-family: "Blisstrapy";

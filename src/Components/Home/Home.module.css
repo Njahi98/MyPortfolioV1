@@ -1,20 +1,39 @@
 .home{
     margin-top: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     height: 20rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: start;
-    border-style: solid;
 }
-.colored{
+.home div> :nth-child(1){
     font-family: "NerdFont";
     background: linear-gradient(to right, #9b5de5, #ff5e5b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-size: 3rem;
+}
+.home div> p:nth-child(2),p:nth-child(3){
+    color: white    ;
     font-size: 1.75rem;
 }
-.normal{
-    color: #BABABA;
-    font-size: 1.75rem;
+
+.home img{
+    border-radius: 5rem;   
+    animation: move 7s infinite;
+    opacity: 0.8;
+    background-blend-mode: color;
+    box-shadow: 0 5px 15px #9b5de5;
+    margin-right: 5rem;
 }
+@keyframes move {
+    0% {
+      transform: translatex(0);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+  }
