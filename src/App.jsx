@@ -6,6 +6,7 @@ import rectangle9522 from "./assets/Rectangle 9522.png";
 import rectangle9523 from "./assets/Rectangle 9523.png";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
+import Project from "./Components/Project/Project";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <img className="background2" src={rectangle9522} alt="background2" />
       <img className="background3" src={rectangle9523} alt="background3" />
       <About/>
-
+      <Project/>
 
       <div className="background-container">
         <div className="stars"></div>

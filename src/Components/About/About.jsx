@@ -19,6 +19,7 @@ import { SiSwagger } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinux } from "react-icons/fa";
+import { SiVite } from "react-icons/si";
 
 function About() {
   return (
@@ -29,11 +30,12 @@ function About() {
           <IoLocationOutline /> Tunisia
           <p>
             {" "}
-            I am a passionate Full Stack developer from Tunisia. My journey in web development
-             began with a fascination for how lines of code can transform into
-              interactive, beautiful, and functional
-              websites and applications. This fascination has grown into a relentless pursuit
-               of knowledge and skills across both front-end and back-end technologies.
+            I am a passionate Full Stack developer from Tunisia. My journey in
+            web development began with a fascination for how lines of code can
+            transform into interactive, beautiful, and functional websites and
+            applications. This fascination has grown into a relentless pursuit
+            of knowledge and skills across both front-end and back-end
+            technologies.
           </p>
         </div>
         <div>
@@ -42,47 +44,38 @@ function About() {
             <FaHtml5
               className={`${styles.leftitem} ${styles.leftitem1}`}
               title="HTML5"
-              
             />
             <FaCss3
               className={`${styles.leftitem} ${styles.leftitem2}`}
               title="CSS3"
-              
             />
             <IoLogoJavascript
               className={`${styles.leftitem} ${styles.leftitem3}`}
               title="Javascript"
-              
             />
             <FaJava
               className={`${styles.leftitem} ${styles.leftitem4}`}
               title="Java"
-              
             />
             <FaReact
               className={`${styles.leftitem} ${styles.leftitem5}`}
               title="React"
-              
             />
             <SiSpringboot
               className={`${styles.leftitem} ${styles.leftitem6}`}
               title="SpringBoot"
-              
             />
             <FaBootstrap
               className={`${styles.leftitem} ${styles.leftitem7}`}
               title="Bootstrap"
-              
             />
             <SiMongodb
               className={`${styles.leftitem} ${styles.leftitem8}`}
               title="Mongodb"
-              
             />
             <IoLogoFirebase
-             className={`${styles.leftitem} ${styles.leftitem9}`}
-             title="Firebase"
-             
+              className={`${styles.leftitem} ${styles.leftitem9}`}
+              title="Firebase"
             />
           </div>
         </div>
@@ -93,43 +86,41 @@ function About() {
             <VscVscode
               className={`${styles.rightitem} ${styles.rightitem1}`}
               title="VScode"
-              
             />
             <SiIntellijidea
               className={`${styles.rightitem} ${styles.rightitem2}`}
               title="Intellj Idea"
-              
             />
             <IoLogoFigma
               className={`${styles.rightitem} ${styles.rightitem3}`}
               title="Figma"
-              
             />
             <SiPostman
               className={`${styles.rightitem} ${styles.rightitem4}`}
               title="PostMan"
-              
             />
             <SiSwagger
               className={`${styles.rightitem} ${styles.rightitem5}`}
               title="Swagger"
-              
             />
             <FaGitAlt
               className={`${styles.rightitem} ${styles.rightitem6}`}
               title="Git"
-              
             />
             <FaGithub
               className={`${styles.rightitem} ${styles.rightitem7}`}
               title="Github"
-              
             />
             <FaLinux
               className={`${styles.rightitem} ${styles.rightitem8}`}
-              title="Average chad Linux user"
-              
+              title="chad Linux user"
             />
+
+            <SiVite
+              className={`${styles.rightitem} ${styles.rightitem9}`}
+              title="Vite"
+            />
+            
           </div>
         </div>
       </div>

@@ -1,0 +1,30 @@
+.projectfunc{
+    margin-top: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.projectfunc >:nth-child(1){
+    font-size: 4rem;
+    font-family: "Blisstrapy";
+    background: linear-gradient(to right, #9b5de5, #ff5e5b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.projectfunc :nth-child(2){
+    font-family: "nerdfont";
+}
+
+.project{
+    display: grid;
+    grid: repeat(2,15rem)/repeat(3,1fr);
+    gap: 15px;
+}

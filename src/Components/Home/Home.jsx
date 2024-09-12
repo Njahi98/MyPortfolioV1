@@ -7,9 +7,9 @@ function Home() {
     
     <div className={styles.home}>
       <div>
-        <p>Hello there!</p>
-        <p>I am Oussama Njahi, I&apos;m a fullstack Developer</p>
-        <p>creating amazing websites using React & Spring Boot.</p>
+        <p>Hello There!</p>
+        <p>I am Oussama Njahi, I&apos;m a fullstack Developer, 
+      creating amazing websites using React & Spring Boot.</p>
       </div>
      
       <img src={devPic} alt="photo" />

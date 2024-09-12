@@ -3,22 +3,22 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: 20rem;
     display: flex;
-    justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
-.home div> :nth-child(1){
-    font-family: "NerdFont";
+.home div> p:nth-child(1){
+    font-family: "Blisstrapy";
     background: linear-gradient(to right, #9b5de5, #ff5e5b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 0;
 }
-.home div> p:nth-child(2),p:nth-child(3){
+.home div> p:nth-child(2){
     color: white    ;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    font-family: "NerdFont";
 }
 
 .home img{
