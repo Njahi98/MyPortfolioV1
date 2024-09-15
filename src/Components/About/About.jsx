@@ -124,7 +124,7 @@ function About() {
           </div>
         </div>
       </div>
-      hi
+      
     </div>
   );
 }

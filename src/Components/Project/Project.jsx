@@ -1,5 +1,6 @@
 import styles from "./Project.module.css";
 import ProjectCard from "./ProjectCard";
+import proj1S1 from "../../assets/project1/proj1S1.png"
 function Project() {
   return (
     <div className={styles.projectfunc}>
@@ -8,7 +9,7 @@ function Project() {
          have worked on.</p>
          <div className={styles.project}>
        
-        <ProjectCard/>
+        <ProjectCard imageSrc={proj1S1} projName={"ERP PROJECT"}/>
         <ProjectCard/>
         <ProjectCard/>
         <ProjectCard/>
