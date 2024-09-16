@@ -33,14 +33,19 @@ function About() {
             I am a passionate Full Stack developer from Tunisia. My journey in
             web development began with a fascination for how lines of code can
             transform into interactive, beautiful, and functional websites and
-            applications. This fascination has grown into a relentless pursuit
+            applications. This fascination has grown into a pursuit
             of knowledge and skills across both front-end and back-end
             technologies.
           </p>
         </div>
         <div>
-          <PiLightning /> Stacks
+          <PiLightning/> Stacks
           <div className={styles.wrapper}>
+          {/* <motion.div
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+</motion.div> */}
             <FaHtml5
               className={`${styles.leftitem} ${styles.leftitem1}`}
               title="HTML5"

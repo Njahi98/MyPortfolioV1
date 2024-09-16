@@ -1,3 +1,4 @@
+@import "@fontsource/poppins";
 @font-face {
   font-family: 'Blisstrapy';
   src: local('Blisstrapy'), url(./fonts/Blisstrapy.ttf) format('truetype');
@@ -6,6 +7,7 @@
   font-family: 'NerdFont';
   src: local('NerdFont'), url(./fonts/NerdFont.ttf) format('truetype');
 }
+
 html,body{
   background: #19191B;
   padding: 0;

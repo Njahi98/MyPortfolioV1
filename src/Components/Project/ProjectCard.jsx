@@ -1,58 +1,92 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useState } from "react";
+import useModal from "../../hooks/useModal";
+import { AnimatePresence } from "framer-motion";
+import Modal from "./Modal/Modal";
+
 function ProjectCard(props) {
+  const [isHover, setIsHover] = useState(false);
+  const { modalOpen, close, open } = useModal();
 
-  const [isHover,setIsHover]=useState();
+  const styles = {
+    position: "relative",
+    borderStyle: "solid",
+    borderRadius: "15px",
+    borderColor: isHover ? "white" : "#97949c2b",
+    borderWidth: "thin",
+    padding: "1rem",
+    cursor: "pointer",
+    overflow: "hidden",
+    transition: "border-color 0.6s ease",
+  };
+  const imgStyle = {
+    width: "100%",
+    height: "100%",
+    borderRadius: "10px",
+    transition: "filter 0.6s ease",
+    filter: isHover ? "brightness(100%)" : "brightness(70%)",
+  };
+  const nameStyle = {
+    color: "white",
+    fontSize: "18px",
+    fontWeight: "bold",
+    transition: "transform 0.6s ease",
+    transform: isHover ? "translateY(-100)" : "translateY(0)",
+  };
 
-    const styles={
-        borderStyle:"solid",
-        borderRadius:"15px",
-        borderColor: isHover? "white":"#97949c2b",
-        borderWidth:"5%",
-        padding:"1rem 1rem 1rem 1rem",
-        backgroundSize: "cover",
-        cursor:"pointer",
-        
-    }
+  const overlayStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "opacity 0.6s ease, transform 0.6s ease",
+    opacity: isHover ? 0 : 1,
+    transform: isHover ? "translateY(-100%)" : "translateY(0)",
+  };
 
-    const imgStyle={
-      width:"100%",
-      height:"100%",
-      borderRadius:"15px",
-      borderStyle:"solid",
-      borderWidth:"thin"
-    }
-
-    const nameStyle={
-      position:"relative",
-      color:"pink",
-      top:"-50%",
-      right:"-50%"
-    }
-
-//background: isHover?"linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))" : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
-
-  const handleMouseEnter = ()=>{
-      setIsHover(true);
-  } 
-  const handleMouseLeave = ()=>{
-      setIsHover(false);
-  } 
-
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
 
   return (
-    <div style={styles} onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-    >
-    <img src={props.imageSrc} style={imgStyle} alt="" />
-    <p style={nameStyle}>{props.projName}</p>
-    </div>
-  )
+    <>
+      <div
+        style={styles}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={() => {
+          modalOpen ? close() : open();
+        }}
+      >
+        <img src={props.imageSrc} style={imgStyle} alt="" />
+        <div style={overlayStyle}>
+          <p style={nameStyle}>{props.projName}</p>
+        </div>
+      </div>
+
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {modalOpen && (
+          <Modal projDescription={props.projDescription} projName={props.projName} text="hiihihi" modalOpen={modalOpen} handleClose={close} />
+        )}
+      </AnimatePresence>
+    </>
+  );
 }
 
-ProjectCard.propTypes={
-  imageSrc:PropTypes.string,
-  projName:PropTypes.string,
-}
+ProjectCard.propTypes = {
+  imageSrc: PropTypes.string,
+  projName: PropTypes.string,
+  onClick: PropTypes.any,
+  projDescription:PropTypes.any,
 
-export default ProjectCard
+};
+
+export default ProjectCard;
