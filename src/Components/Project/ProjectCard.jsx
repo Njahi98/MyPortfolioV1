@@ -74,7 +74,13 @@ function ProjectCard(props) {
 
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {modalOpen && (
-          <Modal projDescription={props.projDescription} projName={props.projName} text="hiihihi" modalOpen={modalOpen} handleClose={close} />
+          <Modal  projDescription={props.projDescription}
+           projName={props.projName}
+             modalOpen={modalOpen}
+             handleClose={close}
+             techStack={props.techStack}
+
+             />
         )}
       </AnimatePresence>
     </>
@@ -86,6 +92,7 @@ ProjectCard.propTypes = {
   projName: PropTypes.string,
   onClick: PropTypes.any,
   projDescription:PropTypes.any,
+  techStack:PropTypes.any,
 
 };
 

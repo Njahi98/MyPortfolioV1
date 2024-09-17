@@ -20,7 +20,7 @@
     color: white;
 display: grid;
 grid-template-columns: 1fr 2fr;
-gap: 10px;
+gap: 10px;  
 }
 .boxes> *{
 border-radius: 1rem;
