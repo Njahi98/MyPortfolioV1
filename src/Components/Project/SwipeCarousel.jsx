@@ -1,23 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import PropTypes from "prop-types";
-import image1 from "../../assets/project1/proj1S1.png"
-import image2 from "../../assets/project1/proj1S2.png"
-import image3 from "../../assets/project1/proj1S3.png"
-import image4 from "../../assets/project1/proj1S4.png"
-import image5 from "../../assets/project1/proj1S5.png"
-import image6 from "../../assets/project1/proj1S6.png"
+import { CarouselContext } from "./CarouselContext";
 
-//thanks YT@Tom is Loading
+
+//thanks to YT@Tom is Loading
 //https://www.youtube.com/watch?v=mn_fh7pRj7w
 
-const imgs = [image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  ]
+
 
 
 const ONE_SECOND = 1000;
@@ -99,16 +89,17 @@ const styles = {
 export const SwipeCarousel = () => {
   const [imgIndex, setImgIndex] = useState(0);
   const dragX = useMotionValue(0);
+  const imgs = useContext(CarouselContext) || [];
 
   useEffect(() => {
     const intervalRef = setInterval(() => {
       const x = dragX.get();
-      if (x === 0) {
+      if (x === 0 && imgs.length > 0) {
         setImgIndex((pv) => (pv === imgs.length - 1 ? 0 : pv + 1));
       }
     }, AUTO_DELAY);
     return () => clearInterval(intervalRef);
-  }, []);
+  }, [imgs, dragX]);
 
   const onDragEnd = () => {
     const x = dragX.get();
@@ -118,6 +109,10 @@ export const SwipeCarousel = () => {
       setImgIndex((pv) => pv - 1);
     }
   };
+
+  if (imgs.length === 0) {
+    return null; 
+  }
 
   return (
     <div style={styles.container}>
@@ -146,6 +141,8 @@ export const SwipeCarousel = () => {
 };
 
 const Images = ({ imgIndex }) => {
+  const imgs = useContext(CarouselContext) || [];
+
   return (
     <>
       {imgs.map((imgSrc, idx) => (
@@ -171,6 +168,8 @@ const Images = ({ imgIndex }) => {
 };
 
 const Dots = ({ imgIndex, setImgIndex }) => {
+  const imgs = useContext(CarouselContext) || [];
+
   return (
     <div style={styles.dotsContainer}>
       {imgs.map((_, idx) => (

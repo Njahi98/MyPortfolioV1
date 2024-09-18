@@ -7,14 +7,14 @@ import { MdLiveTv } from "react-icons/md";
 import { SwipeCarousel } from "../SwipeCarousel";
 import { useState } from "react";
 
-function Modal(props) {
+function Modal({githubLink,liveLink,...props}) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
   const [openLiveBubble, setOpenLiveBubble] = useState(false);
 
   const modalStyles = {
     width: "clamp(50%,1200px,90%)",
     height: "min(50%,600px)",
-    marginTop: "100rem",
+    marginTop: "85rem",
     padding: "1rem",
     borderRadius: "12px",
     borderColor: "white",
@@ -31,7 +31,7 @@ function Modal(props) {
   const dropIn = {
     hidden: {
       y: "-100vh",
-      opacity: 1,
+      opacity: 0,
     },
     visible: {
       y: "0",
@@ -45,36 +45,21 @@ function Modal(props) {
     },
     exit: {
       y: "100vh",
-      opacity: 1,
+      opacity: 0,
     },
   };
-
-  const dropOut = {
-    hidden: {
-      y: "100vh",
-      opacity: 1,
-    },
+  const bubbleVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: {
-      y: "0",
       opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: "spring",
-        damping: 25,
-        stiffness: 500,
-      },
+      scale: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 300, damping: 25 },
     },
-    exit: {
-      y: "-100vh",
-      opacity: 1,
-    },
+    exit: { opacity: 0, scale: 0.8, y: 20, transition: { duration: 0.2 } },
   };
 
-  const closeButtonStyle = {
-    cursor: "pointer",
-    size: "10px",
-    alignSelf: "flex-end",
-  };
+ 
 
   const detailsStyle = {
     width: "100%",
@@ -98,13 +83,14 @@ function Modal(props) {
   };
 
   const linksStyle = {
-    justifyContent: "flex-end",
+    fontFamily:"NerdFont",
+    justifyContent: "center",
     marginRight: "1rem",
     alignItems: "center",
     display: "flex",
     width: "100%",
     height: "2%",
-    padding: "1rem",
+    padding:"1rem",
     gap: "4rem",
   };
 
@@ -132,11 +118,19 @@ function Modal(props) {
   );
 
   const handleGithubClick = () => {
-    openGithubBubble ? setOpenGithubBubble(false) : setOpenGithubBubble(true);
+    if (githubLink) {
+      window.open(githubLink, '_blank','noopener noreferrer');
+    } else {
+      setOpenGithubBubble(!openGithubBubble);
+    }
   };
 
   const handleLiveClick = () => {
-    openLiveBubble ? setOpenLiveBubble(false) : setOpenLiveBubble(true);
+    if (liveLink) {
+      window.open(liveLink, '_blank');
+    } else {
+      setOpenLiveBubble(!openLiveBubble);
+    }
   };
 
   return (
@@ -149,12 +143,13 @@ function Modal(props) {
         animate="visible"
         exit="exit"
       >
+        <div className="closebutton" style={{width:"100%",display:"flex",justifyContent:"flex-end"}}>
         <RiCloseLargeLine
           size="25px"
-          style={closeButtonStyle}
+          style={{cursor:"pointer",}}
           onClick={props.handleClose}
         />
-
+        </div>
         <div style={detailsStyle} className="details">
           <div style={textDetailsStyle} className="textDetails">
             <p
@@ -183,6 +178,7 @@ function Modal(props) {
             <SwipeCarousel />
           </div>
         </div>
+
         <div className="links" style={linksStyle}>
           <div
             onClick={handleGithubClick}
@@ -201,12 +197,12 @@ function Modal(props) {
           {openGithubBubble && (
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              variants={dropOut}
+              variants={bubbleVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
               className="bubble wrapper"
-              style={{ position: "absolute", bottom: "5rem", right: "21rem" }}
+              style={{ position: "absolute", bottom: "21.5rem", right: "52rem" }}
             >
               <div
                 className="speechBubble"
@@ -220,8 +216,13 @@ function Modal(props) {
                   height: "3rem",
                   borderRadius: "10px",
                   zIndex: 120,
+                  display:"flex",
+                  justifyContent:"center",
+                  alignItems:"center",
                 }}
-              ></div>
+              >Unavailable
+
+                </div>
               <div
                 className="speech-bubbleafter"
                 style={{
@@ -258,12 +259,12 @@ function Modal(props) {
           {openLiveBubble && (
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              variants={dropOut}
+              variants={bubbleVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
               className="bubble wrapper2"
-              style={{ position: "absolute", bottom: "5rem", right: "12rem" }}
+              style={{ position: "absolute", bottom: "23rem", right: "43rem" }}
             >
               <div
                 className="speechBubble2"
@@ -277,8 +278,12 @@ function Modal(props) {
                   height: "3rem",
                   borderRadius: "10px",
                   zIndex: 120,
+                  display:"flex",
+                  justifyContent:"center",
+                  alignItems:"center",
                 }}
-              ></div>
+              >Unavailable
+                </div>
               <div
                 className="speech-bubbleafter2"
                 style={{
@@ -313,6 +318,8 @@ Modal.propTypes = {
   techStack: PropTypes.any,
   name: PropTypes.any,
   Icon: PropTypes.any,
+  githubLink: PropTypes.string,
+  liveLink: PropTypes.string,
 };
 
 export default Modal;

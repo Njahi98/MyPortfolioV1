@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import useModal from "../../hooks/useModal";
 import { AnimatePresence } from "framer-motion";
-import Modal from "./Modal/Modal";
+import Modal from "./Modal/ProjectModal";
 
 function ProjectCard(props) {
   const [isHover, setIsHover] = useState(false);
@@ -79,7 +79,8 @@ function ProjectCard(props) {
              modalOpen={modalOpen}
              handleClose={close}
              techStack={props.techStack}
-
+            githubLink={props.githubLink}
+            liveLink={props.liveLink}
              />
         )}
       </AnimatePresence>
@@ -93,7 +94,8 @@ ProjectCard.propTypes = {
   onClick: PropTypes.any,
   projDescription:PropTypes.any,
   techStack:PropTypes.any,
-
+  githubLink: PropTypes.string,
+  liveLink: PropTypes.string,
 };
 
 export default ProjectCard;
