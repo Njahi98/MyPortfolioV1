@@ -1,5 +1,4 @@
 import styles from "./Home.module.css";
-import devPic from "../../assets/devPicture.jpg";
 function Home() {
   return (
     
@@ -12,7 +11,6 @@ function Home() {
       creating amazing websites using React & Spring Boot.</p>
       </div>
      
-      <img src={devPic} alt="photo" />
     </div>
 
 

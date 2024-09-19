@@ -1,5 +1,5 @@
 .home{
-    margin-top: 8rem;
+    margin-top: 12rem;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -21,19 +21,3 @@
     font-family: "NerdFont";
 }
 
-.home img{
-    border-radius: 5rem;   
-    animation: move 7s infinite;
-    opacity: 0.8;
-    background-blend-mode: color;
-    box-shadow: 0 5px 15px #9b5de5;
-    margin-right: 5rem;
-}
-@keyframes move {
-    0% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatey(-20px);
-    }
-  }

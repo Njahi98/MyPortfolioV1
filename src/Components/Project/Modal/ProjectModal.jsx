@@ -264,7 +264,7 @@ function Modal({githubLink,liveLink,...props}) {
               animate="visible"
               exit="exit"
               className="bubble wrapper2"
-              style={{ position: "absolute", bottom: "23rem", right: "43rem" }}
+              style={{ position: "absolute", bottom: "15rem", right: "43rem" }}
             >
               <div
                 className="speechBubble2"
