@@ -1,5 +1,5 @@
 .contactComponent {
-  margin: 10rem auto 0;
+  margin: 10rem auto  0;
   width: 80%;
   max-width: 1200px;
   color: white;
@@ -15,28 +15,29 @@
   background-clip: text;
   color: transparent;
   margin: 0 0 2rem;
-text-align: start;
+  text-align: center;
 }
 
 .contact {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2rem;
+ width: 70%;
+ margin: auto;
+
 }
-.contact{
+.contact form {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
 .contact form input,
 .contact form textarea{
 
-width: 100%;
-padding: 0.5rem;
-background-color: rgba(0, 0, 0, 0.7);
-color: white;
-border: 1px solid rgba(255, 255, 255, 0.1);
-border-radius: 4px;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .contact form textarea {
@@ -45,8 +46,8 @@ border-radius: 4px;
 }
 
 .contact p {
-    font-family: "Nerdfont",sans-serif;
-    margin-bottom: 1rem;
+  font-family: "Poppins",sans-serif;
+  margin-bottom: 1rem;
 }
 .contact button {
   background: linear-gradient(to right, #9b5de5, #ff5e5b);
@@ -56,46 +57,17 @@ border-radius: 4px;
   cursor: pointer;
   border-radius: 4px;
   transition: opacity 0.3s ease;
+  align-self: center;
+  width: 80%;
 }
+
 
 .contact button:hover {
   opacity: 0.8;
 }
 
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact img {
-  border-radius: 5rem; 
-  max-width: 100%;
-  height: auto;  
-  animation: move 7s infinite;
-  opacity: 0.8;
-  box-shadow: 0 5px 15px #9b5de5;
-}
 
 .error {
   color: #ff5e5b;
   font-size: 0.875rem;
-}
-
-@keyframes move {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-@media (max-width: 768px) {
-  .contact {
-    grid-template-columns: 1fr;
-  }
-  .contactComponent h1 {
-    font-size: 3rem;
-  }
-}
+} 

@@ -1,23 +1,98 @@
-.home{
-    margin-top: 12rem;
-    margin-left: auto;
-    margin-right: auto;
+.home {
+    margin:0 auto 0;
     width: 80%;
+    max-width: 1200px;
     display: flex;
-    align-items: flex-start;
-}
-.home div> p:nth-child(1){
-    font-family: "Blisstrapy";
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 6rem);
+  }
+  
+  .content {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .content >:nth-child(1) {
+    font-family: "Blisstrapy", sans-serif;
     background: linear-gradient(to right, #9b5de5, #ff5e5b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 4rem;
-    margin-bottom: 0;
-}
-.home div> p:nth-child(2){
-    color: white    ;
-    font-size: 1.5rem;
-    font-family: "NerdFont";
-}
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .name {
+    color: #ff5e5b;
+  }
+  
+  .description {
+    color: white;
+    font-size: 1.2rem;
+    font-family: "NerdFont", sans-serif;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills span {
+    background-color: rgba(155, 93, 229, 0.2);
+    color: #9b5de5;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .linkBtns {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(to right, #9b5de5, #ff5e5b);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(155, 93, 229, 0.4);
+  }
 
+  .imageContainer img {
+    border-radius: 5rem;
+    max-width: 100%;
+    height: auto;
+    animation: move 7s infinite;
+    opacity: 0.8;
+    box-shadow: 0 5px 15px #9b5de5;
+  }
+  
+  @keyframes move {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+ 
+  

@@ -14,9 +14,9 @@ function NavBar() {
         </div>
 
         <div className={styles.titles}>
-          <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Projects</a>
+          <a href="#">Contact</a>
           <a href="#">Resume</a>
         </div>
 

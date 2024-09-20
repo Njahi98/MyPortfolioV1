@@ -7,8 +7,8 @@
     border-radius: 10rem;
     background-color: rgba(255, 255, 255, 0.061);
     width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: auto;
+    margin-right: auto;
     position: sticky;
     top:0;
     z-index: 1;
@@ -19,6 +19,9 @@ font-size:4rem;
 cursor: pointer;
 text-decoration: none;
 color: inherit;
+}
+.logo a:hover{
+    color: white;
 }
 
 .titles{

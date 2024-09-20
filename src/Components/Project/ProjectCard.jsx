@@ -66,7 +66,7 @@ function ProjectCard(props) {
           modalOpen ? close() : open();
         }}
       >
-        <img src={props.imageSrc} style={imgStyle} alt="" />
+        {props.imageSrc && <img src={props.imageSrc} style={imgStyle} alt="" />}
         <div style={overlayStyle}>
           <p style={nameStyle}>{props.projName}</p>
         </div>
