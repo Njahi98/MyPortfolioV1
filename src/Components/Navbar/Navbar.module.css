@@ -12,6 +12,15 @@
     position: sticky;
     top:0;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
+
+}
+.visible {
+  transform: translateY(0);
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
 .logo a{
 font-family: "Blisstrapy";

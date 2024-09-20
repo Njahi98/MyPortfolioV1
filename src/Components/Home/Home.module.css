@@ -79,8 +79,9 @@
 
   .imageContainer img {
     border-radius: 5rem;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
+    padding-right: 20px;
     animation: move 7s infinite;
     opacity: 0.8;
     box-shadow: 0 5px 15px #9b5de5;

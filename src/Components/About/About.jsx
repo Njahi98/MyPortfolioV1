@@ -23,7 +23,7 @@ import { SiVite } from "react-icons/si";
 
 function About() {
   return (
-    <div className={styles.about}>
+    <div className={styles.about} id="About">
       <p>About me</p>
       <div className={styles.boxes}>
         <div style={{ gridArea: "1/1/3/1" }}>

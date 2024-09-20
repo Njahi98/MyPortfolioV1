@@ -2,22 +2,32 @@ import styles from "./Navbar.module.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
+
+export const handleSmoothClick = (id) => (e) => {
+  e.preventDefault();
+  const element = id? document.getElementById(id):document.body;
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
 function NavBar() {
 
-
-
   return (
-      <div className={styles.NavBar}>
+      <div  className={styles.NavBar}>
         <div className={styles.logo}>
-          <a href="#">NJ</a>
+          <a href="#" onClick={handleSmoothClick()}>NJ</a>
         </div>
 
         <div className={styles.titles}>
-          <a href="#">About</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
-          <a href="#">Resume</a>
+          <a href="#About" onClick={handleSmoothClick("About")}>About</a>
+          <a href="#Projects" onClick={handleSmoothClick("Projects")}>Projects</a>
+          <a href="#Contact" onClick={handleSmoothClick("Contact")}>Contact</a>
+          <a href={cvPdf} target="_blank">Resume</a>
         </div>
 
         <div className={styles.socialMedia}>

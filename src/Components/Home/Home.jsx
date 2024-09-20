@@ -1,5 +1,6 @@
 import styles from './Home.module.css';
-import devPic from '../../assets/devPicture.jpg';
+import devPic from '../../assets/devPicture.webp';
+import { handleSmoothClick } from '../Navbar/Navbar';
 
 function Home() {
   return (
@@ -18,8 +19,8 @@ function Home() {
           <span>HTML/CSS</span>
         </div>
         <div className={styles.linkBtns}>
-          <a href="#projects" className={styles.button}>View My Work</a>
-          <a href="#contact" className={styles.button}>Get in Touch</a>
+          <a href="#Projects" onClick={handleSmoothClick("Projects")} className={styles.button}>View My Work</a>
+          <a href="#Contact" onClick={handleSmoothClick("Contact")} className={styles.button}>Get in Touch</a>
         </div>
       </div>
       <div className={styles.imageContainer}>

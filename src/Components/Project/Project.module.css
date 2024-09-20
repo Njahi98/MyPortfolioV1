@@ -1,5 +1,5 @@
 .projectfunc{
-    margin-top: 16rem;
+    margin-top: 18rem;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -8,7 +8,7 @@
 }
 
 .projectfunc >:nth-child(1){
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: "Blisstrapy";
     background: linear-gradient(to right, #9b5de5, #ff5e5b);
     -webkit-background-clip: text;

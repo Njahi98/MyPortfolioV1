@@ -37,7 +37,7 @@ function Project() {
   const proj2Imgs = [proj2Image1, proj2Image2, proj2Image3, proj2Image4];
 
   return (
-    <div className={styles.projectfunc}>
+    <div className={styles.projectfunc} id="Projects">
       <p>Projects</p>
       <p>A variety of cool projects I have worked on.</p>
       <div className={styles.project}>
