@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import PropTypes from "prop-types";
-import { CarouselContext } from "./CarouselContext";
+import { CarouselContext } from "../../Context/CarouselContext"
 
 
 //thanks to YT@Tom is Loading

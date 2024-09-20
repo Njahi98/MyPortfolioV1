@@ -4,10 +4,59 @@
     border-radius: 12px;
     height: 10rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* border-bottom:none ;
+    border-bottom:none ;
     border-right: none;
-    border-left: none; */
+    border-left: none;
     position:relative;
     top:-20px;
+    display: flex;
+    flex-direction: column;
+    color:#BABABA ;
+}
 
+.title{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 2rem auto 0;
+    font-family: "Poppins";
+}
+.title a{
+    text-decoration: none;
+    color: #BABABA;
+}
+.title *:hover{
+    color: white;
+}
+.phrase{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    margin: 0.75rem auto 0 auto;
+    font-family: "Nerdfont";
+}
+.phrase a{
+    text-decoration: none;
+    color: inherit;
+    font-size: small;
+}
+.phrase :hover{
+    color: white;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    margin: 1rem auto 0 auto;
+}
+.icons *{
+    border-style: solid;
+    padding: 6px;
+    border-radius: 50%;
+    border-width: thin;
+    cursor: pointer;
+}
+.icons *:hover{
+    color: white;
 }

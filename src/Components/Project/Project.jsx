@@ -10,7 +10,7 @@ import { FaCss3 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiFramer } from "react-icons/fi";
 
-import { CarouselContext } from "./CarouselContext";
+import { CarouselContext } from "../../Context/CarouselContext"
 
 import proj1Image1 from "../../assets/project1/proj1S1.png";
 import proj1Image2 from "../../assets/project1/proj1S2.png";

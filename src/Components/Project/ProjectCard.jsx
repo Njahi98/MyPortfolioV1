@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import useModal from "../../hooks/useModal";
 import { AnimatePresence } from "framer-motion";
-import Modal from "./Modal/ProjectModal";
+import Modal from "./ProjectModal/ProjectModal";
 
 function ProjectCard(props) {
   const [isHover, setIsHover] = useState(false);
