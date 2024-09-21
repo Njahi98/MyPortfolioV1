@@ -46,7 +46,10 @@ function Home() {
           >
             Get in Touch
           </a>
-        </div>
+        </div> <br />
+        <p style={{textAlign:"center"}} className={styles.description}>
+          - portfolio is still under construction -
+        </p>
       </div>
       <div className={styles.imageContainer}>
         <img src={devPic} alt="Developer" />
