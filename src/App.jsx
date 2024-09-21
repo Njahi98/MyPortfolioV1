@@ -1,10 +1,10 @@
 import "./App.css";
 import NavBar, { handleSmoothClick } from "./Components/Navbar/Navbar";
-import rectangle9521 from "./assets/Rectangle 9521.png";
-import rectangle9522 from "./assets/Rectangle 9522.png";
-import rectangle9523 from "./assets/Rectangle 9523.png";
-import rectangle9524 from "./assets/Rectangle 9524.png";
-import rectangle9525 from "./assets/Rectangle 9525.png";
+import rectangle9521 from "./assets/backgrounds/Rectangle 9521.png";
+import rectangle9522 from "./assets/backgrounds/Rectangle 9522.png";
+import rectangle9523 from "./assets/backgrounds/Rectangle 9523.png";
+import rectangle9524 from "./assets/backgrounds/Rectangle 9524.png";
+import rectangle9525 from "./assets/backgrounds/Rectangle 9525.png";
 
 
 import Home from "./Components/Home/Home";

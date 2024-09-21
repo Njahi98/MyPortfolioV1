@@ -3,7 +3,7 @@ import Backdrop from "./Backdrop";
 import PropTypes from "prop-types";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
-import { MdLiveTv } from "react-icons/md";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { SwipeCarousel } from "../SwipeCarousel";
 import { useState } from "react";
 
@@ -83,7 +83,7 @@ function Modal({githubLink,liveLink,...props}) {
   };
 
   const linksStyle = {
-    fontFamily:"NerdFont",
+    fontFamily:"NerdFont,Sans-serif",
     justifyContent: "center",
     marginRight: "1rem",
     alignItems: "center",
@@ -202,7 +202,7 @@ function Modal({githubLink,liveLink,...props}) {
               animate="visible"
               exit="exit"
               className="bubble wrapper"
-              style={{ position: "absolute", bottom: "58rem", right: "52rem" }}
+              style={{ position: "absolute", bottom: "56.5rem", right: "52rem" }}
             >
               <div
                 className="speechBubble"
@@ -254,7 +254,7 @@ function Modal({githubLink,liveLink,...props}) {
             }}
             className="live-link"
           >
-            <MdLiveTv style={{ position: "relative" }} /> Live
+            <FaExternalLinkAlt style={{ position: "relative" }} /> Live
           </div>
           {openLiveBubble && (
             <motion.div
@@ -264,7 +264,7 @@ function Modal({githubLink,liveLink,...props}) {
               animate="visible"
               exit="exit"
               className="bubble wrapper2"
-              style={{ position: "absolute", bottom: "58rem", right: "43rem" }}
+              style={{ position: "absolute", bottom: "56.5rem", right: "43rem" }}
             >
               <div
                 className="speechBubble2"

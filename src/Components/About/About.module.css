@@ -1,33 +1,32 @@
-.about{
-    margin-top: 16rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+.about {
+  margin-top: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
   padding-top: 1rem;
 }
-.about >p{
-    text-align: start;
-    font-size: 5rem;
-    font-family: "Blisstrapy";
-    background: linear-gradient(to right, #9b5de5, #ff5e5b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.about > p {
+  text-align: start;
+  font-size: 5rem;
+  font-family: "Blisstrapy", Sans-serif;
+  background: linear-gradient(to right, #9b5de5, #ff5e5b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.boxes{
-    font-family: "NerdFont";
-    color: white;
-display: grid;
-grid-template-columns: 1fr 2fr;
-gap: 10px;  
+.boxes {
+  font-family: "NerdFont", Sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
 }
-.boxes> *{
-border-radius: 1rem;
-border-style:solid ;
-border-width: thin;
-border:1px solid rgba(255, 255, 255, 0.1);
-padding: 2rem 2rem 2rem 2rem;
-
+.boxes > * {
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: thin;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 .wrapper {
@@ -37,7 +36,7 @@ padding: 2rem 2rem 2rem 2rem;
   position: relative;
   height: 7rem;
   display: flex;
-  align-items: center ;
+  align-items: center;
   overflow: hidden;
   mask-image: linear-gradient(
     to right,
@@ -58,7 +57,6 @@ padding: 2rem 2rem 2rem 2rem;
   animation-play-state: paused;
 }
 
-
 .leftitem {
   width: auto;
   height: 50px;
@@ -71,7 +69,6 @@ padding: 2rem 2rem 2rem 2rem;
   animation-iteration-count: infinite;
   cursor: pointer;
 }
-
 
 .leftitem1 {
   animation-delay: calc(30s / 9 * (9 - 1) * -1);
@@ -108,8 +105,6 @@ padding: 2rem 2rem 2rem 2rem;
   animation-delay: calc(30s / 9 * (9 - 9) * -1);
 }
 
-
-
 .wrapper2 {
   width: 100%;
   max-width: 1536px;
@@ -118,7 +113,7 @@ padding: 2rem 2rem 2rem 2rem;
   height: 100px;
   height: 7rem;
   display: flex;
-  align-items: center ;
+  align-items: center;
   overflow: hidden;
   mask-image: linear-gradient(
     to right,

@@ -23,8 +23,8 @@
   transform: translateY(-100%);
 }
 .logo a{
-font-family: "Blisstrapy";
-font-size:4rem;
+    font-family: "Blisstrapy", Sans-serif;
+    font-size:4rem;
 cursor: pointer;
 text-decoration: none;
 color: inherit;
@@ -34,8 +34,8 @@ color: inherit;
 }
 
 .titles{
-    font-family: "NerdFont";
-    display: flex;
+    font-family: "NerdFont", Sans-serif;
+        display: flex;
     border-radius: 5rem;
     cursor: pointer;
     column-gap: 3rem;

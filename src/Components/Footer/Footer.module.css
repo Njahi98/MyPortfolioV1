@@ -33,8 +33,7 @@
     justify-content: space-around;
     width: 30%;
     margin: 0.75rem auto 0 auto;
-    font-family: "Nerdfont";
-}
+    font-family: "NerdFont", Sans-serif;}
 .phrase a{
     text-decoration: none;
     color: inherit;
