@@ -27,6 +27,8 @@ const styles = {
     overflow: 'hidden',
     backgroundColor: '#030303',
     padding: '2rem 0',
+    paddingTop:0
+
   },
   dragContainer: {
     display: 'flex',
