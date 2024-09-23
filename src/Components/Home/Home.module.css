@@ -78,6 +78,11 @@
     box-shadow: 0 4px 15px rgba(155, 93, 229, 0.4);
   }
 
+  .imageContainer{
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .imageContainer img {
     border-radius: 5rem;
     max-width: 80%;
@@ -96,5 +101,7 @@
       transform: translateY(-20px);
     }
   }
+
+  
  
   

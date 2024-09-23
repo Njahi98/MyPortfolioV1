@@ -1,46 +1,36 @@
   
-.background1{
+.background1,.background2,.background3,.background4,.background5{
 position: absolute;
-top: 0;
 z-index: -1;
 width: 100%
 ;
 }
+.background1{
+    top: 0%; 
+}
 .background2{
-    position: absolute;
-    top:5;
-    z-index: -3;
-    width: 100%
-    ;
+    top:21%;
+
 }
 .background3{
-    position: absolute;
-    top: 5;
-    z-index: -3;
-    width: 100%
+    top: 21%;
     ;
 }
 .background4{
-    position: absolute;
-    top: 5;
-    z-index: -3;
-    ;
-   
-    width: 99%;
+    top: 48%;
+    width: 100%;
 }
 .background5{
-    position: absolute;
-    top: 8;
-    z-index: -3;;
-    height: 50%;
+    top: 48%;
+    height: 43%;
 }
 
-
-.App{
-    position: relative;
-    z-index: 2;
-    top: 0;
+.App {
+  position: relative;
+  z-index: 2;
+  overflow-x: clip;
 }
+
 
 /* css part responsible for the stars */
 @keyframes move-background {
@@ -84,42 +74,36 @@ width: 100%
       left:0;
       bottom: 0;
       right: 0;
-      z-index: -5;
+      z-index: -1;
+      overflow: hidden;
   }
   
   .stars {
-   background: black url("./assets/backgrounds/stars.png") repeat;
-   position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: block;
-        z-index: -4;
+    background: black url("./assets/backgrounds/stars.png") repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
   }
   
-  .twinkling{
-      width:10000px;
-      height: 100%;
-      background: transparent url("./assets/backgrounds/twinkling.png") repeat;
-      background-size: 1000px 1000px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: -2;
-      
-      -moz-animation:move-background 30s linear infinite;
-    -ms-animation:move-background 30s linear infinite;
-    -o-animation:move-background 30s linear infinite;
-    -webkit-animation:move-background 30s linear infinite;
-    animation:move-background 30s linear infinite;
-      
+  .twinkling {
+    width: 200%;
+    height: 100%;
+    background: transparent url("./assets/backgrounds/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    animation: move-background 30s linear infinite;
   }
   
   .topButton {
     position: fixed;
-    bottom: 20px;
+    bottom: 2rem;
     right: 20px;
     background-color: #9b5de5;
     color: #BABABA;

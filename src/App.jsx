@@ -13,13 +13,35 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { FaChevronUp } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = ()=>{
+      setShowTopButton(window.pageYOffset>300);
+    }
+    window.addEventListener("scroll",handleScroll)
+  
+    return () => {
+      window.removeEventListener("scroll",handleScroll)
+    }
+  }, [])
+
+
+
   return (
     <div className="App">
+    <div className="background-container">
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+      </div>
       <NavBar />
-      <Home />
 
+      <Home />
+  
       <img className="background2" src={rectangle9522} alt="background2" />
       <img className="background3" src={rectangle9523} alt="background3" />
       <About/>
@@ -30,14 +52,11 @@ function App() {
 
       <Contact/>
       <Footer/>
-      <div className="background-container">
-        <div className="stars"></div>
-        <div className="twinkling"></div>
-      </div>
       <img className="background1" src={rectangle9521} alt="background1" />
-      <a className="topButton" href="#" onClick={handleSmoothClick()}>
+
+      {showTopButton && <a className="topButton" href="#"  onClick={handleSmoothClick()}>
       <FaChevronUp size={25}/>
-      </a>
+      </a>}
 
     </div>
   );
