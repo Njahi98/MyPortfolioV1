@@ -8,19 +8,17 @@ import { SwipeCarousel } from "../SwipeCarousel";
 import { useState } from "react";
 import styles from "./ProjectModal.module.css";
 
-function Modal({githubLink,externalLink,...props}) {
+function Modal({ githubLink, externalLink, ...props }) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
   const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
-
-  //handle popup animations
   const dropIn = {
     hidden: {
       y: "-100vh",
       opacity: 0,
     },
     visible: {
-      y: "0",
+      y: "70vh",
       opacity: 1,
       transition: {
         duration: 0.1,
@@ -34,30 +32,17 @@ function Modal({githubLink,externalLink,...props}) {
       opacity: 0,
     },
   };
-  const bubbleVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 25 },
-    },
-    exit: { opacity: 0, scale: 0.8, y: 20, transition: { duration: 0.2 } },
-  };
-
 
   const TechItem = ({ Icon, name }) => (
-    <div
-      className={styles.TechItemStyle}
-    >
-      <Icon size={24}/>
+    <div className={styles.TechItemStyle}>
+      <Icon size={24} />
       <span>{name}</span>
     </div>
   );
 
   const handleGithubClick = () => {
     if (githubLink) {
-      window.open(githubLink, '_blank','noopener noreferrer');
+      window.open(githubLink, "_blank", "noopener noreferrer");
     } else {
       setOpenGithubBubble(!openGithubBubble);
     }
@@ -65,7 +50,7 @@ function Modal({githubLink,externalLink,...props}) {
 
   const handleExternalLinkClick = () => {
     if (externalLink) {
-      window.open(externalLink, '_blank');
+      window.open(externalLink, "_blank");
     } else {
       setOpenExternalLinkBubble(!openExternalLinkBubble);
     }
@@ -73,7 +58,8 @@ function Modal({githubLink,externalLink,...props}) {
 
   return (
     <Backdrop onClick={props.handleClose}>
-      <motion.div className={styles.modalStyles}
+      <motion.div
+        className={styles.modalStyles}
         onClick={(e) => e.stopPropagation()}
         variants={dropIn}
         initial="hidden"
@@ -81,19 +67,15 @@ function Modal({githubLink,externalLink,...props}) {
         exit="exit"
       >
         <div className={styles.closeButton}>
-        <RiCloseLargeLine
-          size="25px"
-          style={{cursor:"pointer",}}
-          onClick={props.handleClose}
-        />
+          <RiCloseLargeLine
+            size="25px"
+            style={{ cursor: "pointer" }}
+            onClick={props.handleClose}
+          />
         </div>
         <div className={styles.detailsStyle}>
           <div className={styles.textDetailsStyle}>
-            <p
-            className={styles.projNameStyle}
-            >
-              {props.projName}
-            </p>
+            <p className={styles.projNameStyle}>{props.projName}</p>
             <p className={styles.smallTitle}>Description.</p>
             <p>{props.projDescription}</p>
             <p className={styles.smallTitle}>Technologies.</p>
@@ -104,7 +86,7 @@ function Modal({githubLink,externalLink,...props}) {
                 ))}
             </div>
           </div>
-          <div  className={styles.imageDetailsStyle}>
+          <div className={styles.imageDetailsStyle}>
             <SwipeCarousel />
           </div>
         </div>
@@ -113,53 +95,17 @@ function Modal({githubLink,externalLink,...props}) {
           <div
             onClick={handleGithubClick}
             className={styles.iconLink}
+            data-tooltip={githubLink ? "View on GitHub" : "Not available"}
           >
-            <FaGithub/> Github
+            <FaGithub /> Github
           </div>
-
-          {openGithubBubble && (
-            <motion.div
-              onClick={(e) => e.stopPropagation()}
-              variants={bubbleVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className={styles.githubBubbleWrapper}
-            >
-              <div
-                className={styles.speechBubble}
-              >Unavailable
-
-                </div>
-              <div
-                className={styles.speechBubbleAfter}
-              ></div>
-            </motion.div>
-          )}
           <div
             onClick={handleExternalLinkClick}
             className={styles.iconLink}
+            data-tooltip={externalLink ? "View live site" : "Not available"}
           >
-            <FaExternalLinkAlt/> Live
+            <FaExternalLinkAlt /> Live
           </div>
-          {openExternalLinkBubble && (
-            <motion.div
-              onClick={(e) => e.stopPropagation()}
-              variants={bubbleVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className={styles.externalLinkBubbleWrapper}
-            >
-              <div
-                className={styles.speechBubble}
-              >Unavailable
-                </div>
-              <div
-                className={styles.speechBubbleAfter}      
-              ></div>
-            </motion.div>
-          )}
         </div>
       </motion.div>
     </Backdrop>
