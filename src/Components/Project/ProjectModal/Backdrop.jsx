@@ -9,7 +9,7 @@ function Backdrop(props) {
         left:0,
         height:'100%',
         width:'100%',
-        background:'rgba(0, 0, 0, 0.4)',
+        background:'rgba(0, 0, 0, 0.8)',
         display:'flex', 
         alignItems:'center',
         justifyContent:'center',
