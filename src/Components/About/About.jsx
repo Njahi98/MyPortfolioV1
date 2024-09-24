@@ -26,7 +26,7 @@ function About() {
     <div className={styles.about} id="About">
       <p>About me</p>
       <div className={styles.boxes}>
-        <div style={{ gridArea: "1/1/3/1" }}>
+        <div className={styles.paragraph}>
           <IoLocationOutline /> Tunisia
           <p>
             {" "}
