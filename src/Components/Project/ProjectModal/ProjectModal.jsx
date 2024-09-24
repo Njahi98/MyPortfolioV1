@@ -6,27 +6,13 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SwipeCarousel } from "../SwipeCarousel";
 import { useState } from "react";
+import styles from "./ProjectModal.module.css";
 
-function Modal({githubLink,liveLink,...props}) {
+function Modal({githubLink,externalLink,...props}) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
-  const [openLiveBubble, setOpenLiveBubble] = useState(false);
+  const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
-  const modalStyles = {
-    width: "clamp(50%,1200px,90%)",
-    height: "min(50%,600px)",
-    marginTop: "70rem",
-    padding: "1rem",
-    borderRadius: "12px",
-    borderColor: "white",
-    borderStyle: "solid",
-    borderWidth: "thin",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
-    zIndex: 100,
-    color: "white",
-  };
+
   //handle popup animations
   const dropIn = {
     hidden: {
@@ -59,60 +45,12 @@ function Modal({githubLink,liveLink,...props}) {
     exit: { opacity: 0, scale: 0.8, y: 20, transition: { duration: 0.2 } },
   };
 
- 
-
-  const detailsStyle = {
-    width: "100%",
-    height: "90%",
-    borderTop: "solid thin",
-    borderBottom: "solid thin",
-    marginTop: "1rem",
-    display: "flex",
-  };
-
-  const textDetailsStyle = {
-    width: "40%",
-    fontFamily: "poppins",
-    overflow: "auto",
-    color: "#BABABA",
-  };
-
-  const imageDetailsStyle = {
-    width: "70%",
-    height: "100%",
-  };
-
-  const linksStyle = {
-    fontFamily:"NerdFont,Sans-serif",
-    justifyContent: "center",
-    marginRight: "1rem",
-    alignItems: "center",
-    display: "flex",
-    width: "100%",
-    height: "2%",
-    padding:"1rem",
-    gap: "4rem",
-  };
-
-  const techsStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-  };
 
   const TechItem = ({ Icon, name }) => (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        margin: "5px",
-        color: "white",
-        borderStyle: "solid",
-        borderWidth: "thin",
-        borderRadius: "12px",
-        padding: "5px",
-      }}
+      className={styles.TechItemStyle}
     >
-      <Icon size={24} style={{ marginRight: "10px" }} />
+      <Icon size={24}/>
       <span>{name}</span>
     </div>
   );
@@ -125,73 +63,58 @@ function Modal({githubLink,liveLink,...props}) {
     }
   };
 
-  const handleLiveClick = () => {
-    if (liveLink) {
-      window.open(liveLink, '_blank');
+  const handleExternalLinkClick = () => {
+    if (externalLink) {
+      window.open(externalLink, '_blank');
     } else {
-      setOpenLiveBubble(!openLiveBubble);
+      setOpenExternalLinkBubble(!openExternalLinkBubble);
     }
   };
 
   return (
     <Backdrop onClick={props.handleClose}>
-      <motion.div
+      <motion.div className={styles.modalStyles}
         onClick={(e) => e.stopPropagation()}
-        style={modalStyles}
         variants={dropIn}
         initial="hidden"
         animate="visible"
         exit="exit"
       >
-        <div className="closebutton" style={{width:"100%",display:"flex",justifyContent:"flex-end"}}>
+        <div className={styles.closeButton}>
         <RiCloseLargeLine
           size="25px"
           style={{cursor:"pointer",}}
           onClick={props.handleClose}
         />
         </div>
-        <div style={detailsStyle} className="details">
-          <div style={textDetailsStyle} className="textDetails">
+        <div className={styles.detailsStyle}>
+          <div className={styles.textDetailsStyle}>
             <p
-              style={{
-                fontFamily: "poppins",
-                fontSize: "2rem",
-                marginBottom: 0,
-                marginTop: 0,
-                color: "white",
-                fontWeight: "bold",
-              }}
+            className={styles.projNameStyle}
             >
               {props.projName}
             </p>
-            <p style={{ color: "white", fontWeight: "bold" }}>Description.</p>
+            <p className={styles.smallTitle}>Description.</p>
             <p>{props.projDescription}</p>
-            <p style={{ color: "white", fontWeight: "bold" }}>Technologies.</p>
-            <div style={techsStyle} className="technologies">
+            <p className={styles.smallTitle}>Technologies.</p>
+            <div className={styles.techsStyle}>
               {props.techStack &&
                 props.techStack.map((tech, index) => (
                   <TechItem key={index} Icon={tech.icon} name={tech.name} />
                 ))}
             </div>
           </div>
-          <div style={imageDetailsStyle} className="imageDetails">
+          <div  className={styles.imageDetailsStyle}>
             <SwipeCarousel />
           </div>
         </div>
 
-        <div className="links" style={linksStyle}>
+        <div className={styles.linksStyle}>
           <div
             onClick={handleGithubClick}
-            style={{
-              cursor: "pointer",
-              borderStyle: "solid",
-              borderWidth: "thin",
-              borderRadius: "12px",
-              padding: "5px",
-            }}
-            className="github-link"
+            className={styles.iconLink}
           >
-            <FaGithub style={{ position: "relative" }} /> Github
+            <FaGithub/> Github
           </div>
 
           {openGithubBubble && (
@@ -201,106 +124,39 @@ function Modal({githubLink,liveLink,...props}) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bubble wrapper"
-              style={{ position: "absolute", bottom: "56.5rem", right: "52rem" }}
+              className={styles.githubBubbleWrapper}
             >
               <div
-                className="speechBubble"
-                style={{
-                  borderStyle: "solid",
-                  borderColor: "white",
-                  borderWidth: "thin",
-                  position: "relative",
-                  background: "rgba(0, 0, 0, 0.6)",
-                  width: "8rem",
-                  height: "3rem",
-                  borderRadius: "10px",
-                  zIndex: 120,
-                  display:"flex",
-                  justifyContent:"center",
-                  alignItems:"center",
-                }}
+                className={styles.speechBubble}
               >Unavailable
 
                 </div>
               <div
-                className="speech-bubbleafter"
-                style={{
-                  content: "",
-                  position: "absolute",
-                  bottom: 0,
-                  left: "80%",
-                  width: 0,
-                  height: 0,
-                  border: "20px solid transparent",
-                  borderTopColor: "white",
-                  borderBottom: 0,
-                  borderRight: 0,
-                  marginLeft: "-10px",
-                  marginBottom: "-20px",
-                  zIndex: 121,
-                }}
+                className={styles.speechBubbleAfter}
               ></div>
             </motion.div>
           )}
           <div
-            onClick={handleLiveClick}
-            style={{
-              cursor: "pointer",
-              borderStyle: "solid",
-              borderWidth: "thin",
-              borderRadius: "12px",
-              padding: "5px",
-            }}
-            className="live-link"
+            onClick={handleExternalLinkClick}
+            className={styles.iconLink}
           >
-            <FaExternalLinkAlt style={{ position: "relative" }} /> Live
+            <FaExternalLinkAlt/> Live
           </div>
-          {openLiveBubble && (
+          {openExternalLinkBubble && (
             <motion.div
               onClick={(e) => e.stopPropagation()}
               variants={bubbleVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bubble wrapper2"
-              style={{ position: "absolute", bottom: "56.5rem", right: "43rem" }}
+              className={styles.externalLinkBubbleWrapper}
             >
               <div
-                className="speechBubble2"
-                style={{
-                  borderStyle: "solid",
-                  borderColor: "white",
-                  borderWidth: "thin",
-                  position: "relative",
-                  background: "rgba(0, 0, 0, 0.6)",
-                  width: "8rem",
-                  height: "3rem",
-                  borderRadius: "10px",
-                  zIndex: 120,
-                  display:"flex",
-                  justifyContent:"center",
-                  alignItems:"center",
-                }}
+                className={styles.speechBubble}
               >Unavailable
                 </div>
               <div
-                className="speech-bubbleafter2"
-                style={{
-                  content: "",
-                  position: "absolute",
-                  bottom: 0,
-                  left: "80%",
-                  width: 0,
-                  height: 0,
-                  border: "20px solid transparent",
-                  borderTopColor: "white",
-                  borderBottom: 0,
-                  borderRight: 0,
-                  marginLeft: "-10px",
-                  marginBottom: "-20px",
-                  zIndex: 121,
-                }}
+                className={styles.speechBubbleAfter}      
               ></div>
             </motion.div>
           )}
@@ -319,7 +175,7 @@ Modal.propTypes = {
   name: PropTypes.any,
   Icon: PropTypes.any,
   githubLink: PropTypes.string,
-  liveLink: PropTypes.string,
+  externalLink: PropTypes.string,
 };
 
 export default Modal;

@@ -69,7 +69,7 @@ function Project() {
               { icon: FiFramer, name: "Framer Motion" },
             ]}
             githubLink={"https://github.com/Njahi98/MyPortfolioV1"}
-            liveLink={"https://njahi-oussama.vercel.app"}
+            externalLink={"https://njahi-oussama.vercel.app"}
           />{" "}
         </CarouselContext.Provider>
         <ProjectCard />

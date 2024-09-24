@@ -80,14 +80,13 @@ function ProjectCard(props) {
              handleClose={close}
              techStack={props.techStack}
             githubLink={props.githubLink}
-            liveLink={props.liveLink}
+            externalLink={props.externalLink}
              />
         )}
       </AnimatePresence>
     </>
   );
 }
-
 ProjectCard.propTypes = {
   imageSrc: PropTypes.string,
   projName: PropTypes.string,
@@ -95,7 +94,7 @@ ProjectCard.propTypes = {
   projDescription:PropTypes.any,
   techStack:PropTypes.any,
   githubLink: PropTypes.string,
-  liveLink: PropTypes.string,
+  externalLink: PropTypes.string,
 };
 
 export default ProjectCard;
