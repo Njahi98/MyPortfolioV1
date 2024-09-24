@@ -63,7 +63,7 @@
     color: white;
 }
 
-@media (max-width:600px) {
+@media screen and  (max-width:1253px) {
 
 .title{
     display: flex;
@@ -79,6 +79,9 @@
 .phrase{
     text-align: center;
     width: 100%;
+}
+.footer{
+    max-height: fit-content;
 }
         
     }

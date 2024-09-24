@@ -186,7 +186,7 @@
 }
 
 
-@media (max-width:600px) {
+@media screen and  (max-width:1253px) {
   .about > p {
   margin-bottom: 0.75rem;
   }
@@ -197,6 +197,19 @@
 }
 .about{
   margin-top: 5rem; 
+}
+
+.boxes > * {
+  padding: 1rem;
+}
+}
+
+@media screen and(max-width:768px) {
+.rightitem{
+  animation-duration: 5s;
+}
+.leftitem{
+  animation-duration: 5s;
 }
   
 }

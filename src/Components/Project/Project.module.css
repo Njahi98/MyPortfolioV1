@@ -33,7 +33,7 @@
 
 
 
-@media (max-width:600px) {
+@media screen and  (max-width:1253px) {
     .project{
         grid: auto 1fr/1fr;}
 

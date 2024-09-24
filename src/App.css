@@ -124,7 +124,7 @@ width: 100%
     transform: translateY(-5px);
   }
   
-  @media (max-width: 768px) {
+  @media screen and (max-width:1253px) {
     .topButton {
       bottom: 10px;
       right: 10px;
