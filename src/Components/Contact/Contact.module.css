@@ -74,3 +74,16 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
+
+
+@media (max-width:600px) {
+.contact{
+  width: 100%;
+}
+.formgrid{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+    
+}

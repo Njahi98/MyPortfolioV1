@@ -33,9 +33,12 @@
 
 
 
-@media (max-width:1199px) {
+@media (max-width:600px) {
     .project{
-        grid: auto 1fr/1fr;
+        grid: auto 1fr/1fr;}
+
+    .projectfunc{
+        margin-top: 8rem;
     }
       
 }

@@ -5,7 +5,7 @@
   width: 80%;
   padding-top: 1rem;
 }
-.about > p {
+  .about > p {
   text-align: start;
   font-size: 5rem;
   font-family: "Blisstrapy", Sans-serif;
@@ -186,11 +186,17 @@
 }
 
 
-@media (max-width:1199px) {
+@media (max-width:600px) {
+  .about > p {
+  margin-bottom: 0.75rem;
+  }
+  
 .boxes{
   grid-template-columns:1fr ;
   grid-template-rows: auto 1fr;
-
+}
+.about{
+  margin-top: 5rem; 
 }
   
 }
