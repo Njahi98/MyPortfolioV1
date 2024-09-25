@@ -1,53 +1,75 @@
-.NavBar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #BABABA;
-    border-radius: 10rem;
-    background-color: rgba(255, 255, 255, 0.061);
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    position: sticky;
-    top:0;
-    z-index: 1000;
-    
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #bababa;
+  border-radius: 10rem;
+  background-color: rgba(255, 255, 255, 0.061);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: sticky;
+  top: 3%;
+  z-index: 1000;
 }
-.logo a{
+.logo a {
+  font-family: "Blisstrapy", Sans-serif;
+  font-size: 4rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.logo a:hover {
+  color: white;
+}
+
+.titles {
+  font-family: "NerdFont", Sans-serif;
+  display: flex;
+  border-radius: 5rem;
+  cursor: pointer;
+  column-gap: 3rem;
+}
+
+.titles a {
+  text-decoration: none;
+  color: inherit;
+}
+.titles a:hover {
+  color: white;
+}
+.socialMedia {
+  display: flex;
+  column-gap: 1rem;
+  justify-content: baseline;
+}
+.socialMedia * {
+  cursor: pointer;
+  color: inherit;
+}
+.socialMedia a:hover {
+  color: white;
+}
+.burgerStyle {
+  position: sticky;
+  top: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items:  baseline ;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+.burgerLogo a {
     font-family: "Blisstrapy", Sans-serif;
-    font-size:4rem;
-cursor: pointer;
-text-decoration: none;
-color: inherit;
-}
-.logo a:hover{
-    color: white;
-}
-
-.titles{
-    font-family: "NerdFont", Sans-serif;
-        display: flex;
-    border-radius: 5rem;
+    font-size: 4rem;
     cursor: pointer;
-    column-gap: 3rem;
-}
-
-.titles a{
-text-decoration: none;
-color: inherit;
-}
-.titles a:hover{
-    color: white;
-}
-.socialMedia{
-display: flex;
-    column-gap: 1rem;
-    justify-content: baseline;
-}
-.socialMedia *{
+    text-decoration: none;
+    color: #bababa;
+  }
+.burgerCloseStyle{
+    /* position: fixed; 
+    right: 4.5%;
+    top: 5.5%;   */
+    color: white; 
     cursor: pointer;
-    color: inherit;   
-}
-.socialMedia a:hover{
-color: white;
 }

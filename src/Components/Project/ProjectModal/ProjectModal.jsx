@@ -12,6 +12,20 @@ function Modal({ githubLink, externalLink, ...props }) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
   const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
+  const modalBackdrop={
+    position:'absolute',
+    top:0,
+    left:0,
+    height:'100%',
+    width:'100%',
+    background:'rgba(0, 0, 0, 0.8)',
+    display:'flex', 
+    alignItems:'center',
+    justifyContent:'center',
+    zIndex:1  
+};
+
+
   const dropIn = {
     hidden: {
       y: "-100vh",
@@ -57,7 +71,7 @@ function Modal({ githubLink, externalLink, ...props }) {
   };
 
   return (
-    <Backdrop onClick={props.handleClose}>
+    <Backdrop onClick={props.handleClose} backdropStyle={modalBackdrop}>
       <motion.div
         className={styles.modalStyles}
         onClick={(e) => e.stopPropagation()}
