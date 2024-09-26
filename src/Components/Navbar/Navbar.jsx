@@ -7,36 +7,46 @@ import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import Backdrop from "../Project/ProjectModal/Backdrop";
 import { RiCloseLargeLine } from "react-icons/ri";
-
-export const handleSmoothClick = (id) => (e) => {
-  e.preventDefault();
-  const element = id ? document.getElementById(id) : document.body;
-  if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-};
+import { handleSmoothClick } from "./SmoothClick";
+import { Navigation } from "./BurgerNavbar/Navigation";
 
 function NavBar() {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
-  const burgerMenuBackdrop={
-    position:'absolute',
-    top:0,
-    left:'30%',
-    height:'100%',
-    width:'70%',
-    background:'rgba(0, 0, 0, 0.6)',
-    display:'flex', 
-    alignItems:'flex-end',
-    justifyContent:'flex-start',
-    flexDirection:'column',
-    zIndex:1  
-};
+  const burgerMenuBackdrop = {
+    position: "absolute",
+    top: 0,
+    left: "30%",
+    height: "100%",
+    width: "70%",
+    background: "rgba(0, 0, 0, 0.6)",
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-start",
+    flexDirection: "column",
+    zIndex: 1,
+  };
 
+  const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(30px at calc(100% - 40px) 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+  };
 
   useEffect(() => {
     const handleBurger = () => {
@@ -67,24 +77,31 @@ function NavBar() {
             <CiMenuBurger
               size={30}
               onClick={handleBurgerMenu}
-              style={{cursor:"pointer"}}
+              style={{ cursor: "pointer" }}
             />
           )}
         </div>
       )}
 
+      {burgerMenuOpen && (
+        <Backdrop
+         backdropStyle={burgerMenuBackdrop}
+         initial="closed"
+         animate="open"
+         exit="closed"
+         variants={sidebar}
+         >
+          <div className={styles.burgerStyle}>
+            <RiCloseLargeLine
+              className={styles.burgerCloseStyle}
+              size={30}
+              onClick={handleBurgerMenu}
+            />
+          </div>
+          <Navigation/> 
 
-      {burgerMenuOpen && <Backdrop backdropStyle={burgerMenuBackdrop}
-      >
-      <div className={styles.burgerStyle}>
-
-      <RiCloseLargeLine
-            className={styles.burgerCloseStyle}
-            size={30}
-            onClick={handleBurgerMenu}
-          />
-</div>
-        </Backdrop>}
+        </Backdrop>
+      )}
       {!burgerVisible && (
         <div className={styles.NavBar}>
           <div className={styles.logo}>

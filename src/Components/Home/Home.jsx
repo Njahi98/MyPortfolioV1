@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 import devPic from "../../assets/devPicture.webp";
-import { handleSmoothClick } from "../Navbar/Navbar";
 import { motion } from "framer-motion";
+import { handleSmoothClick } from "../Navbar/SmoothClick";
 function Home() {
   return (
     <div className={styles.home}>

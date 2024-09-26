@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar, { handleSmoothClick } from "./Components/Navbar/Navbar";
 import rectangle9521 from "./assets/backgrounds/Rectangle 9521.png";
 import rectangle9522 from "./assets/backgrounds/Rectangle 9522.png";
 import rectangle9523 from "./assets/backgrounds/Rectangle 9523.png";
@@ -14,6 +13,8 @@ import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
+import NavBar from "./Components/Navbar/Navbar";
 
 function App() {
 
@@ -29,9 +30,6 @@ function App() {
       window.removeEventListener("scroll",handleScroll)
     }
   }, [])
-
-
-
   return (
     <div className="App">
     <div className="background-container">
