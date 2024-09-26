@@ -8,6 +8,7 @@
 }
 
 .projectfunc >:nth-child(1){
+    padding-top: 6%;
     font-size: 5rem;
     font-family: "Blisstrapy", Sans-serif;
     background: linear-gradient(to right, #9b5de5, #ff5e5b);

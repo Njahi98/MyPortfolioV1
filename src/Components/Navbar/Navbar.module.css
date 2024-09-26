@@ -5,7 +5,7 @@
   color: #bababa;
   border-radius: 10rem;
   background-color: rgba(255, 255, 255, 0.061);
-  width: 50%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   position: sticky;
@@ -51,15 +51,17 @@
   color: white;
 }
 .burgerStyle {
-  top: 3%;
   display: flex;
   justify-content: space-between;
   align-items:  baseline ;
   color: white;
-  padding: 2rem 2rem;
+  padding: 1.8rem 1rem;
+
 }
 
 .burgerLogo a {
+  position: absolute;
+  top: 1rem;
     font-family: "Blisstrapy", Sans-serif;
     font-size: 4rem;
     cursor: pointer;

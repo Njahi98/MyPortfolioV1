@@ -22,46 +22,49 @@ const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export const MenuItem = ({ i, item, setburgerMenuOpen }) => {
   const style = {
-    border: `2px solid ${colors[i]}`,
-    borderRadius: "5px",
-    width: "auto",
-    height: "40px", 
+    borderBottom: `2px solid ${colors[i]}`,
+    borderRadius: "10px",
+    width: "80%",
+    height: "50px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
+    backgroundColor: "#333", // Dark background color
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Darker shadow
+    transition: "transform 0.2s, box-shadow 0.2s",
   };
 
   const handleClick = (e) => {
     e.preventDefault();
     setburgerMenuOpen(false);
-    
+
     setTimeout(() => {
       if (item.href.startsWith('#')) {
-        // Internal link
         const targetId = item.href.slice(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       } else {
-        // External link
         window.open(item.href, '_blank');
       }
-    }, 300); // Adjust this delay if needed
+    }, 300);
   };
 
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      style={{ borderRadius: "10px", overflow: "hidden",display:"flex",justifyContent:"center" }}
+      onClick={handleClick}
+
     >
       <div style={style}>
         <a
           href={item.href}
-          onClick={handleClick}
-          style={{ color: colors[i], textDecoration: 'none' }}
+          style={{ color: colors[i], textDecoration: 'none', fontWeight: 'bold' }}
         >
           {item.text}
         </a>

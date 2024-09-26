@@ -13,12 +13,20 @@ const variants = {
 };
 
 const ulStyle = {
-  width:"40%",
+  marginRight: "auto",
+  marginLeft: "auto",
+  marginTop: 0,
+  width: "80%",
   listStyle: 'none',
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
   padding: '1rem',
+  border: 'thin solid',
+  borderColor: "#444", // Darker border color
+  borderRadius: "15px",
+  backgroundColor: "#222", // Dark background color
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Darker shadow
 };
 
 const menuItems = [

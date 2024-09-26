@@ -15,7 +15,7 @@
   color: transparent;
 }
 .boxes {
-  font-family: "NerdFont", Sans-serif;
+  font-family: "Poppins", Sans-serif;
   color: white;
   display: grid;
   grid-template-columns: 1fr 2fr;

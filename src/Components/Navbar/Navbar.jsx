@@ -9,18 +9,24 @@ import Backdrop from "../Project/ProjectModal/Backdrop";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { handleSmoothClick } from "./SmoothClick";
 import { Navigation } from "./BurgerNavbar/Navigation";
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
 
 function NavBar() {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
+  const [isDark,setIsDark]=useState(true);
+
   const burgerMenuBackdrop = {
-    position: "absolute",
+    overflow: "hidden",
+    position: "fixed",
     top: 0,
-    left: "10%",
+    left: 0,
     height: "100%",
-    width: "90%",
+    width: "100%",
     background: "rgba(0, 0, 0, 0.8)",
+
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
@@ -50,7 +56,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleBurger = () => {
-      setburgerVisible(window.innerWidth < 1160);
+      setburgerVisible(window.innerWidth < 769);
     };
     window.addEventListener("resize", handleBurger);
 
@@ -64,9 +70,19 @@ function NavBar() {
   const handleBurgerMenu = () => {
     burgerMenuOpen ? setBurgerMenuOpen(false) : setBurgerMenuOpen(true);
   };
+
+  const toggleDarkMode = () => {
+setIsDark(true)
+  }
+
+  const toggleLightMode = () =>{
+setIsDark(false)
+  }
   return (
     <>
       {burgerVisible && (
+
+        
         <div className={styles.burgerStyle}>
           <div className={styles.burgerLogo}>
             <a href="#" onClick={handleSmoothClick()}>
@@ -81,6 +97,8 @@ function NavBar() {
             />
           )}
         </div>
+
+
       )}
 
       {burgerMenuOpen && (
@@ -143,6 +161,9 @@ function NavBar() {
             <a href="mailto:njahioussama75@gmail.com">
               <MdEmail size={25} />
             </a>
+            
+            {isDark ? <MdLightMode onClick={toggleLightMode} size={25}/> : <MdDarkMode onClick={toggleDarkMode} size={25}/>}
+
           </div>
         </div>
       )}
