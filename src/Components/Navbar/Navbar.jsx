@@ -98,7 +98,7 @@ function NavBar() {
               onClick={handleBurgerMenu}
             />
           </div>
-          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
+          <Navigation/> 
 
         </Backdrop>
       )}
