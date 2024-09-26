@@ -51,14 +51,14 @@
   color: white;
 }
 .burgerStyle {
-  position: sticky;
   top: 3%;
   display: flex;
   justify-content: space-between;
   align-items:  baseline ;
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 2rem 2rem;
 }
+
 .burgerLogo a {
     font-family: "Blisstrapy", Sans-serif;
     font-size: 4rem;
@@ -66,10 +66,7 @@
     text-decoration: none;
     color: #bababa;
   }
-.burgerCloseStyle{
-    /* position: fixed; 
-    right: 4.5%;
-    top: 5.5%;   */
+.burgerCloseStyle{  
     color: white; 
     cursor: pointer;
 }

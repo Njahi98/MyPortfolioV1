@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 import devPic from "../../assets/devPicture.webp";
-import { handleSmoothClick } from "../Navbar/Navbar";
 import { motion } from "framer-motion";
+import { handleSmoothClick } from "../Navbar/SmoothClick";
 function Home() {
   return (
     <div className={styles.home}>
@@ -46,10 +46,7 @@ function Home() {
           >
             Get in Touch
           </a>
-        </div> <br />
-        <p style={{textAlign:"center"}} className={styles.description}>
-          - portfolio is still under construction -
-        </p>
+        </div>
       </div>
       <div className={styles.imageContainer}>
         <img src={devPic} alt="Developer" />

@@ -32,7 +32,7 @@ function Modal({ githubLink, externalLink, ...props }) {
       opacity: 0,
     },
     visible: {
-      y: "70vh",
+      y: "65vh",
       opacity: 1,
       transition: {
         duration: 0.1,
@@ -71,7 +71,12 @@ function Modal({ githubLink, externalLink, ...props }) {
   };
 
   return (
-    <Backdrop onClick={props.handleClose} backdropStyle={modalBackdrop}>
+    <Backdrop onClick={props.handleClose} 
+    backdropStyle={modalBackdrop}
+    initial={{opacity:0}} 
+    animate={{opacity:1}}
+    exit={{opacity:0}}
+    >
       <motion.div
         className={styles.modalStyles}
         onClick={(e) => e.stopPropagation()}

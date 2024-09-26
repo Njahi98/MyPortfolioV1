@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
-import { handleSmoothClick } from "../Navbar/Navbar";
+import { handleSmoothClick } from "../Navbar/SmoothClick";
 
 function Footer() {
   return (
