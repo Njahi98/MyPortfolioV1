@@ -58,6 +58,7 @@
   .linkBtns {
     display: flex;
     gap: 1rem;
+    margin-bottom: 3%;
   }
   
   .button {
@@ -83,7 +84,8 @@
 
   .imageContainer img {
     border-radius: 5rem;
-    max-width: 80%;
+    aspect-ratio: 16/9;
+    max-width:80%;
     height: auto;
     padding-right: 20px;
     animation: move 7s infinite;

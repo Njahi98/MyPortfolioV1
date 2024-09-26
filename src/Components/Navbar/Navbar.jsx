@@ -17,10 +17,10 @@ function NavBar() {
   const burgerMenuBackdrop = {
     position: "absolute",
     top: 0,
-    left: "30%",
+    left: "10%",
     height: "100%",
-    width: "70%",
-    background: "rgba(0, 0, 0, 0.6)",
+    width: "90%",
+    background: "rgba(0, 0, 0, 0.8)",
     display: "flex",
     alignItems: "flex-end",
     justifyContent: "flex-start",
@@ -98,7 +98,7 @@ function NavBar() {
               onClick={handleBurgerMenu}
             />
           </div>
-          <Navigation/> 
+          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
 
         </Backdrop>
       )}
