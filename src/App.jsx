@@ -12,13 +12,17 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { FaChevronUp } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
 import NavBar from "./Components/Navbar/Navbar";
 
 function App() {
 
   const [showTopButton, setShowTopButton] = useState(false);
+  const darkContext=createContext();
+
+  const [isDark,setIsDark]=useState(true);
+
 
   useEffect(() => {
     const handleScroll = ()=>{
@@ -30,13 +34,23 @@ function App() {
       window.removeEventListener("scroll",handleScroll)
     }
   }, [])
+
+
+  const toggleDarkMode = () => {
+    setIsDark(true)
+      }
+    
+      const toggleLightMode = () =>{
+    setIsDark(false)
+      }
+
   return (
     <div className="App">
     <div className="background-container">
         <div className="stars"></div>
         <div className="twinkling"></div>
       </div>
-      <NavBar />
+      <NavBar isDark={isDark} toggleDarkMode={toggleDarkMode} toggleLightMode={toggleLightMode} />
 
       <Home />
   

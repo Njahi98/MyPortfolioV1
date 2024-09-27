@@ -114,14 +114,14 @@ function Modal({ githubLink, externalLink, ...props }) {
           <div
             onClick={handleGithubClick}
             className={styles.iconLink}
-            data-tooltip={githubLink ? "View on GitHub" : "Not available"}
+            data-tooltip={githubLink ? "View on GitHub" : "Not available due to company policy"}
           >
             <FaGithub /> Github
           </div>
           <div
             onClick={handleExternalLinkClick}
             className={styles.iconLink}
-            data-tooltip={externalLink ? "View live site" : "Not available"}
+            data-tooltip={externalLink ? "View live site" : "Not available due to company policy"}
           >
             <FaExternalLinkAlt /> Live
           </div>

@@ -30,7 +30,7 @@ export const MenuItem = ({ i, item, setburgerMenuOpen }) => {
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
-    backgroundColor: "#333", // Dark background color
+    backgroundColor: "rgba(255, 255, 255, 0.061)", // Dark background color
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Darker shadow
     transition: "transform 0.2s, box-shadow 0.2s",
   };

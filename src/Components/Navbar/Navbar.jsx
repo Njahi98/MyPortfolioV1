@@ -11,12 +11,12 @@ import { handleSmoothClick } from "./SmoothClick";
 import { Navigation } from "./BurgerNavbar/Navigation";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
+import PropTypes from "prop-types"
 
-function NavBar() {
+function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
-  const [isDark,setIsDark]=useState(true);
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -56,7 +56,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleBurger = () => {
-      setburgerVisible(window.innerWidth < 769);
+      setburgerVisible(window.innerWidth < 900);
     };
     window.addEventListener("resize", handleBurger);
 
@@ -71,18 +71,9 @@ function NavBar() {
     burgerMenuOpen ? setBurgerMenuOpen(false) : setBurgerMenuOpen(true);
   };
 
-  const toggleDarkMode = () => {
-setIsDark(true)
-  }
-
-  const toggleLightMode = () =>{
-setIsDark(false)
-  }
   return (
     <>
       {burgerVisible && (
-
-        
         <div className={styles.burgerStyle}>
           <div className={styles.burgerLogo}>
             <a href="#" onClick={handleSmoothClick()}>
@@ -172,3 +163,9 @@ setIsDark(false)
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  isDark:PropTypes.bool,
+  toggleDarkMode:PropTypes.func,
+  toggleLightMode:PropTypes.func,
+}
