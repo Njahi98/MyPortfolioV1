@@ -12,14 +12,14 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { FaChevronUp } from "react-icons/fa";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
 import NavBar from "./Components/Navbar/Navbar";
+import { DarkContext } from "./Context/DarkContext";
 
 function App() {
 
   const [showTopButton, setShowTopButton] = useState(false);
-  const darkContext=createContext();
 
   const [isDark,setIsDark]=useState(true);
 
@@ -37,20 +37,20 @@ function App() {
 
 
   const toggleDarkMode = () => {
-    setIsDark(true)
-      }
-    
-      const toggleLightMode = () =>{
-    setIsDark(false)
-      }
+    setIsDark(!isDark)
+    }
+  
 
   return (
+    <DarkContext.Provider value={isDark}>
     <div className="App">
-    <div className="background-container">
+
+   {isDark && <div className="background-container">
         <div className="stars"></div>
         <div className="twinkling"></div>
-      </div>
-      <NavBar isDark={isDark} toggleDarkMode={toggleDarkMode} toggleLightMode={toggleLightMode} />
+      </div>}
+
+      <NavBar isDark={isDark} toggleDarkMode={toggleDarkMode} toggleLightMode={toggleDarkMode} />
 
       <Home />
   
@@ -71,6 +71,7 @@ function App() {
       </a>}
 
     </div>
+    </DarkContext.Provider>
   );
 }
 
