@@ -9,15 +9,17 @@ width: 100%
     top: 0%; 
 }
 .background2{
-    top:21%;
-
+    top:14%;
+    /* prev value top:21% */
 }
 .background3{
-    top: 21%;
+    top: 13%;
+     /* prev valuetop:21% */
     ;
 }
 .background4{
-    top: 48%;
+    top: 52%;
+    /* prev value top:48% */
     width: 100%;
 }
 .background5{
@@ -79,7 +81,7 @@ width: 100%
   }
   
   .stars {
-    background: black url("./assets/backgrounds/stars.png") repeat;
+    background: black url("./assets/backgrounds/stars.webp") repeat;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -91,7 +93,7 @@ width: 100%
   .twinkling {
     width: 200%;
     height: 100%;
-    background: transparent url("./assets/backgrounds/twinkling.png") repeat;
+    background: transparent url("./assets/backgrounds/twinkling.webp") repeat;
     background-size: 1000px 1000px;
     position: absolute;
     right: 0;
