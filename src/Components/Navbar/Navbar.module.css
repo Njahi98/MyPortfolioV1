@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #bababa;
+  color: var(--text-color);
   border-radius: 10rem;
-  background-color: rgba(255, 255, 255, 0.061);
+  background-color: var(--background-color);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -17,10 +17,10 @@
   font-size: 4rem;
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
 }
 .logo a:hover {
-  color: white;
+  color: var(--hover-color);
 }
 
 .titles {
@@ -33,10 +33,10 @@
 
 .titles a {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
 }
 .titles a:hover {
-  color: white;
+  color: var(--hover-color);
 }
 .socialMedia {
   display: flex;
@@ -48,15 +48,14 @@
   color: inherit;
 }
 .socialMedia a:hover {
-  color: white;
+  color: var(--hover-color);
 }
 .burgerStyle {
   display: flex;
   justify-content: space-between;
   align-items:  baseline ;
-  color: white;
+  color: var(--text-color);
   padding: 1.8rem 1rem;
-
 }
 
 .burgerLogo a {
@@ -66,9 +65,9 @@
     font-size: 4rem;
     cursor: pointer;
     text-decoration: none;
-    color: #bababa;
+    color: var(--text-color);
   }
 .burgerCloseStyle{  
-    color: white; 
+    color: var(--text-color); 
     cursor: pointer;
 }

@@ -11,12 +11,17 @@ import { handleSmoothClick } from "./SmoothClick";
 import { Navigation } from "./BurgerNavbar/Navigation";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
+import { useContext } from "react";
+import { DarkContext } from "../../Context/DarkContext";
+
+
+function NavBar({ isDark, toggleLightMode, toggleDarkMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
+const toggleTheme = useContext(DarkContext);
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -74,7 +79,10 @@ function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
   return (
     <>
       {burgerVisible && (
-        <div className={styles.burgerStyle}>
+        <div
+          className={styles.burgerStyle}
+          data-theme={isDark ? "Dark" : "Light"}
+        >
           <div className={styles.burgerLogo}>
             <a href="#" onClick={handleSmoothClick()}>
               NJ
@@ -88,38 +96,73 @@ function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
             />
           )}
         </div>
-
-
       )}
 
       {burgerMenuOpen && (
         <Backdrop
-         backdropStyle={burgerMenuBackdrop}
-         initial="closed"
-         animate="open"
-         exit="closed"
-         variants={sidebar}
-         >
-          <div className={styles.burgerStyle}>
+          backdropStyle={burgerMenuBackdrop}
+          initial="closed"
+          animate="open"
+          exit="closed"
+          variants={sidebar}
+        >
+          <div
+            className={styles.burgerStyle}
+            data-theme={toggleTheme ? "Dark" : "Light"}
+          >
+            {isDark ? (
+              <MdLightMode
+                style={{
+                  position: "relative",
+                  right: "-50%",
+                  top: "150%",
+                  border: "1px solid",
+                  padding: "5px",
+                  borderRadius: "50%",
+                  cursor:"pointer",
+
+                }}
+                onClick={toggleLightMode}
+                size={25}
+              />
+            ) : (
+              <MdDarkMode
+                style={{
+                  position: "relative",
+                  right: "-50%",
+                  top: "150%",
+                  border: "1px solid",
+                  padding: "5px",
+                  borderRadius: "50%",
+                  cursor:"pointer",
+                }}
+                onClick={toggleDarkMode}
+                size={25}
+              />
+            )}
+
             <RiCloseLargeLine
               className={styles.burgerCloseStyle}
               size={30}
               onClick={handleBurgerMenu}
             />
           </div>
-          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
 
+          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
         </Backdrop>
       )}
       {!burgerVisible && (
-        <div className={styles.NavBar}>
+        <div
+          className={styles.NavBar}
+          data-theme={toggleTheme ? "Dark" : "Light"}
+        >
           <div className={styles.logo}>
             <a href="#" onClick={handleSmoothClick()}>
               NJ
             </a>
           </div>
 
-          <div className={styles.titles}>
+          <div className={styles.titles} >
             <a href="#About" onClick={handleSmoothClick("About")}>
               About
             </a>
@@ -152,9 +195,12 @@ function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
             <a href="mailto:njahioussama75@gmail.com">
               <MdEmail size={25} />
             </a>
-            
-            {isDark ? <MdLightMode onClick={toggleLightMode} size={25}/> : <MdDarkMode onClick={toggleDarkMode} size={25}/>}
 
+            {isDark ? (
+              <MdLightMode onClick={toggleLightMode} size={25} />
+            ) : (
+              <MdDarkMode onClick={toggleDarkMode} size={25} />
+            )}
           </div>
         </div>
       )}
@@ -165,7 +211,7 @@ function NavBar({isDark,toggleLightMode,toggleDarkMode}) {
 export default NavBar;
 
 NavBar.propTypes = {
-  isDark:PropTypes.bool,
-  toggleDarkMode:PropTypes.func,
-  toggleLightMode:PropTypes.func,
-}
+  isDark: PropTypes.bool,
+  toggleDarkMode: PropTypes.func,
+  toggleLightMode: PropTypes.func,
+};

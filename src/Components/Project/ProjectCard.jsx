@@ -6,6 +6,8 @@ import Modal from "./ProjectModal/ProjectModal";
 import styles from "./ProjectCard.module.css";
 
 function ProjectCard(props) {
+
+
   const [isHover, setIsHover] = useState(false);
   const { modalOpen, close, open } = useModal();
 

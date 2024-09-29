@@ -4,11 +4,16 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
 import { handleSmoothClick } from "../Navbar/SmoothClick";
+import { useContext } from "react";
+import { DarkContext } from "../../Context/DarkContext";
 
 function Footer() {
+
+  const isDark = useContext(DarkContext)
+
   return (
     <div className={styles.footer}>
-      <div className={styles.title}>
+      <div className={styles.title} data-theme={isDark ? "Dark" : "Light"}>
         <a href="#" onClick={handleSmoothClick()}>
           Home
         </a>
@@ -28,7 +33,7 @@ function Footer() {
      
       </div>
 
-      <div className={styles.icons}>
+      <div className={styles.icons} data-theme={isDark ? "Dark" : "Light"}>
         <a
           href="https://www.linkedin.com/in/oussama-njahi/"
           target="_blank"
@@ -48,7 +53,7 @@ function Footer() {
         </a>
       </div>
 
-      <div className={styles.phrase}>
+      <div className={styles.phrase} data-theme={isDark ? "Dark" : "Light"}>
         <a href="" target="_blank" rel="noopener noreferrer">
           Designed & Developed by Oussama Njahi
         </a>

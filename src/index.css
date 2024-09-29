@@ -20,3 +20,18 @@ img{
   max-width: 100%;
   height: auto;
 }
+[data-theme="Dark"] {
+  --text-color: #bababa;
+  --text-color2:white;
+  --background-color: rgba(255, 255, 255, 0.061);
+  --hover-color: #ffffff;
+  --border-color:rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="Light"] {
+  --text-color: black;
+  --text-color2:black;
+  --background-color: white;
+  --hover-color: grey;
+  --border-color:rgba(0, 0, 0, 0.1);
+}

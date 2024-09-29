@@ -20,13 +20,20 @@ import { FaGitAlt } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinux } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
+import { useContext } from "react";
+import { DarkContext } from "../../Context/DarkContext";
+
+
 
 function About() {
+
+    const isDark = useContext(DarkContext);
+
   return (
     <div className={styles.about} id="About">
       <p>About me</p>
-      <div className={styles.boxes}>
-        <div className={styles.paragraph}>
+      <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
+        <div className={styles.paragraph} >
           <IoLocationOutline /> Tunisia
           <p>
             {" "}

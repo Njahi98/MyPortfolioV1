@@ -2,15 +2,20 @@ import styles from "./Home.module.css";
 import devPic from "../../assets/devPicture.webp";
 import { motion } from "framer-motion";
 import { handleSmoothClick } from "../Navbar/SmoothClick";
+import { useContext } from "react";
+import { DarkContext } from "../../Context/DarkContext";
+
+
 function Home() {
+  const isDark = useContext(DarkContext);
   return (
     <div className={styles.home}>
       <div className={styles.content}>
         <p>Hello There!</p>
-        <h2>
+        <h2 data-theme={isDark ? "Dark" : "Light"}>
           I&apos;m <span className={styles.name}>Oussama Njahi</span>
         </h2>
-        <p className={styles.description}>
+        <p className={styles.description} data-theme={isDark ? "Dark" : "Light"}>
           A passionate fullstack developer, creating amazing websites using
           React & Spring Boot.
         </p>
@@ -31,7 +36,7 @@ function Home() {
             HTML/CSS
           </motion.span>
         </div>
-        <div className={styles.linkBtns}>
+        <div className={styles.linkBtns} data-theme={isDark ? "Dark" : "Light"}>
           <a
             href="#Projects"
             onClick={handleSmoothClick("Projects")}

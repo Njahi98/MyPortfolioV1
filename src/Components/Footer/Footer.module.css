@@ -3,7 +3,7 @@
     margin: 2rem auto 2rem auto;
     border-radius: 12px;
     max-height: 12rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     border-bottom:none ;
     border-right: none;
     border-left: none;
@@ -23,10 +23,10 @@
 }
 .title a{
     text-decoration: none;
-    color: #BABABA;
+    color: var(--text-color);
 }
 .title *:hover{
-    color: white;
+    color: var(--hover-color);
 }
 .phrase{
     text-align: center;    
@@ -37,11 +37,11 @@
     
 .phrase a{
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
     font-size: small;
 }
 .phrase :hover{
-    color: white;
+    color: var(--hover-color);
 }
 
 .icons{
@@ -56,11 +56,11 @@
     border-radius: 50%;
     border-width: thin;
     cursor: pointer;
-    color: #BABABA;   
+    color: var(--text-color);   
 
 }
 .icons *:hover{
-    color: white;
+    color: var(--hover-color);
 }
 
 @media screen and  (max-width:1253px) {

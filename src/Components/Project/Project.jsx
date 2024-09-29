@@ -24,7 +24,15 @@ import proj2Image2 from "../../assets/project2/proj2S2.png";
 import proj2Image3 from "../../assets/project2/proj2S3.png";
 import proj2Image4 from "../../assets/project2/proj2S4.png";
 
+import { useContext } from "react";
+import { DarkContext } from "../../Context/DarkContext";
+
+
+
 function Project() {
+
+ const isDark = useContext(DarkContext); 
+
   const proj1Imgs = [
     proj1Image1,
     proj1Image2,
@@ -39,7 +47,7 @@ function Project() {
   return (
     <div className={styles.projectfunc} id="Projects">
       <p>Projects</p>
-      <p>A variety of cool projects I have worked on.</p>
+      <p data-theme={isDark ? "Dark" : "Light"}>A variety of cool projects I have worked on.</p>
       <div className={styles.project}>
         <CarouselContext.Provider value={proj1Imgs}>
           <ProjectCard
