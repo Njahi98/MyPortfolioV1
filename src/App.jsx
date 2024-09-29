@@ -59,17 +59,17 @@ function App() {
 
       <Home />
   
-      {isDark ? <img className="background2" src={rectangle9522} alt="background2" /> : <img className="background2" src={rectangle9522light} alt="background2Light" />}
-      {isDark ? <img className="background3" src={rectangle9523} alt="background3" /> : <img className="background3" src={rectangle9523light} alt="background3Light" />}
+      {isDark ? <img className="background2" src={rectangle9522light} alt="background2" /> : <img className="background2" src={rectangle9522light} alt="background2Light" />}
+      {isDark ? <img className="background3" src={rectangle9523light} alt="background3" /> : <img className="background3" src={rectangle9523light} alt="background3Light" />}
       <About/>
-      {isDark ? <img className="background4" src={rectangle9524} alt="background4" /> : <img className="background4" src={rectangle9524light} alt="background4Light" />}
-      {isDark ? <img className="background5" src={rectangle9525} alt="background5" /> : <img className="background5" src={rectangle9525light} alt="background5Light" />}
+      {isDark ? <img className="background4" src={rectangle9524light} alt="background4" /> : <img className="background4" src={rectangle9524light} alt="background4Light" />}
+      {isDark ? <img className="background5" src={rectangle9525light} alt="background5" /> : <img className="background5" src={rectangle9525light} alt="background5Light" />}
 
       <Project/>
 
       <Contact/>
       <Footer/>
-      { isDark ? <img className="background1" src={rectangle9521} alt="background1" /> : <img className="background1" src={rectangle9521light} alt="background1Light"/>}
+      { isDark ? <img className="background1" src={rectangle9521light} alt="background1" /> : <img className="background1" src={rectangle9521light} alt="background1Light"/>}
 
       {showTopButton && <a className="topButton" href="#"  onClick={handleSmoothClick()}>
       <FaChevronUp size={25}/>
