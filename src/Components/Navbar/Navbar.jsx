@@ -172,9 +172,7 @@ const toggleTheme = useContext(DarkContext);
             <a href="#Contact" onClick={handleSmoothClick("Contact")}>
               Contact
             </a>
-            <a href={cvPdf} target="_blank">
-              Resume
-            </a>
+      
           </div>
 
           <div className={styles.socialMedia}>
@@ -201,6 +199,12 @@ const toggleTheme = useContext(DarkContext);
             ) : (
               <MdDarkMode onClick={toggleDarkMode} size={25} />
             )}
+                <a href={cvPdf} target="_blank" style={{textDecoration:'none',
+                   border:'1px solid',
+                    borderRadius:'1px',
+                    padding:'0.3rem'}}>
+              Resume
+            </a>
           </div>
         </div>
       )}
