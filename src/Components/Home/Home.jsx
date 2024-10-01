@@ -3,19 +3,25 @@ import devPic from "../../assets/devPicture.webp";
 import { motion } from "framer-motion";
 import { handleSmoothClick } from "../Navbar/SmoothClick";
 import { useContext } from "react";
-import { DarkContext } from "../../Context/DarkContext";
-
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Reveal } from "../Utils/Reveal";
 
 function Home() {
-  const isDark = useContext(DarkContext);
+  const isDark = useContext(ThemeContext);
   return (
     <div className={styles.home}>
+<Reveal
+  direction={"y"} value={75}
+      >
       <div className={styles.content}>
         <p>Hello There!</p>
         <h2 data-theme={isDark ? "Dark" : "Light"}>
           I&apos;m <span className={styles.name}>Oussama Njahi</span>
         </h2>
-        <p className={styles.description} data-theme={isDark ? "Dark" : "Light"}>
+        <p
+          className={styles.description}
+          data-theme={isDark ? "Dark" : "Light"}
+        >
           A passionate fullstack developer, creating amazing websites using
           React & Spring Boot.
         </p>
@@ -52,10 +58,15 @@ function Home() {
             Get in Touch
           </a>
         </div>
-      </div>
-      <div className={styles.imageContainer}>
-        <img src={devPic} alt="Developer" />
-      </div>
+      </div></Reveal>
+
+      <Reveal
+     
+      >
+        <div className={styles.imageContainer}>
+          <img src={devPic} alt="Developer" />
+        </div>
+      </Reveal>
     </div>
   );
 }

@@ -14,14 +14,14 @@ import { MdLightMode } from "react-icons/md";
 import PropTypes from "prop-types";
 
 import { useContext } from "react";
-import { DarkContext } from "../../Context/DarkContext";
-
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Reveal } from "../Utils/Reveal";
 
 function NavBar({ isDark, toggleLightMode, toggleDarkMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
-const toggleTheme = useContext(DarkContext);
+const toggleTheme = useContext(ThemeContext);
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -152,6 +152,9 @@ const toggleTheme = useContext(DarkContext);
         </Backdrop>
       )}
       {!burgerVisible && (
+        <Reveal style={{position:"sticky",top:"3%", zIndex:"1000"}}
+   
+        >
         <div
           className={styles.NavBar}
           data-theme={toggleTheme ? "Dark" : "Light"}
@@ -195,18 +198,20 @@ const toggleTheme = useContext(DarkContext);
             </a>
 
             {isDark ? (
-              <MdLightMode onClick={toggleLightMode} size={25} />
+                <div className={styles.themeSwitcher}><MdLightMode  onClick={toggleLightMode} size={25} /></div>
+              
             ) : (
-              <MdDarkMode onClick={toggleDarkMode} size={25} />
+              <div className={styles.themeSwitcher}><MdDarkMode className={styles.themeSwitcher} onClick={toggleDarkMode} size={25} /></div>
             )}
                 <a href={cvPdf} target="_blank" style={{textDecoration:'none',
                    border:'1px solid',
                     borderRadius:'1px',
-                    padding:'0.3rem'}}>
+                    padding:'0.3rem'}}> 
               Resume
             </a>
           </div>
         </div>
+        </Reveal>
       )}
     </>
   );

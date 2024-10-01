@@ -8,8 +8,6 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  position: sticky;
-  top: 3%;
   z-index: 1000;
 }
 .logo a {
@@ -70,3 +68,10 @@
     color: var(--text-color); 
     cursor: pointer;
 }
+
+.themeSwitcher *:hover{
+  background-color: grey;
+  border:none;
+  border-radius: 50%;
+}
+

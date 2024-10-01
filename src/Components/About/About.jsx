@@ -21,15 +21,17 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinux } from "react-icons/fa";
 import { SiVite } from "react-icons/si";
 import { useContext } from "react";
-import { DarkContext } from "../../Context/DarkContext";
+import { ThemeContext } from "../../Context/ThemeContext";
+import { Reveal } from "../Utils/Reveal";
 
 
 
 function About() {
 
-    const isDark = useContext(DarkContext);
+    const isDark = useContext(ThemeContext);
 
   return (
+    <Reveal>
     <div className={styles.about} id="About">
       <p>About me</p>
       <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
@@ -138,6 +140,7 @@ function About() {
       </div>
       
     </div>
+    </Reveal>
   );
 }
 

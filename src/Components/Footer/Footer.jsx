@@ -5,11 +5,11 @@ import { MdEmail } from "react-icons/md";
 import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
 import { handleSmoothClick } from "../Navbar/SmoothClick";
 import { useContext } from "react";
-import { DarkContext } from "../../Context/DarkContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 function Footer() {
 
-  const isDark = useContext(DarkContext)
+  const isDark = useContext(ThemeContext)
 
   return (
     <div className={styles.footer}>

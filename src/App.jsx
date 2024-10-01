@@ -20,14 +20,15 @@ import { FaChevronUp } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
 import NavBar from "./Components/Navbar/Navbar";
-import { DarkContext } from "./Context/DarkContext";
+import { ThemeContext } from "./Context/ThemeContext";
+import useLocalStorage from "use-local-storage";
 
 function App() {
 
   const [showTopButton, setShowTopButton] = useState(false);
-
-  const [isDark,setIsDark]=useState(true);
-
+  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // this line uses system preference
+  const [isDark,setIsDark]=useLocalStorage("isDark",false)
 
   useEffect(() => {
     const handleScroll = ()=>{
@@ -47,7 +48,7 @@ function App() {
   
 
   return (
-    <DarkContext.Provider value={isDark}>
+    <ThemeContext.Provider value={isDark}>
     <div className="App">
 
    {isDark && <div className="background-container">
@@ -76,7 +77,7 @@ function App() {
       </a>}
 
     </div>
-    </DarkContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 

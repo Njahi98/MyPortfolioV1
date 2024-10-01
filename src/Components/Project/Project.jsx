@@ -25,13 +25,13 @@ import proj2Image3 from "../../assets/project2/proj2S3.png";
 import proj2Image4 from "../../assets/project2/proj2S4.png";
 
 import { useContext } from "react";
-import { DarkContext } from "../../Context/DarkContext";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 
 
 function Project() {
 
- const isDark = useContext(DarkContext); 
+ const isDark = useContext(ThemeContext); 
 
   const proj1Imgs = [
     proj1Image1,
@@ -52,7 +52,7 @@ function Project() {
         <CarouselContext.Provider value={proj1Imgs}>
           <ProjectCard
             imageSrc={proj1Image1}
-            projName="ERP project"
+            projName="ERP Project"
             projDescription="During my internship (iWare, Sousse), I enhanced a web application by adding advanced features with React, MongoDB, Spring Boot, and JWT. I contributed to developing a super admin management system, license validation, internship and candidate management with Google Meet scheduling, employee training modules, notifications, and real-time communication via WebSockets. These upgrades improved the platform's services and user experience."
             techStack={[
               { icon: FaReact, name: "React" },
