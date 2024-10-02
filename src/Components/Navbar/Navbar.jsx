@@ -12,14 +12,17 @@ import { Navigation } from "./BurgerNavbar/Navigation";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
 
-function NavBar({ isDark, toggleLightMode, toggleDarkMode }) {
+function NavBar({ isDark, toggleLightMode, toggleDarkMode,toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
+  const [themeSwitcherMenuOpen,setThemeSwitcherMenuOpen]=useState(false);
+  const [selectedTheme,setSelectedTheme]=useState("System");
 
 const toggleTheme = useContext(ThemeContext);
 
@@ -39,7 +42,7 @@ const toggleTheme = useContext(ThemeContext);
     zIndex: 1,
   };
 
-  const sidebar = {
+  const sidebarAnimation = {
     open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at calc(100% - 40px) 40px)`,
       transition: {
@@ -72,9 +75,28 @@ const toggleTheme = useContext(ThemeContext);
     };
   }, []);
 
+  useEffect(() => {
+    if(selectedTheme === "Light"){
+      toggleLightMode();
+    }else if(selectedTheme === "Dark"){
+      toggleDarkMode();
+    }else if(selectedTheme === "System"){
+      toggleSystemMode();
+    }
+ return ()=>{
+  setThemeSwitcherMenuOpen(false);
+  console.log("selected teme is",selectedTheme)
+ }
+     }, [selectedTheme])
+  
+
   const handleBurgerMenu = () => {
     burgerMenuOpen ? setBurgerMenuOpen(false) : setBurgerMenuOpen(true);
   };
+
+  const openThemeSwitcherMenu = () =>{
+    setThemeSwitcherMenuOpen(!themeSwitcherMenuOpen)
+  }
 
   return (
     <>
@@ -104,7 +126,7 @@ const toggleTheme = useContext(ThemeContext);
           initial="closed"
           animate="open"
           exit="closed"
-          variants={sidebar}
+          variants={sidebarAnimation}
         >
           <div
             className={styles.burgerStyle}
@@ -153,7 +175,10 @@ const toggleTheme = useContext(ThemeContext);
       )}
       {!burgerVisible && (
         <Reveal style={{position:"sticky",top:"3%", zIndex:"1000"}}
-   
+        variants={{
+          hidden: { opacity: 0, y: -75 },
+          visible: { opacity: 1, y: 0 },
+        }}
         >
         <div
           className={styles.NavBar}
@@ -198,11 +223,25 @@ const toggleTheme = useContext(ThemeContext);
             </a>
 
             {isDark ? (
-                <div className={styles.themeSwitcher}><MdLightMode  onClick={toggleLightMode} size={25} /></div>
-              
+                // <div className={styles.themeSwitcher}><MdLightMode  onClick={toggleLightMode} size={25} /></div>
+                <div className={styles.themeSwitcher}><MdLightMode  onClick={openThemeSwitcherMenu} size={25} /></div>
+
             ) : (
-              <div className={styles.themeSwitcher}><MdDarkMode className={styles.themeSwitcher} onClick={toggleDarkMode} size={25} /></div>
+              // <div className={styles.themeSwitcher}><MdDarkMode className={styles.themeSwitcher} onClick={toggleDarkMode} size={25} /></div>
+
+              <div className={styles.themeSwitcher}><MdDarkMode onClick={openThemeSwitcherMenu}  size={25} /></div>
             )}
+            {
+              themeSwitcherMenuOpen && <motion.div className={styles.themeMenu}
+              variants={{hidden:{opacity:0,z:-75},visible:{opacity:1,y:0},exit:{opacity:0,z:75}}}
+              initial="hidden" animate="visible" exit="exit" data-theme={isDark ? "Dark" : "Light"}
+
+              >
+                <span onClick={()=>setSelectedTheme("Light")} >Light</span>
+                <span onClick={()=>setSelectedTheme("Dark")} >Dark</span>
+                <span onClick={()=>setSelectedTheme("System")} >System</span>
+              </motion.div>
+            }
                 <a href={cvPdf} target="_blank" style={{textDecoration:'none',
                    border:'1px solid',
                     borderRadius:'1px',
@@ -210,6 +249,7 @@ const toggleTheme = useContext(ThemeContext);
               Resume
             </a>
           </div>
+        
         </div>
         </Reveal>
       )}
@@ -223,4 +263,5 @@ NavBar.propTypes = {
   isDark: PropTypes.bool,
   toggleDarkMode: PropTypes.func,
   toggleLightMode: PropTypes.func,
+  toggleSystemMode: PropTypes.func,
 };

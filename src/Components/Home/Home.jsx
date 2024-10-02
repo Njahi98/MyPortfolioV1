@@ -11,8 +11,10 @@ function Home() {
   return (
     <div className={styles.home}>
 <Reveal
-  direction={"y"} value={75}
-      >
+variants={{
+  hidden: { opacity: 0, x: -75 },
+  visible: { opacity: 1, x: 0 },
+}}      >
       <div className={styles.content}>
         <p>Hello There!</p>
         <h2 data-theme={isDark ? "Dark" : "Light"}>
@@ -25,7 +27,7 @@ function Home() {
           A passionate fullstack developer, creating amazing websites using
           React & Spring Boot.
         </p>
-        <div className={styles.skills}>
+        <div className={styles.skills} data-theme={isDark ? "Dark" : "Light"}>
           <motion.span whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
             React
           </motion.span>
@@ -61,7 +63,10 @@ function Home() {
       </div></Reveal>
 
       <Reveal
-     
+     variants={{
+      hidden: { opacity: 0, x: 75 },
+      visible: { opacity: 1, x: 0 },
+    }}
       >
         <div className={styles.imageContainer}>
           <img src={devPic} alt="Developer" />

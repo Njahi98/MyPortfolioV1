@@ -3,6 +3,7 @@
   width: 80%;
   max-width: 1200px;
   color: var(--text-color2);
+  padding-top: 2rem;
 }
 .contactComponent >:nth-child(1) {
   font-size: 5rem;
@@ -11,7 +12,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin: 0 0 2rem;
+  margin: 1.5rem 0 0.5rem;
+  padding-top: 2rem;
   text-align: center;
 }
 

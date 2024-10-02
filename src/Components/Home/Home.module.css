@@ -48,8 +48,8 @@
   
   .skills span {
     background-color: rgba(155, 93, 229, 0.2);
-    color: #9b5de5;
-    padding: 0.5rem 1rem;
+    color: var(--text-color2); 
+       padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     cursor: pointer;
@@ -86,7 +86,6 @@
     border-radius: 5rem;
     aspect-ratio: 16/9;
     max-width:80%;
-    height: auto;
     padding-right: 20px;
     animation: move 7s infinite;
     opacity: 0.8;
@@ -101,6 +100,10 @@
       transform: translateY(-20px);
     }
   }
+  @media screen and  (min-width:1253px) {
+    .imageContainer{
+      margin-top: 7rem;
+    }  }
 
 @media screen and  (max-width:1253px) {
   .home{
@@ -163,6 +166,9 @@
   }
   .button {
     padding: 0.5rem 1rem;
+  }
+  .imageContainer{
+    margin-top: 1rem;
   }
   .imageContainer img {
     max-width: 100%;

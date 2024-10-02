@@ -7,24 +7,27 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { SwipeCarousel } from "../SwipeCarousel";
 import { useState } from "react";
 import styles from "./ProjectModal.module.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../../Context/ThemeContext";
 
 function Modal({ githubLink, externalLink, ...props }) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
   const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
-  const modalBackdrop={
-    position:'absolute',
-    top:0,
-    left:0,
-    height:'100%',
-    width:'100%',
-    background:'rgba(0, 0, 0, 0.8)',
-    display:'flex', 
-    alignItems:'center',
-    justifyContent:'center',
-    zIndex:1  
-};
+  const isDark = useContext(ThemeContext);
 
+  const modalBackdrop = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    height: "100%",
+    width: "100%",
+    background: "rgba(0, 0, 0, 0.8)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 1001,
+  };
 
   const dropIn = {
     hidden: {
@@ -32,7 +35,7 @@ function Modal({ githubLink, externalLink, ...props }) {
       opacity: 0,
     },
     visible: {
-      y: "65vh",
+      y: "44vh",
       opacity: 1,
       transition: {
         duration: 0.1,
@@ -48,7 +51,10 @@ function Modal({ githubLink, externalLink, ...props }) {
   };
 
   const TechItem = ({ Icon, name }) => (
-    <div className={styles.TechItemStyle}>
+    <div
+      className={styles.TechItemStyle}
+      data-theme={isDark ? "Dark" : "Light"}
+    >
       <Icon size={24} />
       <span>{name}</span>
     </div>
@@ -71,14 +77,16 @@ function Modal({ githubLink, externalLink, ...props }) {
   };
 
   return (
-    <Backdrop onClick={props.handleClose} 
-    backdropStyle={modalBackdrop}
-    initial={{opacity:0}} 
-    animate={{opacity:1}}
-    exit={{opacity:0}}
+    <Backdrop
+      onClick={props.handleClose}
+      backdropStyle={modalBackdrop}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <motion.div
         className={styles.modalStyles}
+        data-theme={isDark ? "Dark" : "Light"}
         onClick={(e) => e.stopPropagation()}
         variants={dropIn}
         initial="hidden"
@@ -93,9 +101,22 @@ function Modal({ githubLink, externalLink, ...props }) {
           />
         </div>
         <div className={styles.detailsStyle}>
-          <div className={styles.textDetailsStyle}>
-            <p className={styles.projNameStyle}>{props.projName}</p>
-            <p className={styles.smallTitle}>Description.</p>
+          <div
+            className={styles.textDetailsStyle}
+            data-theme={isDark ? "Dark" : "Light"}
+          >
+            <p
+              className={styles.projNameStyle}
+              data-theme={isDark ? "Dark" : "Light"}
+            >
+              {props.projName}
+            </p>
+            <p
+              className={styles.smallTitle}
+              data-theme={isDark ? "Dark" : "Light"}
+            >
+              Description.
+            </p>
             <p>{props.projDescription}</p>
             <p className={styles.smallTitle}>Technologies.</p>
             <div className={styles.techsStyle}>
@@ -114,14 +135,23 @@ function Modal({ githubLink, externalLink, ...props }) {
           <div
             onClick={handleGithubClick}
             className={styles.iconLink}
-            data-tooltip={githubLink ? "View on GitHub" : "Not available due to company policy"}
+            data-theme={isDark ? "Dark" : "Light"}
+            data-tooltip={
+              githubLink
+                ? "View on GitHub"
+                : "Not available due to company policy"
+            }
           >
             <FaGithub /> Github
           </div>
           <div
             onClick={handleExternalLinkClick}
             className={styles.iconLink}
-            data-tooltip={externalLink ? "View live site" : "Not available due to company policy"}
+            data-tooltip={
+              externalLink
+                ? "View live site"
+                : "Not available due to company policy"
+            }
           >
             <FaExternalLinkAlt /> Live
           </div>

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   margin: 5px;
-  color: white;
+  color: var(--text-color2);
   border-style: solid;
   border-width: thin;
   border-radius: 12px;
@@ -11,18 +11,18 @@
 }
 
 .modalStyles {
-  width: clamp(50%, 1200px, 90%);
-  height: min(80vh, 600px);
+  height: auto;
+  width: 80%;
   margin: auto;
-  padding: 1rem;
+  padding: 0 1rem;
   border-radius: 12px;
-  border: 1px solid white;
+  border: 1px solid var(--text-color2);
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--background-color2);
   z-index: 100;
-  color: white;
+  color: var(--text-color2);
   position: relative;
 }
 
@@ -30,7 +30,7 @@
   width: 40%;
   font-family: "poppins";
   overflow: auto;
-  color: #bababa;
+  color: var(--text-color);
 }
 
 .projNameStyle {
@@ -38,13 +38,14 @@
   font-size: 2rem;
   margin-bottom: 0;
   margin-top: 0;
-  color: white;
+  color: var(--text-color2);
   font-weight: bold;
 }
 
 .closeButton {
   width: 100%;
   text-align: end;
+  margin: 0.5rem 0;
 }
 
 .detailsStyle {
@@ -52,12 +53,11 @@
   height: 90%;
   border-top: solid thin;
   border-bottom: solid thin;
-  margin-top: 1rem;
   display: flex;
 }
 
 .smallTitle {
-  color: white;
+  color: var(--text-color2);
   font-weight: bold;
 }
 
@@ -77,13 +77,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem;
   gap: 2rem;
 }
 
 .iconLink {
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid var(--text-color2);
   border-radius: 12px;
   padding: 0.5rem 1rem;
   display: flex;
@@ -110,7 +110,7 @@
 }
 
 .iconLink::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 120%;
   left: 50%;
@@ -128,38 +128,16 @@
   visibility: visible;
 }
 
-@media (max-width: 768px) {
-  .modalStyles {
-    width: 88%;
-    height: 90vh;
-  }
-
+@media (max-width: 1253px) {
   .detailsStyle {
     flex-direction: column;
-    height: auto;
+    align-items: center;
+    width: 100%;
   }
-
   .textDetailsStyle {
     width: 100%;
   }
-
   .imageDetailsStyle {
     width: 100%;
-    height: 50%;
-  }
-
-  .linksStyle {
-      gap: 1rem;
-  }
-
-  .iconLink::after,
-  .iconLink::before {
-    bottom: auto;
-    top: 120%;
-  }
-
-  .iconLink::before {
-    border-top-color: transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.8);
   }
 }

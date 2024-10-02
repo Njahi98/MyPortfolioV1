@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { CarouselContext } from "../../Context/CarouselContext"
 
 
-//thanks to YT@Tom is Loading
+//thank you YT@Tom is Loading
 //https://www.youtube.com/watch?v=mn_fh7pRj7w
 
 
@@ -25,10 +25,8 @@ const styles = {
   container: {
     position: 'relative',
     overflow: 'hidden',
-    backgroundColor: '#030303',
     padding: '2rem 0',
-    paddingTop:0
-
+    paddingTop:0,
   },
   dragContainer: {
     display: 'flex',
@@ -101,7 +99,7 @@ export const SwipeCarousel = () => {
       }
     }, AUTO_DELAY);
     return () => clearInterval(intervalRef);
-  }, [imgs, dragX]);
+  }, []);
 
   const onDragEnd = () => {
     const x = dragX.get();

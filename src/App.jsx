@@ -24,59 +24,110 @@ import { ThemeContext } from "./Context/ThemeContext";
 import useLocalStorage from "use-local-storage";
 
 function App() {
-
   const [showTopButton, setShowTopButton] = useState(false);
   const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // this line uses system preference
-  const [isDark,setIsDark]=useLocalStorage("isDark",false)
+  // this const preference finds system preference
+  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
 
   useEffect(() => {
-    const handleScroll = ()=>{
-      setShowTopButton(window.pageYOffset>300);
-    }
-    window.addEventListener("scroll",handleScroll)
-  
-    return () => {
-      window.removeEventListener("scroll",handleScroll)
-    }
-  }, [])
+    const handleScroll = () => {
+      setShowTopButton(window.pageYOffset > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
 
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleDarkMode = () => {
-    setIsDark(!isDark)
-    }
-  
+    setIsDark(true);
+  };
+  const toggleLightMode = () => {
+    setIsDark(false);
+  };
+
+  const toggleSystemMode = () => {
+    setIsDark(preference);
+  };
 
   return (
     <ThemeContext.Provider value={isDark}>
-    <div className="App">
+      <div className="App">
+        {isDark && (
+          <div className="background-container">
+            <div className="stars"></div>
+            <div className="twinkling"></div>
+          </div>
+        )}
 
-   {isDark && <div className="background-container">
-        <div className="stars"></div>
-        <div className="twinkling"></div>
-      </div>}
+        <NavBar
+          isDark={isDark}
+          toggleDarkMode={toggleDarkMode}
+          toggleLightMode={toggleLightMode}
+          toggleSystemMode={toggleSystemMode}
+        />
 
-      <NavBar isDark={isDark} toggleDarkMode={toggleDarkMode} toggleLightMode={toggleDarkMode} />
+        <Home />
 
-      <Home />
-  
-      {isDark ? <img className="background2" src={rectangle9522} alt="background2" /> : <img className="background2" src={rectangle9522light} alt="background2Light" />}
-      {isDark ? <img className="background3" src={rectangle9523} alt="background3" /> : <img className="background3" src={rectangle9523light} alt="background3Light" />}
-      <About/>
-      {isDark ? <img className="background4" src={rectangle9524} alt="background4" /> : <img className="background4" src={rectangle9524light} alt="background4Light" />}
-      {isDark ? <img className="background5" src={rectangle9525} alt="background5" /> : <img className="background5" src={rectangle9525light} alt="background5Light" />}
+        {isDark ? (
+          <img className="background2" src={rectangle9522} alt="background2" />
+        ) : (
+          <img
+            className="background2"
+            src={rectangle9522light}
+            alt="background2Light"
+          />
+        )}
+        {isDark ? (
+          <img className="background3" src={rectangle9523} alt="background3" />
+        ) : (
+          <img
+            className="background3"
+            src={rectangle9523light}
+            alt="background3Light"
+          />
+        )}
+        <About />
+        {isDark ? (
+          <img className="background4" src={rectangle9524} alt="background4" />
+        ) : (
+          <img
+            className="background4"
+            src={rectangle9524light}
+            alt="background4Light"
+          />
+        )}
+        {isDark ? (
+          <img className="background5" src={rectangle9525} alt="background5" />
+        ) : (
+          <img
+            className="background5"
+            src={rectangle9525light}
+            alt="background5Light"
+          />
+        )}
 
-      <Project/>
+        <Project />
 
-      <Contact/>
-      <Footer/>
-      { isDark ? <img className="background1" src={rectangle9521} alt="background1" /> : <img className="background1" src={rectangle9521light} alt="background1Light"/>}
+        <Contact />
+        <Footer />
+        {isDark ? (
+          <img className="background1" src={rectangle9521} alt="background1" />
+        ) : (
+          <img
+            className="background1"
+            src={rectangle9521light}
+            alt="background1Light"
+          />
+        )}
 
-      {showTopButton && <a className="topButton" href="#"  onClick={handleSmoothClick()}>
-      <FaChevronUp size={25}/>
-      </a>}
-
-    </div>
+        {showTopButton && (
+          <a className="topButton" href="#" onClick={handleSmoothClick()}>
+            <FaChevronUp size={25} />
+          </a>
+        )}
+      </div>
     </ThemeContext.Provider>
   );
 }
