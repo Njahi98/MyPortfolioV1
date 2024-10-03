@@ -9,7 +9,7 @@
 }
 
 html,body{
-  background: white;
+  background: var(--background-color2);
   padding: 0;
   margin: 0;
   width: 100%;

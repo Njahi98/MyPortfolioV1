@@ -48,7 +48,7 @@ function Project() {
     
     <div className={styles.projectfunc} id="Projects">
       <p>Projects</p>
-      <p data-theme={isDark ? "Dark" : "Light"}>A variety of cool projects I have worked on.</p>
+      <p data-theme={isDark ? "Dark" : "Light"}>A variety of projects I have worked on.</p>
       <div className={styles.project}>
         <CarouselContext.Provider value={proj1Imgs}>
           <ProjectCard
