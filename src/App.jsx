@@ -17,17 +17,43 @@ import Project from "./Components/Project/Project";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 import { FaChevronUp } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
 import NavBar from "./Components/Navbar/Navbar";
 import { ThemeContext } from "./Context/ThemeContext";
 import useLocalStorage from "use-local-storage";
 
 function App() {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const [isDark, setIsDark] = useLocalStorage("isDark", prefersDark.matches);
+  const [themeMode, setThemeMode] = useLocalStorage("themeMode", "system");
+
+  const applyTheme = useCallback((mode) => {
+    setThemeMode(mode);
+    if (mode === "system") {
+      setIsDark(prefersDark.matches);
+    } else {
+      setIsDark(mode === "dark");
+    }
+  }, [setIsDark, setThemeMode, prefersDark]);
+
+  useEffect(() => {
+    const handleChange = (e) => {
+      if (themeMode === "system") {
+        setIsDark(e.matches);
+      }
+    };
+
+    prefersDark.addListener(handleChange);
+    return () => prefersDark.removeListener(handleChange);
+  }, [themeMode, setIsDark]);
+
+  const toggleDarkMode = () => applyTheme("dark");
+  const toggleLightMode = () => applyTheme("light");
+  const toggleSystemMode = () => applyTheme("system");
+
   const [showTopButton, setShowTopButton] = useState(false);
-  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // this const preference finds system preference
-  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,17 +65,6 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const toggleDarkMode = () => {
-    setIsDark(true);
-  };
-  const toggleLightMode = () => {
-    setIsDark(false);
-  };
-
-  const toggleSystemMode = () => {
-    setIsDark(preference);
-  };
 
   return (
     <ThemeContext.Provider value={isDark}>

@@ -18,13 +18,12 @@ import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
 
-function NavBar({ isDark, toggleLightMode, toggleDarkMode,toggleSystemMode }) {
+function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
-  const [themeSwitcherMenuOpen,setThemeSwitcherMenuOpen]=useState(false);
-  const [selectedTheme,setSelectedTheme]=useState("System");
+  const [themeSwitcherMenuOpen, setThemeSwitcherMenuOpen] = useState(false);
 
-const toggleTheme = useContext(ThemeContext);
+  const toggleTheme = useContext(ThemeContext);
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -76,34 +75,30 @@ const toggleTheme = useContext(ThemeContext);
   }, []);
 
   useEffect(() => {
-    if(selectedTheme === "Light"){
-      toggleLightMode();
-    }else if(selectedTheme === "Dark"){
-      toggleDarkMode();
-    }else if(selectedTheme === "System"){
-      toggleSystemMode();
+    switch (isDark) {
+      case true:
+        toggleDarkMode();
+        break;
+      case false:
+        toggleLightMode();
+        break;
     }
- return ()=>{
-  setThemeSwitcherMenuOpen(false);
-  console.log("selected teme is",selectedTheme)
- }
-     }, [selectedTheme])
-  
+  }, [isDark, toggleDarkMode, toggleLightMode]);
 
   const handleBurgerMenu = () => {
     burgerMenuOpen ? setBurgerMenuOpen(false) : setBurgerMenuOpen(true);
   };
 
-  const openThemeSwitcherMenu = () =>{
-    setThemeSwitcherMenuOpen(!themeSwitcherMenuOpen)
-  }
+  const openThemeSwitcherMenu = () => {
+    setThemeSwitcherMenuOpen(!themeSwitcherMenuOpen);
+  };
 
   return (
     <>
       {burgerVisible && (
         <div
           className={styles.burgerStyle}
-          data-theme={isDark ? "Dark" : "Light"}
+          data-theme={toggleTheme ? "Dark" : "Light"}
         >
           <div className={styles.burgerLogo}>
             <a href="#" onClick={handleSmoothClick()}>
@@ -174,83 +169,85 @@ const toggleTheme = useContext(ThemeContext);
         </Backdrop>
       )}
       {!burgerVisible && (
-        <Reveal style={{position:"sticky",top:"3%", zIndex:"1000"}}
+        <Reveal style={{ position: "sticky", top: "3%", zIndex: "1000" }}
         variants={{
           hidden: { opacity: 0, y: -75 },
           visible: { opacity: 1, y: 0 },
         }}
         >
-        <div
-          className={styles.NavBar}
-          data-theme={toggleTheme ? "Dark" : "Light"}
-        >
-          <div className={styles.logo}>
-            <a href="#" onClick={handleSmoothClick()}>
-              NJ
-            </a>
-          </div>
+          <div
+            className={styles.NavBar}
+            data-theme={toggleTheme ? "Dark" : "Light"}
+          >
+            <div className={styles.logo}>
+              <a href="#" onClick={handleSmoothClick()}>
+                NJ
+              </a>
+            </div>
 
-          <div className={styles.titles} >
-            <a href="#About" onClick={handleSmoothClick("About")}>
-              About
-            </a>
-            <a href="#Projects" onClick={handleSmoothClick("Projects")}>
-              Projects
-            </a>
-            <a href="#Contact" onClick={handleSmoothClick("Contact")}>
-              Contact
-            </a>
-      
-          </div>
+            <div className={styles.titles}>
+              <a href="#About" onClick={handleSmoothClick("About")}>
+                About
+              </a>
+              <a href="#Projects" onClick={handleSmoothClick("Projects")}>
+                Projects
+              </a>
+              <a href="#Contact" onClick={handleSmoothClick("Contact")}>
+                Contact
+              </a>
+            </div>
 
-          <div className={styles.socialMedia}>
-            <a
-              href="https://www.linkedin.com/in/oussama-njahi/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin size={25} />
-            </a>
-            <a
-              href="https://github.com/njahi98"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={25} />
-            </a>
-            <a href="mailto:njahioussama75@gmail.com">
-              <MdEmail size={25} />
-            </a>
-
-            {isDark ? (
-                // <div className={styles.themeSwitcher}><MdLightMode  onClick={toggleLightMode} size={25} /></div>
-                <div className={styles.themeSwitcher}><MdLightMode  onClick={openThemeSwitcherMenu} size={25} /></div>
-
-            ) : (
-              // <div className={styles.themeSwitcher}><MdDarkMode className={styles.themeSwitcher} onClick={toggleDarkMode} size={25} /></div>
-
-              <div className={styles.themeSwitcher}><MdDarkMode onClick={openThemeSwitcherMenu}  size={25} /></div>
-            )}
-            {
-              themeSwitcherMenuOpen && <motion.div className={styles.themeMenu}
-              variants={{hidden:{opacity:0,z:-75},visible:{opacity:1,y:0},exit:{opacity:0,z:75}}}
-              initial="hidden" animate="visible" exit="exit" data-theme={isDark ? "Dark" : "Light"}
-
+            <div className={styles.socialMedia}>
+              <a
+                href="https://www.linkedin.com/in/oussama-njahi/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span onClick={()=>setSelectedTheme("Light")} >Light</span>
-                <span onClick={()=>setSelectedTheme("Dark")} >Dark</span>
-                <span onClick={()=>setSelectedTheme("System")} >System</span>
-              </motion.div>
-            }
-                <a href={cvPdf} target="_blank" style={{textDecoration:'none',
-                   border:'1px solid',
-                    borderRadius:'1px',
-                    padding:'0.3rem'}}> 
-              Resume
-            </a>
+                <FaLinkedin size={25} />
+              </a>
+              <a
+                href="https://github.com/njahi98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={25} />
+              </a>
+              <a href="mailto:njahioussama75@gmail.com">
+                <MdEmail size={25} />
+              </a>
+
+              {isDark ? (
+                <div className={styles.themeSwitcher}>
+                  <MdLightMode onClick={openThemeSwitcherMenu} size={25} />
+                </div>
+              ) : (
+                <div className={styles.themeSwitcher}>
+                  <MdDarkMode onClick={openThemeSwitcherMenu} size={25} />
+                </div>
+              )}
+              {themeSwitcherMenuOpen && (
+                <motion.div
+                  className={styles.themeMenu}
+                  variants={{
+                    hidden: { opacity: 0, y: -75 },
+                    visible: { opacity: 1, y: 0 },
+                    exit: { opacity: 0, y: 75 },
+                  }}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  data-theme={isDark ? "Dark" : "Light"}
+                >
+                  <span onClick={toggleLightMode}>Light</span>
+                  <span onClick={toggleDarkMode}>Dark</span>
+                  <span onClick={toggleSystemMode}>System</span>
+                </motion.div>
+              )}
+              <a href={cvPdf} target="_blank" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
+                Resume
+              </a>
+            </div>
           </div>
-        
-        </div>
         </Reveal>
       )}
     </>

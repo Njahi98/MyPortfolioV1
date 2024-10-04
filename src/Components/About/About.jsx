@@ -84,6 +84,7 @@ function About() {
                 className={`${styles.leftitem} ${styles.leftitem9}`}
                 title="Firebase"
               />
+              {/* maybe add a new grid item with my picture in it here */}
             </div>
           </div>
 

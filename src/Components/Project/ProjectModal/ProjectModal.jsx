@@ -28,6 +28,9 @@ function Modal({ githubLink, externalLink, ...props }) {
     justifyContent: "center",
     zIndex: 1001,
   };
+  
+  //maybe fix the responsive modal issue
+  //maybe add more framer motion animations
 
   const dropIn = {
     hidden: {
