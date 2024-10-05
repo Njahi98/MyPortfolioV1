@@ -38,7 +38,7 @@ function Modal({ githubLink, externalLink, ...props }) {
       opacity: 0,
     },
     visible: {
-      y: "44vh",
+      y: "51vh",
       opacity: 1,
       transition: {
         duration: 0.1,
