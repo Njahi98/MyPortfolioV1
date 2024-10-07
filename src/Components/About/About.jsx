@@ -28,9 +28,17 @@ function About() {
   const isDark = useContext(ThemeContext);
 
   return (
-    <Reveal>
-      <div className={styles.about} id="About">
-        <p>About me</p>
+    <div className={styles.about} id="About">
+      <Reveal
+        variants={{
+          hidden: { opacity: 0, y: -75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+      >
+        {" "}
+        <p className={styles.aboutMeP}>About me</p>
+      </Reveal>
+      <Reveal>
         <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
           <div className={styles.paragraph}>
             <IoLocationOutline /> Tunisia
@@ -130,8 +138,8 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
-    </Reveal>
+      </Reveal>
+    </div>
   );
 }
 
