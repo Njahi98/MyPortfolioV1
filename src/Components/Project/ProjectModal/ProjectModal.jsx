@@ -30,7 +30,6 @@ function Modal({ githubLink, externalLink, ...props }) {
   };
   
   //maybe fix the responsive modal issue
-  //maybe add more framer motion animations
 
   const dropIn = {
     hidden: {
@@ -160,6 +159,7 @@ function Modal({ githubLink, externalLink, ...props }) {
           </div>
         </div>
       </motion.div>
+
     </Backdrop>
   );
 }

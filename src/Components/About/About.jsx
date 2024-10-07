@@ -29,16 +29,10 @@ function About() {
 
   return (
     <div className={styles.about} id="About">
-      <Reveal
-        variants={{
-          hidden: { opacity: 0, y: -75 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      >
+      <Reveal >
         {" "}
         <p className={styles.aboutMeP}>About me</p>
-      </Reveal>
-      <Reveal>
+      
         <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
           <div className={styles.paragraph}>
             <IoLocationOutline /> Tunisia

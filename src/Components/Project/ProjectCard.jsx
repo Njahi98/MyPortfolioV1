@@ -4,6 +4,7 @@ import useModal from "../../hooks/useModal";
 import { AnimatePresence } from "framer-motion";
 import Modal from "./ProjectModal/ProjectModal";
 import styles from "./ProjectCard.module.css";
+import { Reveal } from "../Utils/Reveal";
 
 function ProjectCard(props) {
 
@@ -28,10 +29,11 @@ function ProjectCard(props) {
           modalOpen ? close() : open();
         }}
       >
+        <Reveal>
         {props.imageSrc && <img src={props.imageSrc} className={`${styles.projectImage} ${isHover ? styles.brightImage : ''}`} alt="" />}
         <div className={`${styles.overlay} ${isHover ? styles.hiddenOverlay : ''}`}>
           <p className={`${styles.projectName} ${isHover ? styles.hiddenName : ''}`}>{props.projName}</p>
-        </div>
+        </div></Reveal>
       </div>
 
       <AnimatePresence initial={false} onExitComplete={() => null}>

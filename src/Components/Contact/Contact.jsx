@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { BsSendFill } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from "sonner";
+import { Reveal } from "../Utils/Reveal";
 function Contact() {
   const isDark = useContext(ThemeContext);
   const form = useRef();
@@ -50,7 +51,7 @@ function Contact() {
   };
 
   return (
-    <div
+   <Reveal> <div
       className={styles.contactComponent}
       data-theme={isDark ? "Dark" : "Light"}
       id="Contact"
@@ -144,7 +145,7 @@ function Contact() {
       ) : (
         <Toaster position="top-right"/>
       )}
-    </div>
+    </div></Reveal>
   );
 }
 

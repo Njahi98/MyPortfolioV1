@@ -5,11 +5,11 @@
     width: 80%;
     padding: 1rem 1rem 1rem 1rem;
 }
-.projectfunc >p{
+.smallTitle{
     color: var(--text-color2);
 }
 
-.projectfunc >:nth-child(1){
+.pTitle{
     padding-top: 6%;
     font-size: 5rem;
     font-family: "Blisstrapy", Sans-serif;

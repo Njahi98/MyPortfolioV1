@@ -70,7 +70,6 @@ variants={{
       >
         <div className={styles.imageContainer}>
           <img src={devPic} alt="Developer" />
-          {/* maybe add some floating symbols next to the image */}
         </div>
       </Reveal>
     </div>

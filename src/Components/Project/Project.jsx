@@ -26,6 +26,7 @@ import proj2Image4 from "../../assets/project2/proj2S4.png";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
+import { Reveal } from "../Utils/Reveal";
 
 
 
@@ -47,8 +48,9 @@ function Project() {
   return (
     
     <div className={styles.projectfunc} id="Projects">
-      <p>Projects</p>
-      <p data-theme={isDark ? "Dark" : "Light"}>A variety of projects I have worked on.</p>
+      <Reveal><p className={styles.pTitle}>Projects</p>
+      <p className={styles.smallTitle} data-theme={isDark ? "Dark" : "Light"}>A variety of projects I have worked on.</p></Reveal>
+      
       <div className={styles.project}>
         <CarouselContext.Provider value={proj1Imgs}>
           <ProjectCard
