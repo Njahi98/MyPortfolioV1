@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-My first Portfolio project - a responsive portfolio website built with React and Vite, using pure CSS for styling.
+My first Portfolio project - a responsive portfolio website built with React and Vite, using CSS for styling.
 
 ![Portfolio Preview](/src/assets/project2/proj2S1.png)
 
@@ -10,7 +10,7 @@ My first Portfolio project - a responsive portfolio website built with React and
 - **Theme Switcher** - Dark/light mode implementation
 - **Smooth Animations** - simple animations powered by Framer Motion
 - **Contact Form** - Integrated email functionality using EmailJS
-- **Pure CSS Styling** - Hand-crafted styles without UI libraries
+- **Custom Styling** - Hand-crafted CSS without UI libraries
 - **Toast Notifications** - User feedback using Sonner
 
 ## 🛠️ Built With
