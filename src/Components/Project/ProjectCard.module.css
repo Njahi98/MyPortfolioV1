@@ -2,7 +2,7 @@
     position: relative;
     border-style: solid;
     border-radius: 15px;
-    border-color: #97949c2b;
+    border-color: var(--border-color);
     border-width: thin;
     padding: 1rem;
     cursor: pointer;
@@ -48,6 +48,7 @@
     align-items: center;
     justify-content: center;
     transition: opacity 0.6s ease, transform 0.6s ease;
+    border-radius: 15px;
   }
   
   .overlay.hiddenOverlay {

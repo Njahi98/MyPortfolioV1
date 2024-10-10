@@ -22,20 +22,24 @@ import { handleSmoothClick } from "./Components/Navbar/SmoothClick";
 import NavBar from "./Components/Navbar/Navbar";
 import { ThemeContext } from "./Context/ThemeContext";
 import useLocalStorage from "use-local-storage";
+import { motion } from "framer-motion";
 
 function App() {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
   const [isDark, setIsDark] = useLocalStorage("isDark", prefersDark.matches);
   const [themeMode, setThemeMode] = useLocalStorage("themeMode", "system");
 
-  const applyTheme = useCallback((mode) => {
-    setThemeMode(mode);
-    if (mode === "system") {
-      setIsDark(prefersDark.matches);
-    } else {
-      setIsDark(mode === "dark");
-    }
-  }, [setIsDark, setThemeMode, prefersDark]);
+  const applyTheme = useCallback(
+    (mode) => {
+      setThemeMode(mode);
+      if (mode === "system") {
+        setIsDark(prefersDark.matches);
+      } else {
+        setIsDark(mode === "dark");
+      }
+    },
+    [setIsDark, setThemeMode, prefersDark]
+  );
 
   useEffect(() => {
     const handleChange = (e) => {
@@ -53,7 +57,6 @@ function App() {
   const toggleSystemMode = () => applyTheme("system");
 
   const [showTopButton, setShowTopButton] = useState(false);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,9 +141,22 @@ function App() {
         )}
 
         {showTopButton && (
-          <a className="topButton" href="#" onClick={handleSmoothClick()}>
-            <FaChevronUp size={25} />
-          </a>
+   <motion.a
+   className="topButton"
+   href="#"
+   onClick={handleSmoothClick()}
+   initial={{ scale: 0, opacity: 0 }}
+   animate={{ rotate: 360, scale: 1, opacity: 1 }}
+   transition={{
+     type: "spring",
+     stiffness: 100,   
+     damping: 10,      
+     duration: 0.8,    
+   }}
+ >
+   <FaChevronUp size={25} />
+ </motion.a>
+ 
         )}
       </div>
     </ThemeContext.Provider>

@@ -5,10 +5,13 @@ import { AnimatePresence } from "framer-motion";
 import Modal from "./ProjectModal/ProjectModal";
 import styles from "./ProjectCard.module.css";
 import { Reveal } from "../Utils/Reveal";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContext";
 
 function ProjectCard(props) {
 
 
+  const isDark=useContext(ThemeContext);
   const [isHover, setIsHover] = useState(false);
   const { modalOpen, close, open } = useModal();
 
@@ -28,6 +31,7 @@ function ProjectCard(props) {
         onClick={() => {
           modalOpen ? close() : open();
         }}
+        data-theme= {isDark ? "Dark" : "Light"}
       >
         <Reveal>
         {props.imageSrc && <img src={props.imageSrc} className={`${styles.projectImage} ${isHover ? styles.brightImage : ''}`} alt="" />}
