@@ -1,0 +1,60 @@
+.background1,.background2,.background3,.background4,.background5{
+    position: absolute;
+    z-index: -1;
+    width: 100%
+    ;
+    }
+    .background1{
+        top: 0%; 
+    }
+    .background2{
+        top:14%;
+        /* prev value top:21% */
+    }
+    .background3{
+        top: 13%;
+         /* prev valuetop:21% */
+        ;
+    }
+    .background4{
+        top: 52%;
+        /* prev value top:48% */
+        width: 100%;
+    }
+    .background5{
+        top: 48%;
+        height: 43%;
+    }
+
+    .background-container{
+        position: fixed;
+        top: 0;
+        left:0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+    
+    .stars {
+      background: black url("../../assets/backgrounds/stars.webp") repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -2;
+    }
+    
+    .twinkling {
+      width: 200%;
+      height: 100%;
+      background: transparent url("../../assets/backgrounds/twinkling.webp") repeat;
+      background-size: 1000px 1000px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      animation: move-background 30s linear infinite;
+    }

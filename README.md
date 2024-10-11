@@ -49,18 +49,19 @@ npm run build
 
 ```
 src/
-├── assets/        # Images and other static files
-├── components/    # UI components
-│   ├── About/     # About section component and styles
-│   ├── Contact/   # Contact section component and styles
-│   ├── Footer/    # Footer component and styles
-│   ├── Home/      # Home section component and styles
-│   ├── Navbar/    # Navigation component and styles
-│   ├── Project/   # Project section component and styles
-│   └── Utils/     # Utility/shared components
-├── context/       # React context files
-├── fonts/         # Custom font files
-└── hooks/         # Custom React hooks
+├── assets/          # Images and other static files
+├── components/      # UI components
+│   ├── About/       # About section component and styles
+│   ├── Backgrounds/ # Backgrounds configuration
+│   ├── Contact/     # Contact section component and styles
+│   ├── Footer/      # Footer component and styles
+│   ├── Home/        # Home section component and styles
+│   ├── Navbar/      # Navigation component and styles
+│   ├── Project/     # Project section component and styles
+│   └── Utils/       # Utility/shared components
+├── context/         # React context files
+├── fonts/           # Custom font files
+└── hooks/           # Custom React hooks
 ```
 
 ## 📱 Environment Support

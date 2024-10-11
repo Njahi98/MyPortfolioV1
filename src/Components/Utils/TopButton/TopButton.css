@@ -1,0 +1,31 @@
+.topButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 20px;
+  background-color: #9b5de5;
+  color: #bababa;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.topButton:hover {
+  background-color: #9b5de5;
+  color: white;
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 1253px) {
+  .topButton {
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}

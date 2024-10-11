@@ -1,136 +1,41 @@
-  
-.background1,.background2,.background3,.background4,.background5{
-position: absolute;
-z-index: -1;
-width: 100%
-;
-}
-.background1{
-    top: 0%; 
-}
-.background2{
-    top:14%;
-    /* prev value top:21% */
-}
-.background3{
-    top: 13%;
-     /* prev valuetop:21% */
-    ;
-}
-.background4{
-    top: 52%;
-    /* prev value top:48% */
-    width: 100%;
-}
-.background5{
-    top: 48%;
-    height: 43%;
-}
-
 .App {
   position: relative;
   z-index: 2;
   overflow-x: clip;
 }
 
-
 /* css part responsible for the stars */
 @keyframes move-background {
-    from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  @-webkit-keyframes move-background {
-    from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-  
-  @-moz-keyframes move-background {    
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+}
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  
-      @-webkit-keyframes move-background {
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-  
-  .background-container{
-      position: fixed;
-      top: 0;
-      left:0;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
-      overflow: hidden;
+}
+
+@-moz-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  
-  .stars {
-    background: black url("./assets/backgrounds/stars.webp") repeat;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-  
-  .twinkling {
-    width: 200%;
-    height: 100%;
-    background: transparent url("./assets/backgrounds/twinkling.webp") repeat;
-    background-size: 1000px 1000px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    animation: move-background 30s linear infinite;
+}
+
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
   }
-  
-  .topButton {
-    position: fixed;
-    bottom: 2rem;
-    right: 20px;
-    background-color: #9b5de5;
-    color: #BABABA;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
   }
-  
-  .topButton:hover {
-    background-color: #9b5de5;
-    color: white;
-    transform: translateY(-5px);
-  }
-  
-  @media screen and (max-width:1253px) {
-    .topButton {
-      bottom: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-    }
-  }
+}
