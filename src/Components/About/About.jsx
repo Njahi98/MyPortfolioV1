@@ -26,13 +26,13 @@ import { Reveal } from "../Utils/Reveal";
 
 function About() {
   const isDark = useContext(ThemeContext);
+  const iconStyle = { width: "auto", height: "50px" };
 
   return (
     <div className={styles.about} id="About">
-      <Reveal >
+      <Reveal>
         {" "}
         <p className={styles.aboutMeP}>About me</p>
-      
         <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
           <div className={styles.paragraph}>
             <IoLocationOutline /> Tunisia
@@ -47,88 +47,158 @@ function About() {
             </p>
           </div>
           {/* infinite Marquee without Javascript, only CSS, thank you 'Slaying the dragon' */}
+
           <div>
             <PiLightning /> Stacks
             <div className={styles.wrapper}>
-              <FaHtml5
-                className={`${styles.leftitem} ${styles.leftitem1}`}
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem1} ${styles.bubble}`}
                 title="HTML5"
-              />
-              <FaCss3
-                className={`${styles.leftitem} ${styles.leftitem2}`}
+                data-tooltip="HTML5"
+              >
+                <FaHtml5 style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem2} ${styles.bubble}`}
                 title="CSS3"
-              />
-              <IoLogoJavascript
-                className={`${styles.leftitem} ${styles.leftitem3}`}
+                data-tooltip="CSS3"
+              >
+                <FaCss3 style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem3} ${styles.bubble}`}
                 title="Javascript"
-              />
-              <FaJava
-                className={`${styles.leftitem} ${styles.leftitem4}`}
+                data-tooltip="Javascript"
+              >
+                <IoLogoJavascript style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem4} ${styles.bubble}`}
                 title="Java"
-              />
-              <FaReact
-                className={`${styles.leftitem} ${styles.leftitem5}`}
+                data-tooltip="Java"
+              >
+                <FaJava style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem5} ${styles.bubble}`}
                 title="React"
-              />
-              <SiSpringboot
-                className={`${styles.leftitem} ${styles.leftitem6}`}
+                data-tooltip="React"
+              >
+                <FaReact style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem6} ${styles.bubble}`}
                 title="SpringBoot"
-              />
-              <FaBootstrap
-                className={`${styles.leftitem} ${styles.leftitem7}`}
+                data-tooltip="SpringBoot"
+              >
+                <SiSpringboot style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem7} ${styles.bubble}`}
                 title="Bootstrap"
-              />
-              <SiMongodb
-                className={`${styles.leftitem} ${styles.leftitem8}`}
-                title="Mongodb"
-              />
-              <IoLogoFirebase
-                className={`${styles.leftitem} ${styles.leftitem9}`}
+                data-tooltip="Bootstrap"
+              >
+                <FaBootstrap style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem8} ${styles.bubble}`}
+                title="MongoDB"
+                data-tooltip="MongoDB"
+              >
+                <SiMongodb style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.leftitem}  ${styles.leftitem9} ${styles.bubble}`}
                 title="Firebase"
-              />
+                data-tooltip="Firebase"
+              >
+                <IoLogoFirebase style={iconStyle} />
+              </div>
             </div>
           </div>
 
           <div>
             <VscTools /> Tools
             <div className={styles.wrapper2}>
-              <VscVscode
-                className={`${styles.rightitem} ${styles.rightitem1}`}
+              <div
+                className={`${styles.rightitem} ${styles.rightitem1} ${styles.bubble}`}
                 title="VScode"
-              />
-              <SiIntellijidea
-                className={`${styles.rightitem} ${styles.rightitem2}`}
-                title="Intellj Idea"
-              />
-              <IoLogoFigma
-                className={`${styles.rightitem} ${styles.rightitem3}`}
-                title="Figma"
-              />
-              <SiPostman
-                className={`${styles.rightitem} ${styles.rightitem4}`}
-                title="PostMan"
-              />
-              <SiSwagger
-                className={`${styles.rightitem} ${styles.rightitem5}`}
-                title="Swagger"
-              />
-              <FaGitAlt
-                className={`${styles.rightitem} ${styles.rightitem6}`}
-                title="Git"
-              />
-              <FaGithub
-                className={`${styles.rightitem} ${styles.rightitem7}`}
-                title="Github"
-              />
-              <FaLinux
-                className={`${styles.rightitem} ${styles.rightitem8}`}
-                title="chad Linux user"
-              />
+                data-tooltip="VScode"
+              >
+                <VscVscode style={iconStyle} />
+              </div>
 
-              <SiVite
-                className={`${styles.rightitem} ${styles.rightitem9}`}
+              <div
+                className={`${styles.rightitem} ${styles.rightitem2} ${styles.bubble}`}
+                title="Intellij Idea"
+                data-tooltip="Intellij Idea"
+              >
+                <SiIntellijidea style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem3} ${styles.bubble}`}
+                title="Figma"
+                data-tooltip="Figma"
+              >
+                <IoLogoFigma style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem4} ${styles.bubble}`}
+                title="PostMan"
+                data-tooltip="PostMan"
+              >
+                <SiPostman style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem5} ${styles.bubble}`}
+                title="Swagger"
+                data-tooltip="Swagger"
+              >
+                <SiSwagger style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem6} ${styles.bubble}`}
+                title="Git"
+                data-tooltip="Git"
+              >
+                <FaGitAlt style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem7} ${styles.bubble}`}
+                title="Github"
+                data-tooltip="Github"
+              >
+                <FaGithub style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem8} ${styles.bubble}`}
+                title="chad Linux user"
+                data-tooltip="chad Linux user"
+              >
+                <FaLinux style={iconStyle} />
+              </div>
+
+              <div
+                className={`${styles.rightitem} ${styles.rightitem9} ${styles.bubble}`}
                 title="Vite"
-              />
+                data-tooltip="Vite"
+              >
+                <SiVite style={iconStyle} />
+              </div>
             </div>
           </div>
         </div>
