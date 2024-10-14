@@ -2,7 +2,6 @@ import styles from "./Navbar.module.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
 import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import Backdrop from "../Project/ProjectModal/Backdrop";
@@ -243,7 +242,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   <span onClick={toggleSystemMode}>System</span>
                 </motion.div>
               )}
-              <a href={cvPdf} target="_blank" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
+              <a href="./Resume.pdf" target="_blank" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
                 Resume
               </a>
             </div>

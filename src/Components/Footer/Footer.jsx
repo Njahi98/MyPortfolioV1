@@ -2,7 +2,6 @@ import styles from "./Footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import cvPdf from "../../assets/Oussama-Njahi-Resume.pdf";
 import { handleSmoothClick } from "../Navbar/SmoothClick";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -27,7 +26,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >Source Code</a>
-        <a href={cvPdf} target="_blank">
+        <a href="/Resume.pdf" target="_blank">
           Resume
         </a>
      

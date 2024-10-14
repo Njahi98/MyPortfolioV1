@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import PropTypes from "prop-types";
-import cvPdf from "../../../assets/Oussama-Njahi-Resume.pdf";
 
 const variants = {
   open: {
@@ -33,7 +32,7 @@ const menuItems = [
   { href: "#About", text: "About" },
   { href: "#Projects", text: "Projects" },
   { href: "#Contact", text: "Contact" },
-  { href: cvPdf, text: "Resume" },
+  { href: "Resume.pdf", text: "Resume" },
 ];
 
 export const Navigation = ({ setburgerMenuOpen }) => (
