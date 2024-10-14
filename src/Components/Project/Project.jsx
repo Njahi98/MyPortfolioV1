@@ -9,6 +9,8 @@ import { FaHtml5 } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiFramer } from "react-icons/fi";
+import { SiReacthookform } from "react-icons/si";
+
 
 import { CarouselContext } from "../../Context/CarouselContext"
 
@@ -78,6 +80,7 @@ function Project() {
               { icon: IoLogoJavascript, name: "JavaScript" },
               { icon: FaReact, name: "React" },
               { icon: FiFramer, name: "Framer Motion" },
+              { icon: SiReacthookform, name: "Reacthook Form" },
             ]}
             githubLink={"https://github.com/Njahi98/MyPortfolioV1"}
             externalLink={"https://njahi-oussama.vercel.app"}
