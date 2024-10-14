@@ -26,7 +26,7 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >Source Code</a>
-        <a href="/Resume.pdf" target="_blank">
+        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
           Resume
         </a>
      

@@ -242,7 +242,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   <span onClick={toggleSystemMode}>System</span>
                 </motion.div>
               )}
-              <a href="./Resume.pdf" target="_blank" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
+              <a href="./Resume.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
                 Resume
               </a>
             </div>
