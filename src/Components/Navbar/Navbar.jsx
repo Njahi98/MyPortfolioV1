@@ -94,7 +94,8 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
 
   return (
     <>
-      {burgerVisible && (
+      {burgerVisible ?
+       (
         <div
           className={styles.burgerStyle}
           data-theme={toggleTheme ? "Dark" : "Light"}
@@ -112,62 +113,9 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             />
           )}
         </div>
-      )}
-
-      {burgerMenuOpen && (
-        <Backdrop
-          backdropStyle={burgerMenuBackdrop}
-          initial="closed"
-          animate="open"
-          exit="closed"
-          variants={sidebarAnimation}
-        >
-          <div
-            className={styles.burgerStyle}
-            data-theme={toggleTheme ? "Dark" : "Light"}
-          >
-            {isDark ? (
-              <MdLightMode
-                style={{
-                  position: "relative",
-                  right: "-50%",
-                  top: "150%",
-                  border: "1px solid",
-                  padding: "5px",
-                  borderRadius: "50%",
-                  cursor:"pointer",
-
-                }}
-                onClick={toggleLightMode}
-                size={25}
-              />
-            ) : (
-              <MdDarkMode
-                style={{
-                  position: "relative",
-                  right: "-50%",
-                  top: "150%",
-                  border: "1px solid",
-                  padding: "5px",
-                  borderRadius: "50%",
-                  cursor:"pointer",
-                }}
-                onClick={toggleDarkMode}
-                size={25}
-              />
-            )}
-
-            <RiCloseLargeLine
-              className={styles.burgerCloseStyle}
-              size={30}
-              onClick={handleBurgerMenu}
-            />
-          </div>
-
-          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
-        </Backdrop>
-      )}
-      {!burgerVisible && (
+      )
+      :
+      (
         <Reveal style={{ position: "sticky", top: "3%", zIndex: "1000" }}
         variants={{
           hidden: { opacity: 0, y: -75 },
@@ -248,7 +196,63 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             </div>
           </div>
         </Reveal>
+      )
+      }
+
+      {burgerMenuOpen && (
+        <Backdrop
+          backdropStyle={burgerMenuBackdrop}
+          initial="closed"
+          animate="open"
+          exit="closed"
+          variants={sidebarAnimation}
+        >
+          <div
+            className={styles.burgerStyle}
+            data-theme={toggleTheme ? "Dark" : "Light"}
+          >
+            {isDark ? (
+              <MdLightMode
+                style={{
+                  position: "relative",
+                  right: "-50%",
+                  top: "150%",
+                  border: "1px solid",
+                  padding: "5px",
+                  borderRadius: "50%",
+                  cursor:"pointer",
+
+                }}
+                onClick={toggleLightMode}
+                size={25}
+              />
+            ) : (
+              <MdDarkMode
+                style={{
+                  position: "relative",
+                  right: "-50%",
+                  top: "150%",
+                  border: "1px solid",
+                  padding: "5px",
+                  borderRadius: "50%",
+                  cursor:"pointer",
+                }}
+                onClick={toggleDarkMode}
+                size={25}
+              />
+            )}
+
+            <RiCloseLargeLine
+              className={styles.burgerCloseStyle}
+              size={30}
+              onClick={handleBurgerMenu}
+            />
+          </div>
+
+          <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
+        </Backdrop>
       )}
+
     </>
   );
 }
