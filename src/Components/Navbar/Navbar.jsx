@@ -85,7 +85,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   }, [isDark, toggleDarkMode, toggleLightMode]);
 
   const handleBurgerMenu = () => {
-    burgerMenuOpen ? setBurgerMenuOpen(false) : setBurgerMenuOpen(true);
+    setBurgerMenuOpen(!burgerMenuOpen);
   };
 
   const openThemeSwitcherMenu = () => {
