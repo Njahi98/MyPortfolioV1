@@ -48,7 +48,7 @@ function About() {
           </div>
           {/* infinite Marquee without Javascript, only CSS, thank you 'Slaying the dragon' */}
 
-          <div>
+          <div className={styles.firstRow}>
             <PiLightning /> Stacks
             <div className={styles.wrapper}>
               <div
@@ -125,7 +125,7 @@ function About() {
             </div>
           </div>
 
-          <div>
+          <div className={styles.secondRow}>
             <VscTools /> Tools
             <div className={styles.wrapper2}>
               <div
