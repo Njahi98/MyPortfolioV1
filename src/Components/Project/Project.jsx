@@ -14,17 +14,17 @@ import { SiReacthookform } from "react-icons/si";
 
 import { CarouselContext } from "../../Context/CarouselContext"
 
-import proj1Image1 from "../../assets/project1/proj1S1.png";
-import proj1Image2 from "../../assets/project1/proj1S2.png";
-import proj1Image3 from "../../assets/project1/proj1S3.png";
-import proj1Image4 from "../../assets/project1/proj1S4.png";
-import proj1Image5 from "../../assets/project1/proj1S5.png";
-import proj1Image6 from "../../assets/project1/proj1S6.png";
+import proj1Image1 from "../../assets/project1/proj1S1.webp";
+import proj1Image2 from "../../assets/project1/proj1S2.webp";
+import proj1Image3 from "../../assets/project1/proj1S3.webp";
+import proj1Image4 from "../../assets/project1/proj1S4.webp";
+import proj1Image5 from "../../assets/project1/proj1S5.webp";
+import proj1Image6 from "../../assets/project1/proj1S6.webp";
 
-import proj2Image1 from "../../assets/project2/proj2S1.png";
-import proj2Image2 from "../../assets/project2/proj2S2.png";
-import proj2Image3 from "../../assets/project2/proj2S3.png";
-import proj2Image4 from "../../assets/project2/proj2S4.png";
+import proj2Image1 from "../../assets/project2/proj2S1.webp";
+import proj2Image2 from "../../assets/project2/proj2S2.webp";
+import proj2Image3 from "../../assets/project2/proj2S3.webp";
+import proj2Image4 from "../../assets/project2/proj2S4.webp";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";

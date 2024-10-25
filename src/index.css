@@ -1,11 +1,11 @@
 @import "@fontsource/poppins";
 @font-face {
   font-family: 'Blisstrapy';
-  src: local('Blisstrapy'), url(./fonts/Blisstrapy.ttf) format('truetype');
+  src: local('Blisstrapy'), url(./fonts/Blisstrapy.woff2) format('truetype');
 }
 @font-face {
   font-family: 'NerdFont';
-  src: local('NerdFont'), url(./fonts/NerdFont.ttf) format('truetype');
+  src: local('NerdFont'), url(./fonts/NerdFont.woff2) format('truetype');
 }
 
 html,body{
