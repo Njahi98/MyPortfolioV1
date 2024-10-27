@@ -2,7 +2,7 @@
 
 My first Portfolio project - a responsive portfolio website built with React and Vite, using CSS for styling.
 
-![Portfolio Preview](/src/assets/project2/proj2S1.png)
+![Portfolio Preview](/src/assets/project2/proj2S1.webp)
 
 ## ✨ Features
 
