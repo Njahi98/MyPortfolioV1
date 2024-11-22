@@ -19,7 +19,9 @@ i18next
             Light: "Light",
             Dark: "Dark",
             System: "System",
-            Resume:'Resume'
+            Resume: "Resume",
+            English: "English",
+            French: "French",
           },
           home: {
             Hello: "Hello There!",
@@ -85,7 +87,8 @@ i18next
             Light: "Clair",
             Dark: "Sombre",
             System: "Système",
-            Resume:'CV'
+            English: "Anglais",
+            French: "Français",
           },
           home: {
             Hello: "Bonjour!",
@@ -136,8 +139,7 @@ i18next
             About: "À propos",
             Projects: "Projets",
             SourceCode: "Code source",
-            Resume: "CV",
-            endPhrase: 'Conçu et développé par Oussama Njahi',
+            endPhrase: "Conçu et développé par Oussama Njahi",
           },
         },
       },

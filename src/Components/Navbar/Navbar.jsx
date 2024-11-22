@@ -4,6 +4,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
+import { MdOutlineTranslate } from "react-icons/md";
+
 import Backdrop from "../Project/ProjectModal/Backdrop";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { handleSmoothClick } from "./SmoothClick";
@@ -23,10 +25,11 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [themeSwitcherMenuOpen, setThemeSwitcherMenuOpen] = useState(false);
+  const [languageSwitcherMenuOpen, setLanguageSwitcherMenuOpen] = useState(false);
 
   const toggleTheme = useContext(ThemeContext);
 
-  const {t}=useTranslation();
+  const { t,i18n } = useTranslation();
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -95,11 +98,13 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const openThemeSwitcherMenu = () => {
     setThemeSwitcherMenuOpen(!themeSwitcherMenuOpen);
   };
+  const openLanguageSwitcherMenu = () => {
+    setLanguageSwitcherMenuOpen(!languageSwitcherMenuOpen);
+  };
 
   return (
     <>
-      {burgerVisible ?
-       (
+      {burgerVisible ? (
         <div
           className={styles.burgerStyle}
           data-theme={toggleTheme ? "Dark" : "Light"}
@@ -117,14 +122,13 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             />
           )}
         </div>
-      )
-      :
-      (
-        <Reveal style={{ position: "sticky", top: "3%", zIndex: "1000" }}
-        variants={{
-          hidden: { opacity: 0, y: -75 },
-          visible: { opacity: 1, y: 0 },
-        }}
+      ) : (
+        <Reveal
+          style={{ position: "sticky", top: "3%", zIndex: "1000" }}
+          variants={{
+            hidden: { opacity: 0, y: -75 },
+            visible: { opacity: 1, y: 0 },
+          }}
         >
           <div
             className={styles.NavBar}
@@ -138,10 +142,10 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
 
             <div className={styles.titles}>
               <a href="#About" onClick={handleSmoothClick("About")}>
-                {t('navBar.About')}
+                {t("navBar.About")}
               </a>
               <a href="#Projects" onClick={handleSmoothClick("Projects")}>
-                {t('navBar.Projects')}
+                {t("navBar.Projects")}
               </a>
               <a href="#Contact" onClick={handleSmoothClick("Contact")}>
                 Contact
@@ -166,6 +170,9 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
               <a href="mailto:njahioussama75@gmail.com">
                 <MdEmail size={25} />
               </a>
+              <a >
+                <MdOutlineTranslate onClick={openLanguageSwitcherMenu} size={25} />
+              </a>
 
               {isDark ? (
                 <div className={styles.themeSwitcher}>
@@ -175,6 +182,23 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                 <div className={styles.themeSwitcher}>
                   <MdDarkMode onClick={openThemeSwitcherMenu} size={25} />
                 </div>
+              )}
+               {languageSwitcherMenuOpen && (
+                <motion.div
+                  className={styles.languageMenu}
+                  variants={{
+                    hidden: { opacity: 0, y: -75 },
+                    visible: { opacity: 1, y: 0 },
+                    exit: { opacity: 0, y: 75 },
+                  }}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  data-theme={isDark ? "Dark" : "Light"}
+                >
+                  <span onClick={()=>i18n.changeLanguage('en')} disabled={i18n.resolvedLanguage === 'en'}>{t("navBar.English")}</span>
+                  <span onClick={()=>i18n.changeLanguage('fr')} disabled={i18n.resolvedLanguage === 'fr'}>{t("navBar.French")}</span>
+                </motion.div>
               )}
               {themeSwitcherMenuOpen && (
                 <motion.div
@@ -189,19 +213,28 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   exit="exit"
                   data-theme={isDark ? "Dark" : "Light"}
                 >
-                  <span onClick={toggleLightMode}>{t('navBar.Light')}</span>
-                  <span onClick={toggleDarkMode}>{t('navBar.Dark')}</span>
-                  <span onClick={toggleSystemMode}>{t('navBar.System')}</span>
+                  <span onClick={toggleLightMode}>{t("navBar.Light")}</span>
+                  <span onClick={toggleDarkMode}>{t("navBar.Dark")}</span>
+                  <span onClick={toggleSystemMode}>{t("navBar.System")}</span>
                 </motion.div>
               )}
-              <a href="./Resume.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
-              {t('navBar.Resume')}
+              <a
+                href="./Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: "none",
+                  border: "1px solid",
+                  borderRadius: "1px",
+                  padding: "0.3rem",
+                }}
+              >
+                Resume
               </a>
             </div>
           </div>
         </Reveal>
-      )
-      }
+      )}
 
       {burgerMenuOpen && (
         <Backdrop
@@ -224,8 +257,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   border: "1px solid",
                   padding: "5px",
                   borderRadius: "50%",
-                  cursor:"pointer",
-
+                  cursor: "pointer",
                 }}
                 onClick={toggleLightMode}
                 size={25}
@@ -239,7 +271,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   border: "1px solid",
                   padding: "5px",
                   borderRadius: "50%",
-                  cursor:"pointer",
+                  cursor: "pointer",
                 }}
                 onClick={toggleDarkMode}
                 size={25}
@@ -256,7 +288,6 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
           <Navigation setburgerMenuOpen={setBurgerMenuOpen} />
         </Backdrop>
       )}
-
     </>
   );
 }
