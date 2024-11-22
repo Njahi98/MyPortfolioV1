@@ -25,11 +25,12 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [themeSwitcherMenuOpen, setThemeSwitcherMenuOpen] = useState(false);
-  const [languageSwitcherMenuOpen, setLanguageSwitcherMenuOpen] = useState(false);
+  const [languageSwitcherMenuOpen, setLanguageSwitcherMenuOpen] =
+    useState(false);
 
   const toggleTheme = useContext(ThemeContext);
 
-  const { t,i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -157,6 +158,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                 href="https://www.linkedin.com/in/oussama-njahi/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
               >
                 <FaLinkedin size={25} />
               </a>
@@ -164,15 +166,19 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                 href="https://github.com/njahi98"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
               >
                 <FaGithub size={25} />
               </a>
-              <a href="mailto:njahioussama75@gmail.com">
+              <a href="mailto:njahioussama75@gmail.com" aria-label="Send Email">
                 <MdEmail size={25} />
               </a>
-              <a >
-                <MdOutlineTranslate onClick={openLanguageSwitcherMenu} size={25} />
-              </a>
+              <div>
+                <MdOutlineTranslate
+                  onClick={openLanguageSwitcherMenu}
+                  size={25}
+                />
+              </div>
 
               {isDark ? (
                 <div className={styles.themeSwitcher}>
@@ -183,7 +189,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   <MdDarkMode onClick={openThemeSwitcherMenu} size={25} />
                 </div>
               )}
-               {languageSwitcherMenuOpen && (
+              {languageSwitcherMenuOpen && (
                 <motion.div
                   className={styles.languageMenu}
                   variants={{
@@ -196,8 +202,18 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   exit="exit"
                   data-theme={isDark ? "Dark" : "Light"}
                 >
-                  <span onClick={()=>i18n.changeLanguage('en')} disabled={i18n.resolvedLanguage === 'en'}>{t("navBar.English")}</span>
-                  <span onClick={()=>i18n.changeLanguage('fr')} disabled={i18n.resolvedLanguage === 'fr'}>{t("navBar.French")}</span>
+                  <span
+                    onClick={() => i18n.changeLanguage("en")}
+                    disabled={i18n.resolvedLanguage === "en"}
+                  >
+                    {t("navBar.English")}
+                  </span>
+                  <span
+                    onClick={() => i18n.changeLanguage("fr")}
+                    disabled={i18n.resolvedLanguage === "fr"}
+                  >
+                    {t("navBar.French")}
+                  </span>
                 </motion.div>
               )}
               {themeSwitcherMenuOpen && (
