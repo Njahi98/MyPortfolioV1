@@ -9,12 +9,14 @@ import { useState } from "react";
 import styles from "./ProjectModal.module.css";
 import { useContext } from "react";
 import { ThemeContext } from "../../../Context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 function Modal({ githubLink, externalLink, ...props }) {
   const [openGithubBubble, setOpenGithubBubble] = useState(false);
   const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
   const isDark = useContext(ThemeContext);
+  const {t}=useTranslation();
 
   const modalBackdrop = {
     position: "absolute",
@@ -140,8 +142,8 @@ function Modal({ githubLink, externalLink, ...props }) {
             data-theme={isDark ? "Dark" : "Light"}
             data-tooltip={
               githubLink
-                ? "View on GitHub"
-                : "Not available due to company policy"
+                ? t('projects.githubAvailable')
+                : t('projects.githubNotAvailable')
             }
           >
             <FaGithub /> Github
@@ -151,8 +153,8 @@ function Modal({ githubLink, externalLink, ...props }) {
             className={styles.iconLink}
             data-tooltip={
               externalLink
-                ? "View live site"
-                : "Not available due to company policy"
+                ? t('projects.liveAvailable')
+                : t('projects.liveNotAvailable')
             }
           >
             <FaExternalLinkAlt /> Live

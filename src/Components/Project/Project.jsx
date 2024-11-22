@@ -29,6 +29,7 @@ import proj2Image4 from "../../assets/project2/proj2S4.webp";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
+import { useTranslation } from "react-i18next";
 
 
 
@@ -46,19 +47,20 @@ function Project() {
   ];
 
   const proj2Imgs = [proj2Image1, proj2Image2, proj2Image3, proj2Image4];
+  const {t}=useTranslation();
 
   return (
     
     <div className={styles.projectfunc} id="Projects">
-      <Reveal><p className={styles.pTitle}>Projects</p>
-      <p className={styles.smallTitle} data-theme={isDark ? "Dark" : "Light"}>A variety of projects I have worked on.</p></Reveal>
+      <Reveal><p className={styles.pTitle}>{t('projects.ProjectTitle')}</p>
+      <p className={styles.smallTitle} data-theme={isDark ? "Dark" : "Light"}>{t('projects.ProjectIntro')}</p></Reveal>
       
       <div className={styles.project}>
         <CarouselContext.Provider value={proj1Imgs}>
           <ProjectCard
             imageSrc={proj1Image1}
-            projName="ERP Project"
-            projDescription="During my internship (iWare, Sousse), I enhanced a web application by adding advanced features with React, MongoDB, Spring Boot, and JWT. I contributed to developing a super admin management system, license validation, internship and candidate management with Google Meet scheduling, employee training modules, notifications, and real-time communication via WebSockets. These upgrades improved the platform's services and user experience."
+            projName={t('projects.Proj1Title')}
+            projDescription={t('projects.Proj1Description')}
             techStack={[
               { icon: FaReact, name: "React" },
               { icon: SiSpringboot, name: "SpringBoot" },
@@ -72,8 +74,8 @@ function Project() {
         <CarouselContext.Provider value={proj2Imgs}>
           <ProjectCard
             imageSrc={proj2Image1}
-            projName={"Personal Portfolio"}
-            projDescription="A continuous portfolio project by Njahi Oussama"
+            projName={t('projects.Proj2Title')}
+            projDescription={t('projects.Proj2Description')}
             techStack={[
               { icon: FaHtml5, name: "HTML5" },
               { icon: FaCss3, name: "CSS3" },

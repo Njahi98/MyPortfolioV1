@@ -6,22 +6,24 @@ My first Portfolio project - a responsive portfolio website built with React and
 
 ## ✨ Features
 
-- **Responsive Design** - Seamlessly adapts to all device sizes
-- **Theme Switcher** - Dark/light mode implementation
-- **Smooth Animations** - simple animations powered by Framer Motion
-- **Contact Form** - Integrated email functionality using EmailJS
-- **Custom Styling** - Hand-crafted CSS without UI libraries
-- **Toast Notifications** - User feedback using Sonner
+- **Responsive Design** - Seamlessly adapts to all device sizes  
+- **Theme Switcher** - Dark/light mode implementation  
+- **Smooth Animations** - Simple animations powered by Framer Motion  
+- **Contact Form** - Integrated email functionality using EmailJS  
+- **Custom Styling** - Hand-crafted CSS without UI libraries  
+- **Toast Notifications** - User feedback using Sonner  
+- **Language Switching** - Seamlessly switch between English and French using i18next  
 
-## 🛠️ Built With
+## 🛠️ Built With  
 
-- [React](https://reactjs.org/) - Frontend library
-- [Vite](https://vitejs.dev/) - Build tool
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [EmailJS](https://www.emailjs.com/) - Email sending functionality
-- [React Icons](https://react-icons.github.io/react-icons/) - Icon library
-- [React Hook Form](https://react-hook-form.com/) - Form handling
-- [use-local-storage](https://github.com/astoilkov/use-local-storage) - Local storage management
+- [React](https://reactjs.org/) - Frontend library  
+- [Vite](https://vitejs.dev/) - Build tool  
+- [Framer Motion](https://www.framer.com/motion/) - Animation library  
+- [EmailJS](https://www.emailjs.com/) - Email sending functionality  
+- [React Icons](https://react-icons.github.io/react-icons/) - Icon library  
+- [React Hook Form](https://react-hook-form.com/) - Form handling  
+- [use-local-storage](https://github.com/astoilkov/use-local-storage) - Local storage management  
+- [i18next](https://www.i18next.com/) - Internationalization framework for switching between Languages
 
 ## 🚀 Getting Started
 

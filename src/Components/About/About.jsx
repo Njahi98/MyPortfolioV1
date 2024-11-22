@@ -23,33 +23,29 @@ import { SiVite } from "react-icons/si";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
+import { useTranslation } from "react-i18next";
 
 function About() {
   const isDark = useContext(ThemeContext);
   const iconStyle = { width: "auto", height: "50px" };
+  const {t}=useTranslation();
 
   return (
     <div className={styles.about} id="About">
       <Reveal>
         {" "}
-        <p className={styles.aboutMeP}>About me</p>
+        <p className={styles.aboutMeP}>{t('about.AboutMe')}</p>
         <div className={styles.boxes} data-theme={isDark ? "Dark" : "Light"}>
           <div className={styles.paragraph}>
-            <IoLocationOutline /> Tunisia
+            <IoLocationOutline /> {t('about.Location')}
             <p>
-              {" "}
-              I am a passionate Full Stack developer from Tunisia. My journey in
-              web development began with a fascination for how lines of code can
-              transform into interactive, beautiful, and functional websites and
-              applications. This fascination has grown into a pursuit of
-              knowledge and skills across both front-end and back-end
-              technologies.
+                {t('about.Paragraph')}
             </p>
           </div>
           {/* infinite Marquee without Javascript, only CSS, thank you 'Slaying the dragon' */}
 
           <div className={styles.firstRow}>
-            <PiLightning /> Stacks
+            <PiLightning /> {t('about.Stacks')}
             <div className={styles.wrapper}>
               <div
                 className={`${styles.leftitem}  ${styles.leftitem1} ${styles.bubble}`}
@@ -126,7 +122,7 @@ function About() {
           </div>
 
           <div className={styles.secondRow}>
-            <VscTools /> Tools
+            <VscTools /> {t('about.Tools')}
             <div className={styles.wrapper2}>
               <div
                 className={`${styles.rightitem} ${styles.rightitem1} ${styles.bubble}`}

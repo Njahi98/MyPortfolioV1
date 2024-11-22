@@ -7,9 +7,11 @@ import { BsSendFill } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { Toaster, toast } from "sonner";
 import { Reveal } from "../Utils/Reveal";
+import { useTranslation } from "react-i18next";
 function Contact() {
   const isDark = useContext(ThemeContext);
   const form = useRef();
+  const {t}=useTranslation();
 
   const {
     register,
@@ -56,7 +58,7 @@ function Contact() {
       data-theme={isDark ? "Dark" : "Light"}
       id="Contact"
     >
-      <p>Get in Touch</p>
+      <p>{t('contact.contactTitle')}</p>
       <div
         className={
           isDark ? `${styles.contact}` : `${styles.contact} ${styles.light}`
@@ -64,16 +66,14 @@ function Contact() {
       >
         <form ref={form} onSubmit={handleSubmit(onSubmit)}>
           <p>
-            Whether you&apos;re interested in discussing a job opportunity, have
-            a project in mind, or just want to say hello, feel free to drop me a
-            message using the form below. I&apos;d love to connect!
+            {t('contact.contactIntro')}
           </p>
           <div className={styles.formgrid}>
             <div className="nameField">
               <input
                 {...register("user_name", { required: true, minLength: 3 })}
                 name="user_name"
-                placeholder="Your Name"
+                placeholder={t('contact.namePlaceHolder')}
               />
               {errors.user_name && (
                 <motion.p
@@ -84,7 +84,7 @@ function Contact() {
                   animate="visible"
                   exit="exit"
                 >
-                  Name must be at least 3 characters.
+                  {t('contact.nameError')}
                 </motion.p>
               )}
             </div>
@@ -95,7 +95,7 @@ function Contact() {
                   pattern: /^\S+@\S+$/i,
                 })}
                 name="user_email"
-                placeholder="Your Email"
+                placeholder={t('contact.emailPlaceHolder')}
               />
               {errors.user_email && (
                 <motion.p
@@ -106,7 +106,7 @@ function Contact() {
                   animate="visible"
                   exit="exit"
                 >
-                  Please enter a valid email address.
+                  {t('contact.emailError')}
                 </motion.p>
               )}
             </div>
@@ -114,7 +114,7 @@ function Contact() {
           <textarea
             {...register("message", { required: true, minLength: 3 })}
             name="message"
-            placeholder="Your Message"
+            placeholder={t('contact.messagePlaceHolder')}
           />
           {errors.message && (
             <motion.p
@@ -125,11 +125,11 @@ function Contact() {
               animate="visible"
               exit="exit"
             >
-              Please provide a message with at least 3 words.
+              {t('contact.messageError')}
             </motion.p>
           )}
           <button type="submit" data-theme={isDark ? "Dark" : "Light"}>
-            Send Message <BsSendFill />
+          {t('contact.sendMsgButton')} <BsSendFill />
           </button>
         </form>
       </div>

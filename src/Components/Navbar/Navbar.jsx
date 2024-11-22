@@ -17,12 +17,16 @@ import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
 
+import { useTranslation } from "react-i18next";
+
 function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [themeSwitcherMenuOpen, setThemeSwitcherMenuOpen] = useState(false);
 
   const toggleTheme = useContext(ThemeContext);
+
+  const {t}=useTranslation();
 
   const burgerMenuBackdrop = {
     overflow: "hidden",
@@ -134,10 +138,10 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
 
             <div className={styles.titles}>
               <a href="#About" onClick={handleSmoothClick("About")}>
-                About
+                {t('navBar.About')}
               </a>
               <a href="#Projects" onClick={handleSmoothClick("Projects")}>
-                Projects
+                {t('navBar.Projects')}
               </a>
               <a href="#Contact" onClick={handleSmoothClick("Contact")}>
                 Contact
@@ -185,13 +189,13 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                   exit="exit"
                   data-theme={isDark ? "Dark" : "Light"}
                 >
-                  <span onClick={toggleLightMode}>Light</span>
-                  <span onClick={toggleDarkMode}>Dark</span>
-                  <span onClick={toggleSystemMode}>System</span>
+                  <span onClick={toggleLightMode}>{t('navBar.Light')}</span>
+                  <span onClick={toggleDarkMode}>{t('navBar.Dark')}</span>
+                  <span onClick={toggleSystemMode}>{t('navBar.System')}</span>
                 </motion.div>
               )}
               <a href="./Resume.pdf" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", border: "1px solid", borderRadius: "1px", padding: "0.3rem" }}>
-                Resume
+              {t('navBar.Resume')}
               </a>
             </div>
           </div>
