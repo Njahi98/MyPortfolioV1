@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const variants = {
   open: {
@@ -28,20 +29,25 @@ const ulStyle = {
   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)", // Darker shadow
 };
 
-const menuItems = [
-  { href: "#About", text: "About" },
-  { href: "#Projects", text: "Projects" },
-  { href: "#Contact", text: "Contact" },
-  { href: "Resume.pdf", text: "Resume" },
-];
 
-export const Navigation = ({ setburgerMenuOpen }) => (
+
+export const Navigation = ({ setburgerMenuOpen }) => {
+  const {t}=useTranslation();
+
+  const menuItems = [
+    { href: "#About", text: t('navBar.About') },
+    { href: "#Projects", text:t('navBar.Projects') },
+    { href: "#Contact", text: 'Contact' },
+    { href: "Resume.pdf", text: 'Resume' },
+  ];
+
+  return (
   <motion.ul style={ulStyle} variants={variants}>
     {menuItems.map((item, i) => (
       <MenuItem key={i} i={i} item={item} setburgerMenuOpen={setburgerMenuOpen} />
     ))}
   </motion.ul>
-);
+)};
 
 Navigation.propTypes = {
   setburgerMenuOpen: PropTypes.func.isRequired,

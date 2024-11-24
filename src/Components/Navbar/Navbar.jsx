@@ -267,9 +267,9 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             {isDark ? (
               <MdLightMode
                 style={{
-                  position: "relative",
-                  right: "-50%",
-                  top: "150%",
+                  position: "absolute",
+                  top:"80%",
+                  left:"25%",
                   border: "1px solid",
                   padding: "5px",
                   borderRadius: "50%",
@@ -281,9 +281,9 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             ) : (
               <MdDarkMode
                 style={{
-                  position: "relative",
-                  right: "-50%",
-                  top: "150%",
+                  position: "absolute",
+                  top:"80%",
+                  left:"25%",
                   border: "1px solid",
                   padding: "5px",
                   borderRadius: "50%",
@@ -293,6 +293,22 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                 size={25}
               />
             )}
+          
+              <MdOutlineTranslate
+                style={{
+                  position: "absolute",
+                  top:"130%",
+                  left:"25%",
+                  border: "1px solid",
+                  padding: "5px",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                }}
+                onClick={()=>{
+                  i18n.changeLanguage(localStorage.getItem('i18nextLng').includes('en') ?'fr':'en')
+                }}
+                size={25}
+              />
 
             <RiCloseLargeLine
               className={styles.burgerCloseStyle}
