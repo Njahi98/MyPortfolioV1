@@ -51,7 +51,7 @@ function Footer() {
         >
           <FaGithub size={22} />{" "}
         </a>
-        <a href="mailto:njahioussama75@gmail.com" aria-label="Send Email">
+        <a href="mailto:njahioussama@outlook.com" aria-label="Send Email">
           <MdEmail size={22} />
         </a>
       </div>
