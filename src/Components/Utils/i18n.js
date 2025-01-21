@@ -35,7 +35,7 @@ i18next
             AboutMe: "About Me",
             Location: "Tunisia",
             Paragraph: `
-              I am a passionate Full Stack developer from Tunisia. My journey in
+              I am a passionate Web developer from Tunisia. My journey in
               web development began with a fascination for how lines of code can
               transform into interactive, beautiful, and functional websites and
               applications. This fascination has grown into a pursuit of
@@ -101,7 +101,7 @@ i18next
           about: {
             AboutMe: "A propos de moi",
             Location: "Tunisie",
-            Paragraph: `Je suis un développeur Full Stack passionné originaire de Tunisie. Mon aventure dans le développement web a commencé par une fascination pour la manière dont des lignes de code peuvent se transformer en sites web et applications interactifs, beaux et fonctionnels. Cette fascination s'est transformée en une quête de connaissances et de compétences dans les technologies front-end et back-end.`,
+            Paragraph: `Je suis un développeur Web passionné originaire de Tunisie. Mon aventure dans le développement web a commencé par une fascination pour la manière dont des lignes de code peuvent se transformer en sites web et applications interactifs, beaux et fonctionnels. Cette fascination s'est transformée en une quête de connaissances et de compétences dans les technologies front-end et back-end.`,
             Stacks: "Technologies",
             Tools: "Outils",
           },
