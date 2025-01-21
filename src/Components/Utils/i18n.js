@@ -27,7 +27,7 @@ i18next
             Hello: "Hello There!",
             Name: "I'm",
             Intro:
-              "A passionate fullstack developer, creating amazing websites using React & Spring Boot.",
+              "A passionate Web developer, creating amazing websites using React & Spring Boot.",
             ProjectButton: "View My Work",
             ContactButton: "Get in Touch",
           },
@@ -94,7 +94,7 @@ i18next
             Hello: "Bonjour!",
             Name: "Je suis",
             Intro:
-              "Un développeur fullstack passionné, créant des sites web incroyables avec React et Spring Boot.",
+              "Un développeur Web passionné, créant des sites web incroyables avec React et Spring Boot.",
             ProjectButton: "Voir mon travail",
             ContactButton: "Me contacter",
           },
