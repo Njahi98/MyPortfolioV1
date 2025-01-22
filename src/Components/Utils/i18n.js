@@ -62,7 +62,7 @@ i18next
             contactIntro:
               "Whether you're interested in discussing a job opportunity, havea project in mind, or just want to say hello, feel free to drop me amessage using the form below. I'd love to connect!",
             namePlaceHolder: "Your Name",
-            nameError: "Name must be at least 3 characters.",
+            nameError: "Please provide a name with at least 3 characters",
             emailPlaceHolder: "Your Email",
             emailError: "Please enter a valid email address.",
             messagePlaceHolder: "Your Message",
@@ -126,7 +126,7 @@ i18next
             contactIntro:
               "Que vous souhaitiez discuter d'une opportunité professionnelle, avoir un projet en tête ou simplement dire bonjour, n'hésitez pas à m'envoyer un message via le formulaire ci-dessous. Je serais ravi de vous répondre !",
             namePlaceHolder: "Votre nom",
-            nameError: "Le nom doit comporter au moins 3 caractères.",
+            nameError: "Veuillez entrer un nom content au moins 3 charactères",
             emailPlaceHolder: "Votre email",
             emailError: "Veuillez entrer une adresse email valide.",
             messagePlaceHolder: "Votre message",
