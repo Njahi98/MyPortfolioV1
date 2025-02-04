@@ -60,7 +60,7 @@ i18next
           contact: {
             contactTitle: "Get in Touch",
             contactIntro:
-              "Whether you're interested in discussing a job opportunity, havea project in mind, or just want to say hello, feel free to drop me amessage using the form below. I'd love to connect!",
+              "Whether you're interested in discussing a job opportunity, have a project in mind, or just want to say hello, feel free to drop me a message using the form below. I'd love to connect!",
             namePlaceHolder: "Your Name",
             nameError: "Please provide a name with at least 3 characters",
             emailPlaceHolder: "Your Email",
