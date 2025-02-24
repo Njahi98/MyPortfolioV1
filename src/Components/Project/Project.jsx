@@ -10,6 +10,9 @@ import { FaCss3 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FiFramer } from "react-icons/fi";
 import { SiReacthookform } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiEjs } from "react-icons/si";
 
 
 import { CarouselContext } from "../../Context/CarouselContext"
@@ -25,6 +28,21 @@ import proj2Image1 from "../../assets/project2/proj2S1.webp";
 import proj2Image2 from "../../assets/project2/proj2S2.webp";
 import proj2Image3 from "../../assets/project2/proj2S3.webp";
 import proj2Image4 from "../../assets/project2/proj2S4.webp";
+import proj2Image5 from "../../assets/project2/proj2S5.webp";
+import proj2Image6 from "../../assets/project2/proj2S6.webp";
+import proj2Image7 from "../../assets/project2/proj2S7.webp";
+import proj2Image8 from "../../assets/project2/proj2S8.webp";
+import proj2Image9 from "../../assets/project2/proj2S9.webp";
+import proj2Image10 from "../../assets/project2/proj2S10.webp";
+import proj2Image11 from "../../assets/project2/proj2S11.webp";
+import proj2Image12 from "../../assets/project2/proj2S12.webp";
+import proj2Image13 from "../../assets/project2/proj2S13.webp";
+import proj2Image14 from "../../assets/project2/proj2S14.webp";
+
+import proj3Image1 from "../../assets/project3/proj3S1.webp";
+import proj3Image2 from "../../assets/project3/proj3S2.webp";
+import proj3Image3 from "../../assets/project3/proj3S3.webp";
+import proj3Image4 from "../../assets/project3/proj3S4.webp";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -45,8 +63,25 @@ function Project() {
     proj1Image5,
     proj1Image6,
   ];
+  const proj2Imgs = [
+    proj2Image1,
+    proj2Image2,
+    proj2Image3,
+    proj2Image4,
+    proj2Image5,
+    proj2Image6,
+    proj2Image7,
+    proj2Image8,
+    proj2Image9,
+    proj2Image10,
+    proj2Image11,
+    proj2Image12,
+    proj2Image13,
+    proj2Image14,
+  ];
 
-  const proj2Imgs = [proj2Image1, proj2Image2, proj2Image3, proj2Image4];
+
+  const proj3Imgs = [proj3Image1, proj3Image2, proj3Image3, proj3Image4];
   const {t}=useTranslation();
 
   return (
@@ -77,6 +112,23 @@ function Project() {
             projName={t('projects.Proj2Title')}
             projDescription={t('projects.Proj2Description')}
             techStack={[
+              { icon: FaNodeJs, name: "NodeJS" },
+              { icon: SiExpress, name: "Express" },
+              { icon: DiMongodb, name: "MongoDb" },
+              { icon: SiJsonwebtokens, name: "JWT" },
+              { icon: SiEjs, name: "EJS" },
+            ]}
+            githubLink={"https://github.com/Njahi98/Recipe-Management-Application"}
+            externalLink={"https://recipe-management-application-1.onrender.com/"}
+          />{" "}
+        </CarouselContext.Provider>
+
+        <CarouselContext.Provider value={proj3Imgs}>
+          <ProjectCard
+            imageSrc={proj3Image1}
+            projName={t('projects.ProjTitle3')}
+            projDescription={t('projects.Proj3Description')}
+            techStack={[
               { icon: FaHtml5, name: "HTML5" },
               { icon: FaCss3, name: "CSS3" },
               { icon: IoLogoJavascript, name: "JavaScript" },
@@ -88,7 +140,6 @@ function Project() {
             externalLink={"https://njahi-oussama.vercel.app"}
           />{" "}
         </CarouselContext.Provider>
-        <ProjectCard />
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

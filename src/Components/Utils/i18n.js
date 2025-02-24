@@ -47,15 +47,26 @@ i18next
           projects: {
             ProjectTitle: "Projects",
             ProjectIntro: "A variety of projects I have worked on.",
-            Proj1Title: "ERP Project",
+            Proj1Title: "Enhancing an ERP Project",
             Proj1Description:
-              "During my internship (iWare, Sousse), I enhanced a web application by adding advanced features with React, MongoDB, Spring Boot, and JWT. I contributed to developing a super admin management system, license validation, internship and candidate management with Google Meet scheduling, employee training modules, notifications, and real-time communication via WebSockets. These upgrades improved the platform's services and user experience.",
-            Proj2Title: "Personal Portfolio",
-            Proj2Description: "A continuous portfolio project by Njahi Oussama",
+              `During my internship (iWare, Sousse):
+          • Built admin dashboard with React, Spring Boot and JWT for managing user roles and access control
+          • Created internship management system with Google Meet scheduling for interviews
+          • Set up WebSocket system for push and in-app notifications and real time messaging with MongoDB for storage
+          • Developed training module to help manage employee professional development`,
+          Proj2Title: "Recipe Management Application",
+               Proj2Description:
+                 `• developed and deployed a full-stack recipe management platform using Node.js/Express.js, implementing role-based access control and JWT/bcrypt authentication for 3 user roles (admin/user/guest)
+                  •Engineered secure file handling system using GridFS and Multer for recipe images, integrating Sharp.js for automated image processing and optimization
+                  •Designed MongoDB schemas with Mongoose ODM for complex data relationships between users, recipes, and reviews, implementing efficient query optimization
+                  •Built robust REST API with middleware-based authorization checks, Morgan request logging, and comprehensive error handling for user profiles, recipes, and review management
+                  •Implemented server-side rendering using EJS templates with modular components.`,
+                  ProjTitle3: "Personal Portfolio",
+            Proj3Description: "A continuous portfolio project by Njahi Oussama",
             githubAvailable: "View on GitHub",
-            githubNotAvailable: "Not available due to company policy",
+            githubNotAvailable: "Not available",
             liveAvailable: "View live site",
-            liveNotAvailable: "Not available due to company policy",
+            liveNotAvailable: "Not available",
           },
           contact: {
             contactTitle: "Get in Touch",
@@ -108,18 +119,29 @@ i18next
           projects: {
             ProjectTitle: "Projets",
             ProjectIntro: "Une variété de projets sur lesquels j'ai travaillé.",
-            Proj1Title: "Projet ERP",
+            Proj1Title: "Extension d'un projet ERP",
             Proj1Description:
-              "Pendant mon stage (iWare, Sousse), j'ai amélioré une application web en ajoutant des fonctionnalités avancées avec React, MongoDB, Spring Boot et JWT. J'ai contribué au développement d'un système de gestion pour super administrateurs, à la validation des licences, à la gestion des stages et des candidats avec la planification via Google Meet, aux modules de formation des employés, aux notifications, ainsi qu'à la communication en temps réel via WebSockets. Ces améliorations ont renforcé les services et l'expérience utilisateur de la plateforme.",
-            Proj2Title: "Portfolio Personnel",
-            Proj2Description:
+              `Pendant mon stage (iWare, Sousse):
+               • Développement d’un tableau de bord administrateur avec React, Spring Boot et JWT pour la gestion des rôles
+               • Création d’un système de gestion des stages avec planification des entretiens via Google Meet
+               • Mise en place d’un système de notifications push et in-app en temps réel avec WebSocket et MongoDB
+               • Développement d’un module de formation pour la gestion du développement professionnel`,
+               Proj2Title: "Application de Gestion de Recettes",
+               Proj2Description:
+                 `•Conception et déploiement d'une plateforme full-stack de gestion de recettes avec Node.js/Express.js, implémentant un contrôle d'accès basé sur les rôles et une authentification JWT/bcrypt pour 3 types d'utilisateurs (admin/utilisateur/invité)
+                  •Développement d'un système sécurisé de gestion de fichiers utilisant GridFS et Multer pour les images de recettes, avec intégration de Sharp.js pour le traitement et l'optimisation automatique des images
+                  •Conception de schémas MongoDB avec Mongoose ODM pour les relations de données complexes entre utilisateurs, recettes et avis, incluant l'optimisation des requêtes
+                  •Construction d'une API REST robuste avec vérifications d'autorisation par middleware, journalisation des requêtes Morgan, et gestion complète des erreurs pour les profils utilisateurs, recettes et gestion des avis
+                  •Implémentation du rendu côté serveur avec templates EJS et composants modulaires.`,
+ProjTitle3: "Portfolio Personnel",
+Proj3Description :
               "Un projet de portfolio en constante évolution par Njahi Oussama",
             githubAvailable: "Voir sur GitHub",
             githubNotAvailable:
-              "Non disponible en raison de la politique de l'entreprise",
+              "Non disponible",
             liveAvailable: "Voir le site en ligne",
             liveNotAvailable:
-              "Non disponible en raison de la politique de l'entreprise",
+              "Non disponible",
           },
           contact: {
             contactTitle: "Me Contacter",

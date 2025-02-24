@@ -121,7 +121,7 @@ function Modal({ githubLink, externalLink, ...props }) {
             >
               Description.
             </p>
-            <p>{props.projDescription}</p>
+            <p className={styles.formattedDescription}>{props.projDescription}</p>
             <p className={styles.smallTitle}>Technologies.</p>
             <div className={styles.techsStyle}>
               {props.techStack &&

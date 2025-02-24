@@ -127,6 +127,9 @@
   opacity: 1;
   visibility: visible;
 }
+.formattedDescription {
+  white-space: pre-line;
+}
 
 @media (max-width: 1253px) {
   .detailsStyle {
