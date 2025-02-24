@@ -56,11 +56,9 @@ i18next
           • Developed training module to help manage employee professional development`,
           Proj2Title: "Recipe Management Application",
                Proj2Description:
-                 `• developed and deployed a full-stack recipe management platform using Node.js/Express.js, implementing role-based access control and JWT/bcrypt authentication for 3 user roles (admin/user/guest)
-                  •Engineered secure file handling system using GridFS and Multer for recipe images, integrating Sharp.js for automated image processing and optimization
-                  •Designed MongoDB schemas with Mongoose ODM for complex data relationships between users, recipes, and reviews, implementing efficient query optimization
-                  •Built robust REST API with middleware-based authorization checks, Morgan request logging, and comprehensive error handling for user profiles, recipes, and review management
-                  •Implemented server-side rendering using EJS templates with modular components.`,
+                 `• Developed full-stack recipe platform with Node.js/Express, implementing JWT authentication and role-based access for admin/user/guest accounts
+                  • Built secure image handling pipeline using GridFS, Multer and Sharp.js for processing, with MongoDB/Mongoose schemas for optimized data relationships
+                  • Developed REST API for Recipe, Reviews, Users and Profiles with middleware authorization, comprehensive error handling, and EJS server-side rendering.`,
                   ProjTitle3: "Personal Portfolio",
             Proj3Description: "A continuous portfolio project by Njahi Oussama",
             githubAvailable: "View on GitHub",
@@ -128,13 +126,11 @@ i18next
                • Développement d’un module de formation pour la gestion du développement professionnel`,
                Proj2Title: "Application de Gestion de Recettes",
                Proj2Description:
-                 `•Conception et déploiement d'une plateforme full-stack de gestion de recettes avec Node.js/Express.js, implémentant un contrôle d'accès basé sur les rôles et une authentification JWT/bcrypt pour 3 types d'utilisateurs (admin/utilisateur/invité)
-                  •Développement d'un système sécurisé de gestion de fichiers utilisant GridFS et Multer pour les images de recettes, avec intégration de Sharp.js pour le traitement et l'optimisation automatique des images
-                  •Conception de schémas MongoDB avec Mongoose ODM pour les relations de données complexes entre utilisateurs, recettes et avis, incluant l'optimisation des requêtes
-                  •Construction d'une API REST robuste avec vérifications d'autorisation par middleware, journalisation des requêtes Morgan, et gestion complète des erreurs pour les profils utilisateurs, recettes et gestion des avis
-                  •Implémentation du rendu côté serveur avec templates EJS et composants modulaires.`,
-ProjTitle3: "Portfolio Personnel",
-Proj3Description :
+                 `• Conçu une plateforme culinaire full-stack avec Node.js/Express, implémentant l'authentification JWT et l'accès basé sur les rôles pour comptes admin/utilisateur/invité
+                  • Créé un système sécurisé de traitement d'images utilisant GridFS, Multer et Sharp.js, avec schémas MongoDB/Mongoose pour relations de données optimisées
+                  • Développé une API REST pour les recettes, les avis, les utilisateurs et les profils avec autorisation par middleware, gestion d'erreurs complète, et rendu côté serveur EJS.`,
+                ProjTitle3: "Portfolio Personnel",
+                Proj3Description :
               "Un projet de portfolio en constante évolution par Njahi Oussama",
             githubAvailable: "Voir sur GitHub",
             githubNotAvailable:
