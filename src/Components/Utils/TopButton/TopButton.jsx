@@ -8,15 +8,23 @@ function TopButton() {
   const [showTopButton, setShowTopButton] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+  
     const handleScroll = () => {
-      setShowTopButton(window.pageYOffset > 300);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowTopButton(window.pageYOffset > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+  
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   return (
     <>

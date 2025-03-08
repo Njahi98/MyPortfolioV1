@@ -69,16 +69,14 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   };
 
   useEffect(() => {
-    const handleBurger = () => {
-      setburgerVisible(window.innerWidth < 900);
-    };
-    window.addEventListener("resize", handleBurger);
-
-    handleBurger();
-
-    return () => {
-      window.removeEventListener("resize", handleBurger);
-    };
+    const mediaQuery = window.matchMedia("(max-width: 900px)");
+  
+    const handleChange = (e) => setburgerVisible(e.matches);
+    mediaQuery.addEventListener("change", handleChange);
+  
+    handleChange(mediaQuery);
+  
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   useEffect(() => {
