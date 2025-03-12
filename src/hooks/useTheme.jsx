@@ -25,8 +25,8 @@ const useTheme = () => {
       }
     };
 
-    prefersDark.addListener(handleChange);
-    return () => prefersDark.removeListener(handleChange);
+    prefersDark.addEventListener("change",handleChange);
+    return () => prefersDark.removeEventListener("change",handleChange);
   }, [themeMode, setIsDark, prefersDark]);
 
   const toggleDarkMode = () => applyTheme("dark");
