@@ -6,13 +6,10 @@ import { useContext} from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
 import { Reveal } from "../Utils/Reveal";
 import { useTranslation } from "react-i18next";
-import useImageAnimation from "./useImageAnimation";
 
 function Home() {
   const isDark = useContext(ThemeContext);
   const { t } = useTranslation();
-  const {containerRef,imageRef}=useImageAnimation();
-
 
   return (
     <div className={styles.home}>
@@ -92,8 +89,8 @@ function Home() {
           visible: { opacity: 1, x: 0 },
         }}
       >
-    <div className={styles.imageContainer} ref={containerRef}>
-      <img src={devPic} alt="Developer" ref={imageRef} />
+    <div className={styles.imageContainer}>
+      <img src={devPic} alt="Developer" />
     </div>
       </Reveal>
     </div>
