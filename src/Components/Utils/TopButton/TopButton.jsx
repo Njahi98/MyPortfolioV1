@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./TopButton.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { handleSmoothClick } from "../../Navbar/SmoothClick";
 import { FaChevronUp } from "react-icons/fa";
 
@@ -26,26 +26,71 @@ function TopButton() {
   }, []);
   
 
+  const buttonVariants = {
+    initial: { 
+      scale: 0.5,
+      opacity: 0,
+      y: 20
+    },
+    animate: { 
+      scale: 1,
+      opacity: 1,
+      y: 0
+    },
+    exit: {
+      scale: 0.5,
+      opacity: 0,
+      y: 20
+    },
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.2
+      }
+    },
+    tap: {
+      scale: 0.95
+    }
+  };
+
   return (
-    <>
+    <AnimatePresence>
       {showTopButton && (
         <motion.a
           className="topButton"
           href="#"
           onClick={handleSmoothClick()}
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ rotate: 360, scale: 1, opacity: 1 }}
+          variants={buttonVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          whileHover="hover"
+          whileTap="tap"
           transition={{
             type: "spring",
-            stiffness: 100,
-            damping: 10,
-            duration: 0.8,
+            stiffness: 400,
+            damping: 25,
           }}
         >
-          <FaChevronUp size={25} />
+          <motion.div
+            initial={{ rotate: 90 }}
+            animate={{ 
+              rotate: 180,
+              y: [0, -2, 0],
+            }}
+            transition={{
+              y: {
+                repeat: Infinity,
+                duration: 1.5,
+                ease: "easeInOut"
+              }
+            }}
+          >
+            <FaChevronUp size={25} />
+          </motion.div>
         </motion.a>
       )}
-    </>
+    </AnimatePresence>
   );
 }
 
