@@ -13,7 +13,7 @@ import { Navigation } from "./BurgerNavbar/Navigation";
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
 import PropTypes from "prop-types";
-import { motion } from "framer-motion";
+import { motion,useScroll,useMotionValueEvent } from "framer-motion";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -25,8 +25,15 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
   const [burgerVisible, setburgerVisible] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [themeSwitcherMenuOpen, setThemeSwitcherMenuOpen] = useState(false);
-  const [languageSwitcherMenuOpen, setLanguageSwitcherMenuOpen] =
-    useState(false);
+  const [languageSwitcherMenuOpen, setLanguageSwitcherMenuOpen] = useState(false);
+  const [navBarHidden,setNavBarHidden]=useState(false);
+
+  const {scrollY} = useScroll();
+  useMotionValueEvent(scrollY,"change",(latest)=>{
+    const previous = scrollY.getPrevious();
+    (latest>previous && latest > 150 ) ? setNavBarHidden(true) : setNavBarHidden(false) 
+  })
+  
 
   const toggleTheme = useContext(ThemeContext);
 
@@ -129,9 +136,15 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div
+          <motion.div
             className={styles.NavBar}
             data-theme={toggleTheme ? "Dark" : "Light"}
+            variants={{
+              visible:{y:0},
+              hidden:{y:"-150%"}
+            }}
+            animate={navBarHidden ? "hidden" : "visible"}
+            transition={{duration:0.35,ease:"easeInOut"}}
           >
             <div className={styles.logo}>
               <a href="#" onClick={handleSmoothClick()}>
@@ -246,7 +259,7 @@ function NavBar({ isDark, toggleDarkMode, toggleLightMode, toggleSystemMode }) {
                 Resume
               </a>
             </div>
-          </div>
+          </motion.div>
         </Reveal>
       )}
 

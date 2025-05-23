@@ -49,7 +49,7 @@ export const MenuItem = ({ i, item, setburgerMenuOpen }) => {
       } else {
         window.open(item.href, '_blank');
       }
-    }, 300);
+    }, 50);
   };
 
   return (
