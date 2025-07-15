@@ -44,7 +44,7 @@ function Home() {
           },
         }}
       >
-        {["React","Nodejs","Express","Spring Boot", "JavaScript", "Java"].map(
+        {["React","Nodejs","ExpressJs","Spring Boot", "JavaScript","TypeScript","Java"].map(
           (skill) => (
             <motion.span
               key={skill}

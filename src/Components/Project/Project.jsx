@@ -13,6 +13,10 @@ import { SiReacthookform } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { SiEjs } from "react-icons/si";
+import { DiPostgresql } from "react-icons/di";
+import { SiPrisma } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiZod } from "react-icons/si";
 
 
 import { CarouselContext } from "../../Context/CarouselContext"
@@ -43,6 +47,15 @@ import proj3Image1 from "../../assets/project3/proj3S1.webp";
 import proj3Image2 from "../../assets/project3/proj3S2.webp";
 import proj3Image3 from "../../assets/project3/proj3S3.webp";
 import proj3Image4 from "../../assets/project3/proj3S4.webp";
+import proj3Image5 from "../../assets/project3/proj3S5.webp";
+import proj3Image6 from "../../assets/project3/proj3S6.webp";
+import proj3Image7 from "../../assets/project3/proj3S7.webp";
+import proj3Image8 from "../../assets/project3/proj3S8.webp";
+
+import proj4Image1 from "../../assets/project4/proj4S1.webp";
+import proj4Image2 from "../../assets/project4/proj4S2.webp";
+import proj4Image3 from "../../assets/project4/proj4S3.webp";
+import proj4Image4 from "../../assets/project4/proj4S4.webp";
 
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
@@ -80,8 +93,19 @@ function Project() {
     proj2Image14,
   ];
 
+  const proj3Imgs=[    
+    proj3Image1,
+    proj3Image2,
+    proj3Image3,
+    proj3Image4,
+    proj3Image5,
+    proj3Image6,
+    proj3Image7,
+    proj3Image8,
+  ]
 
-  const proj3Imgs = [proj3Image1, proj3Image2, proj3Image3, proj3Image4];
+
+  const proj4Imgs = [proj4Image1, proj4Image2, proj4Image3, proj4Image4];
   const {t}=useTranslation();
 
   return (
@@ -123,11 +147,30 @@ function Project() {
           />{" "}
         </CarouselContext.Provider>
 
-        <CarouselContext.Provider value={proj3Imgs}>
+                <CarouselContext.Provider value={proj3Imgs}>
           <ProjectCard
             imageSrc={proj3Image1}
-            projName={t('projects.ProjTitle3')}
+            projName={t('projects.Proj3Title')}
             projDescription={t('projects.Proj3Description')}
+            techStack={[
+              { icon: FaReact, name: "React" },
+              { icon: SiTypescript, name: "TypeScript" },
+              { icon: FaNodeJs, name: "NodeJS" },
+              { icon: SiExpress, name: "Express" }, 
+              { icon: SiPrisma, name: "Prisma" },
+              { icon: DiPostgresql, name: "PostgreSQL" },
+              { icon: SiJsonwebtokens, name: "JWT" },
+              { icon: SiZod, name: "ZOD" },
+            ]}
+            githubLink={"https://github.com/Njahi98/textile-frontend"}
+          />{" "}
+        </CarouselContext.Provider>
+
+        <CarouselContext.Provider value={proj4Imgs}>
+          <ProjectCard
+            imageSrc={proj4Image1}
+            projName={t('projects.ProjTitle4')}
+            projDescription={t('projects.Proj4Description')}
             techStack={[
               { icon: FaHtml5, name: "HTML5" },
               { icon: FaCss3, name: "CSS3" },
@@ -140,7 +183,6 @@ function Project() {
             externalLink={"https://njahi-oussama.vercel.app"}
           />{" "}
         </CarouselContext.Provider>
-        <ProjectCard />
         <ProjectCard />
         <ProjectCard />
       </div>

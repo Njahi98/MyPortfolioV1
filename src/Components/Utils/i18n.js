@@ -27,7 +27,7 @@ i18next
             Hello: "Hello There!",
             Name: "I'm",
             Intro:
-              "A passionate Web developer, creating amazing websites using React & Spring Boot.",
+              "Web developer crafting modern websites with React and Node.js.",
             ProjectButton: "View My Work",
             ContactButton: "Get in Touch",
           },
@@ -59,8 +59,16 @@ i18next
                  `• Developed full-stack recipe platform with Node.js/Express, implementing JWT authentication and role-based access for admin/user/guest accounts
                   • Built secure image handling pipeline using GridFS, Multer and Sharp.js for processing, with MongoDB/Mongoose schemas for optimized data relationships
                   • Developed REST API for Recipe, Reviews, Users and Profiles with middleware authorization, comprehensive error handling, and EJS server-side rendering.`,
-                  ProjTitle3: "Personal Portfolio",
-            Proj3Description: "A continuous portfolio project by Njahi Oussama",
+                            Proj3Title: "Textile Facility Admin Dashboard",
+               Proj3Description:
+                 `• Built a modern admin dashboard with React, TypeScript, and Tailwind CSS for textile production management.
+• Implemented advanced tables (tanstack-react-table), real-time data with SWR/Axios, and robust forms using
+react-hook-form/Zod validation.
+• Used shadcn/ui for beautiful and accessible UI and Zustand for state management.
+• Integrated seamlessly with a Node.js/Prisma backend for authentication, user/worker management, and
+production line oversight.`,
+                  ProjTitle4: "Personal Portfolio",
+            Proj4Description: "A continuous portfolio project by Njahi Oussama",
             githubAvailable: "View on GitHub",
             githubNotAvailable: "Not available",
             liveAvailable: "View live site",
@@ -103,7 +111,7 @@ i18next
             Hello: "Bonjour!",
             Name: "Je suis",
             Intro:
-              "Un développeur Web passionné, créant des sites web incroyables avec React et Spring Boot.",
+              "Développeur web créant des sites modernes avec React et Node.js.",
             ProjectButton: "Voir mon travail",
             ContactButton: "Me contacter",
           },
@@ -129,8 +137,17 @@ i18next
                  `• Conçu une plateforme culinaire full-stack avec Node.js/Express, implémentant l'authentification JWT et l'accès basé sur les rôles pour comptes admin/utilisateur/invité
                   • Créé un système sécurisé de traitement d'images utilisant GridFS, Multer et Sharp.js, avec schémas MongoDB/Mongoose pour relations de données optimisées
                   • Développé une API REST pour les recettes, les avis, les utilisateurs et les profils avec autorisation par middleware, gestion d'erreurs complète, et rendu côté serveur EJS.`,
-                ProjTitle3: "Portfolio Personnel",
-                Proj3Description :
+                         Proj3Title: "Tableau de Bord Administrateur pour une Usine Textile",
+               Proj3Description:
+                 `• Développement d’un tableau de bord moderne avec React, TypeScript et Tailwind CSS pour la gestion de la
+production textile.
+• Implémentation de tableaux avancés (tanstack-react-table), de données en temps réel avec SWR/Axios, et de
+formulaires robustes grâce à react-hook-form et à la validation Zod.
+• Utilisation de shadcn/ui pour une interface utilisateur accessible, et de Zustand pour la gestion d’état.
+• Intégration d’un backend Node.js/Prisma pour l’authentification, la gestion des utilisateurs/ouvriers, et le suivi
+des lignes de production.`,
+                ProjTitle4: "Portfolio Personnel",
+                Proj4Description :
               "Un projet de portfolio en constante évolution par Njahi Oussama",
             githubAvailable: "Voir sur GitHub",
             githubNotAvailable:
