@@ -1,146 +1,239 @@
-.TechItemStyle {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  color: var(--text-color2);
-  border-style: solid;
-  border-width: thin;
-  border-radius: 12px;
-  padding: 5px;
-  gap: 0.5rem;
-}
-
 .modalStyles {
-  height: auto;
-  width: 80%;
+  width: min(90vw, 1200px);
+  max-height: 80vh;
   margin: auto;
-  padding: 0 1rem;
-  border-radius: 12px;
+  border-radius: 16px;
   border: 1px solid var(--text-color2);
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: var(--background-color2);
-  z-index: 100;
-  color: var(--text-color2);
+  color: var(--text-color);
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-.textDetailsStyle {
-  width: 40%;
-  font-family: "poppins";
-  overflow: auto;
-  color: var(--text-color);
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-bottom: 1px solid var(--text-color2);
+  background-color: var(--background-color2);
+  flex-shrink: 0;
 }
 
 .projNameStyle {
   font-family: "poppins", sans-serif;
-  font-size: 2rem;
-  margin-bottom: 0;
-  margin-top: 0;
+  font-size: 1.75rem;
+  margin: 0;
   color: var(--text-color2);
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .closeButton {
-  width: 100%;
-  text-align: end;
-  margin: 0.5rem 0;
-}
-
-.detailsStyle {
-  width: 100%;
-  height: 90%;
-  border-top: solid thin;
-  border-bottom: solid thin;
-  display: flex;
-}
-
-.smallTitle {
+  background: none;
+  border: none;
   color: var(--text-color2);
-  font-weight: bold;
-}
-
-.techsStyle {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.imageDetailsStyle {
-  width: 70%;
-  height: 100%;
-}
-
-.linksStyle {
-  font-family: "NerdFont", Sans-serif;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 0.75rem;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.modalContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
-.iconLink {
-  cursor: pointer;
-  border: 1px solid var(--text-color2);
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
+.contentSection {
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-family: "poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color2);
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+.sectionTitle:first-of-type {
+  margin-top: 1rem;
+}
+
+.description {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  white-space: pre-line;
+  font-family: "poppins", sans-serif;
+}
+
+.techsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.TechItemStyle {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  position: relative;
-}
-
-.iconLink::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
+  color: var(--text-color2);
+  border: 1px solid var(--text-color2);
+  border-radius: 8px;
   padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border-radius: 4px;
   font-size: 0.875rem;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
 }
 
-.iconLink::before {
-  content: "";
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+.TechItemStyle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.iconLink:hover::after,
-.iconLink:hover::before {
-  opacity: 1;
-  visibility: visible;
-}
-.formattedDescription {
-  white-space: pre-line;
+.carouselSection {
+  flex: 1;
+  min-height: 300px;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 1253px) {
-  .detailsStyle {
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem 1.5rem 2rem;
+  border-top: 1px solid var(--text-color2);
+  background-color: var(--background-color2);
+  flex-shrink: 0;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--text-color2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color2);
+  font-family: "poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .modalStyles {
+    width: 95vw;
+    max-height: 85vh;
+  }
+  
+  .modalHeader {
+    padding: 1rem 1.5rem 0.75rem 1.5rem;
+  }
+  
+  .projNameStyle {
+    font-size: 1.5rem;
+  }
+  
+  .modalContent {
+    padding: 0 1.5rem;
+  }
+  
+  .modalFooter {
+    padding: 1rem 1.5rem 1.25rem 1.5rem;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    gap: 1rem;
   }
-  .textDetailsStyle {
+  
+  .actionButton {
     width: 100%;
+    max-width: 200px;
   }
-  .imageDetailsStyle {
-    width: 100%;
+  
+  .carouselSection {
+    min-height: 250px;
   }
+}
+
+@media (max-width: 480px) {
+  .modalStyles {
+    width: 98vw;
+    max-height: 90vh;
+  }
+  
+  .modalHeader {
+    padding: 1rem;
+  }
+  
+  .projNameStyle {
+    font-size: 1.25rem;
+  }
+  
+  .modalContent {
+    padding: 0 1rem;
+  }
+  
+  .modalFooter {
+    padding: 1rem;
+  }
+  
+  .techsGrid {
+    gap: 0.5rem;
+  }
+  
+  .TechItemStyle {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+.modalContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background-color: var(--text-color2);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
 }

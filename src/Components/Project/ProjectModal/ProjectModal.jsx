@@ -16,41 +16,47 @@ function Modal({ githubLink, externalLink, ...props }) {
   const [openExternalLinkBubble, setOpenExternalLinkBubble] = useState(false);
 
   const isDark = useContext(ThemeContext);
-  const {t}=useTranslation();
+  const { t } = useTranslation();
 
   const modalBackdrop = {
-    position: "absolute",
+    position: "fixed",
     top: 0,
     left: 0,
-    height: "100%",
-    width: "100%",
+    height: "100vh",
+    width: "100vw",
     background: "rgba(0, 0, 0, 0.8)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     zIndex: 1001,
+    padding: "1rem",
+    boxSizing: "border-box",
   };
-  
-  //maybe fix the responsive modal issue
 
   const dropIn = {
     hidden: {
       y: "-100vh",
       opacity: 0,
+      scale: 0.8,
     },
     visible: {
-      y: "51vh",
+      y: 0,
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.1,
+        duration: 0.3,
         type: "spring",
         damping: 25,
-        stiffness: 500,
+        stiffness: 400,
       },
     },
     exit: {
       y: "100vh",
       opacity: 0,
+      scale: 0.8,
+      transition: {
+        duration: 0.2,
+      },
     },
   };
 
@@ -97,85 +103,88 @@ function Modal({ githubLink, externalLink, ...props }) {
         animate="visible"
         exit="exit"
       >
-        <div className={styles.closeButton}>
-          <RiCloseLargeLine
-            size="25px"
-            style={{ cursor: "pointer" }}
+        
+        <div className={styles.modalHeader}>
+          <h2 className={styles.projNameStyle} data-theme={isDark ? "Dark" : "Light"}>
+            {props.projName}
+          </h2>
+          <button 
+            className={styles.closeButton}
             onClick={props.handleClose}
-          />
-        </div>
-        <div className={styles.detailsStyle}>
-          <div
-            className={styles.textDetailsStyle}
-            data-theme={isDark ? "Dark" : "Light"}
+            aria-label="Close modal"
           >
-            <p
-              className={styles.projNameStyle}
-              data-theme={isDark ? "Dark" : "Light"}
-            >
-              {props.projName}
-            </p>
-            <p
-              className={styles.smallTitle}
-              data-theme={isDark ? "Dark" : "Light"}
-            >
-              Description.
-            </p>
-            <p className={styles.formattedDescription}>{props.projDescription}</p>
-            <p className={styles.smallTitle}>Technologies.</p>
-            <div className={styles.techsStyle}>
+            <RiCloseLargeLine size="24px" />
+          </button>
+        </div>
+
+        
+        <div className={styles.modalContent}>
+          <div className={styles.contentSection}>
+            <h3 className={styles.sectionTitle} data-theme={isDark ? "Dark" : "Light"}>
+              Description
+            </h3>
+            <p className={styles.description}>{props.projDescription}</p>
+
+            <h3 className={styles.sectionTitle} data-theme={isDark ? "Dark" : "Light"}>
+              Technologies
+            </h3>
+            <div className={styles.techsGrid}>
               {props.techStack &&
                 props.techStack.map((tech, index) => (
                   <TechItem key={index} Icon={tech.icon} name={tech.name} />
                 ))}
             </div>
           </div>
-          <div className={styles.imageDetailsStyle}>
+
+          <div className={styles.carouselSection}>
             <SwipeCarousel />
           </div>
         </div>
 
-        <div className={styles.linksStyle}>
-          <div
+        
+        <div className={styles.modalFooter}>
+          <button
             onClick={handleGithubClick}
-            className={styles.iconLink}
+            className={styles.actionButton}
             data-theme={isDark ? "Dark" : "Light"}
-            data-tooltip={
+            title={
               githubLink
                 ? t('projects.githubAvailable')
                 : t('projects.githubNotAvailable')
             }
           >
-            <FaGithub /> Github
-          </div>
-          <div
+            <FaGithub size="18px" />
+            <span>GitHub</span>
+          </button>
+          
+          <button
             onClick={handleExternalLinkClick}
-            className={styles.iconLink}
-            data-tooltip={
+            className={styles.actionButton}
+            data-theme={isDark ? "Dark" : "Light"}
+            title={
               externalLink
                 ? t('projects.liveAvailable')
                 : t('projects.liveNotAvailable')
             }
           >
-            <FaExternalLinkAlt /> Live
-          </div>
+            <FaExternalLinkAlt size="18px" />
+            <span>Live Demo</span>
+          </button>
         </div>
       </motion.div>
-
     </Backdrop>
   );
 }
 
 Modal.propTypes = {
-  handleClose: PropTypes.any,
-  text: PropTypes.string,
+  handleClose: PropTypes.func.isRequired,
   projName: PropTypes.string,
   projDescription: PropTypes.string,
-  techStack: PropTypes.any,
-  name: PropTypes.any,
-  Icon: PropTypes.any,
+  techStack: PropTypes.array,
   githubLink: PropTypes.string,
   externalLink: PropTypes.string,
+  Icon: PropTypes.elementType,
+  name: PropTypes.string,
 };
 
 export default Modal;
