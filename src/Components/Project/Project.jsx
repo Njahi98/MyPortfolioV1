@@ -177,6 +177,7 @@ function Project() {
               { icon: SiReacthookform, name: "Reacthook Form" },
             ]}
             githubLink={"https://github.com/Njahi98/textile-frontend"}
+            externalLink={"https://textilepro.vercel.app/"}
           />{" "}
         </CarouselContext.Provider>
 

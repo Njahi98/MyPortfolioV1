@@ -61,12 +61,12 @@ i18next
                   • Developed REST API for Recipe, Reviews, Users and Profiles with middleware authorization, comprehensive error handling, and EJS server-side rendering.`,
                             Proj3Title: "Textile Facility Admin Dashboard",
                Proj3Description:
-                 `• Built a modern admin dashboard with React, TypeScript, and Tailwind CSS for textile production management.
-• Implemented advanced tables (tanstack-react-table), real-time data with SWR/Axios, and robust forms using
-react-hook-form/Zod validation.
-• Used shadcn/ui for beautiful and accessible UI and Zustand for state management.
-• Integrated seamlessly with a Node.js/Prisma backend for authentication, user/worker management, and
-production line oversight.`,
+                 `• Developed a full-stack admin dashboard to streamline textile production management, including worker
+tracking, product oversight, production line monitoring, and AI insights.
+• Built with React, TypeScript, and Tailwind CSS, featuring advanced tables (TanStack), dynamic forms (React
+Hook Form + Zod), and global state with Zustand.
+• Enhanced user experience with shadcn/ui components and real-time data fetching via SWR/Axios.
+• Designed and integrated a secure Express/Prisma backend with authentication and role-based access control.`,
                   ProjTitle4: "Personal Portfolio",
             Proj4Description: "A continuous portfolio project by Njahi Oussama",
             githubAvailable: "View on GitHub",
@@ -139,13 +139,10 @@ production line oversight.`,
                   • Développé une API REST pour les recettes, les avis, les utilisateurs et les profils avec autorisation par middleware, gestion d'erreurs complète, et rendu côté serveur EJS.`,
                          Proj3Title: "Tableau de Bord Administrateur pour une Usine Textile",
                Proj3Description:
-                 `• Développement d’un tableau de bord moderne avec React, TypeScript et Tailwind CSS pour la gestion de la
-production textile.
-• Implémentation de tableaux avancés (tanstack-react-table), de données en temps réel avec SWR/Axios, et de
-formulaires robustes grâce à react-hook-form et à la validation Zod.
-• Utilisation de shadcn/ui pour une interface utilisateur accessible, et de Zustand pour la gestion d’état.
-• Intégration d’un backend Node.js/Prisma pour l’authentification, la gestion des utilisateurs/ouvriers, et le suivi
-des lignes de production.`,
+                 `• Développement d’un tableau de bord administrateur full-stack pour la gestion des lignes de production, du suivi des ouvriers, des produits et des indicateurs de performance.
+• Mise en place d’une authentification sécurisée avec rôles (JWT) et intégration d’une interface moderne (React, TypeScript, Tailwind, shadcn/ui).
+• Tableaux avancés (TanStack), formulaires (React Hook Form + Zod) et gestion d’état global (Zustand).
+• Backend Node.js/Express avec Prisma et PostgreSQL, incluant import automatisé de fichiers Excel/CSV, génération d’analyses en temps réel et intégration d’une IA pour l’analyse prédictive des performances.`,
                 ProjTitle4: "Portfolio Personnel",
                 Proj4Description :
               "Un projet de portfolio en constante évolution par Njahi Oussama",
