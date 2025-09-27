@@ -1,7 +1,7 @@
 import styles from "./Project.module.css";
 import ProjectCard from "./ProjectCard";
 import { FaReact } from "react-icons/fa";
-import { SiSocketdotio, SiSpringboot } from "react-icons/si";
+import { SiI18Next, SiSocketdotio, SiSpringboot } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { SiJsonwebtokens } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
@@ -175,6 +175,8 @@ function Project() {
               { icon: SiZod, name: "ZOD" },
               {icon: SiSocketdotio, name: "Socket.io" },
               { icon: SiReacthookform, name: "Reacthook Form" },
+              {icon:FiFramer, name: "Framer Motion" },
+              {icon:SiI18Next, name: "i18next" }
             ]}
             githubLink={"https://github.com/Njahi98/textile-frontend"}
             externalLink={"https://textilepro.vercel.app/"}
