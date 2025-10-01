@@ -179,7 +179,7 @@ function Project() {
               {icon:SiI18Next, name: "i18next" }
             ]}
             githubLink={"https://github.com/Njahi98/textile-frontend"}
-            externalLink={"https://textilepro.vercel.app/"}
+            externalLink={"https://textilepro.netlify.app/"}
           />{" "}
         </CarouselContext.Provider>
 
@@ -197,7 +197,7 @@ function Project() {
               { icon: SiReacthookform, name: "Reacthook Form" },
             ]}
             githubLink={"https://github.com/Njahi98/MyPortfolioV1"}
-            externalLink={"https://njahi-oussama.vercel.app"}
+            externalLink={"https://njahi-oussama.netlify.app"}
           />{" "}
         </CarouselContext.Provider>
         <ProjectCard />
