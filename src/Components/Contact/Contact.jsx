@@ -32,6 +32,10 @@ function Contact() {
   };
 
   const onSubmit = () => {
+    reset();
+    toast.error("This form function has been disabled. Please use the available email to contact me instead.");
+
+  /*
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -47,9 +51,9 @@ function Contact() {
         },
         (error) => {
           console.log("FAILED...", error.text);
-          toast.error("Oops, something went wrong.");
         }
       );
+*/
   };
 
   return (
